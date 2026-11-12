@@ -168,28 +168,53 @@ a:focus-visible,button:focus-visible,input:focus-visible,.tog:focus-visible{outl
 .b-bilde:hover .bo{background:#356A89}
 .b-bilde .bo h3{margin-top:4px}
 
+.hnav{display:flex;align-self:stretch;gap:2px}
+.ni{display:flex}
+.ni>a{display:flex;align-items:center;position:relative;padding:0 14px;font-size:15px;font-weight:500;color:#231F20;text-decoration:none}
+.ni>a::after{content:"";position:absolute;left:14px;right:14px;bottom:24px;height:2px;background:#356A89;transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.ni:hover>a,.ni:focus-within>a{color:#356A89}
+.ni:hover>a::after,.ni:focus-within>a::after{transform:scaleX(1)}
+.hk{font-size:15px;font-weight:500;color:#231F20;text-decoration:none}.hk:hover{color:#356A89}
+.mega{position:absolute;left:0;right:0;top:100%;background:#fff;border-top:1px solid #D3DCDF;border-bottom:1px solid #D3DCDF;visibility:hidden;opacity:0;transition:opacity .18s,visibility 0s .18s}
+.ni:hover .mega,.ni:focus-within .mega{visibility:visible;opacity:1;transition:opacity .18s}
+.mg{display:grid;gap:48px;padding:40px 0 48px}
+.ml h3{font-size:28px;line-height:34px;font-weight:500}
+.ml p{margin-top:10px;font-size:16px;line-height:24px;color:#566B76}
+.ml .xl-lenke{margin-top:18px;font-size:16px}
+.mcol a{display:block;text-decoration:none;font-size:16px;line-height:22px;color:#566B76;padding:5px 0}
+.mcol a:hover{color:#356A89}
+.mcol a.mh{font-size:17px;font-weight:600;color:#231F20;padding-bottom:8px}
+.mcol a.mh:hover{color:#356A89}
+.mn{font-size:15px;line-height:22px;color:#566B76}
+.mrow4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.mcard{display:block;text-decoration:none}
+.mi{display:block;overflow:hidden;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%);aspect-ratio:4/3;background:#EAF0EC}
+.mi.p{aspect-ratio:4/4.4}
+.mi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.mcard:hover .mi img{transform:scale(1.06)}
+.mcard b{display:block;margin-top:10px;font-size:16px;line-height:22px;font-weight:500;color:#231F20}
+.mcard i{display:block;margin-top:10px;font-style:normal;font-size:14px;line-height:20px;color:#566B76}
+.mcard i+b{margin-top:2px}
+.mcard:hover b{color:#356A89}
+@media(max-width:900px){.hnav{display:none}.hk{display:none}}
+@media(min-width:901px){.mbtn{display:none}}
+
 </style></head><body>
 <div style="width:100%;background:#fff;position:relative">
 <header class="hdr">
 <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;height:80px;gap:24px">
 <a href="index.html" aria-label="Excellerate, til forsiden"><img src="img/logo-xl.png" alt="Excellerate" style="height:22px;display:block"></a>
-<nav class="nav" aria-label="Hovedmeny"><a href="#">Tjenester</a><a href="#">Referanser</a><a href="fagekspertene.html">Fagekspertene</a><a href="#">Kunnskap</a><a href="#">Om oss</a></nav>
+<nav class="hnav" aria-label="Hovedmeny"><div class="ni"><a href="#">Tjenester</a><div class="mega"><div class="wrap"><div class="mg" style="grid-template-columns:280px repeat(4,1fr)"><div class="ml"><h3>Tjenester</h3><p>Fire områder som henger sammen. Velg der dere trenger mest.</p><a class="xl-lenke" href="#">Se alle tjenester<span class="pil"></span></a></div><div class="mcol"><a class="mh" href="#">Salgsutvikling</a><a href="#">Rådgivende verdisalg</a><a href="#">Kunstig intelligens i salg</a><a href="#">Salgsledelse</a><a href="#">Kundeinnsikt</a></div><div class="mcol"><a class="mh" href="#">Lederutvikling</a><a href="#">Strategi til handling</a><a href="#">Coaching</a><a href="#">Organisasjonsutvikling</a></div><div class="mcol"><a class="mh" href="#">Kulturutvikling</a><a href="#">Prestasjonskultur</a><a href="#">Kommersiell kultur</a></div><div class="mcol"><a class="mh" href="#">KI, adopsjon og sikkerhet</a><a href="#">AI Act og compliance</a><a href="#">KI i hverdagen</a><a href="#">Informasjonssikkerhet</a></div></div></div></div></div><div class="ni"><a href="#">Bransjer</a><div class="mega"><div class="wrap"><div class="mg" style="grid-template-columns:280px repeat(3,1fr)"><div class="ml"><h3>Bransjer</h3><p>Samme metode, tilpasset deres marked og deres kunder.</p><a class="xl-lenke" href="#">Se alle bransjer<span class="pil"></span></a></div><div class="mcol"><a class="mh" href="#">Handel og tjenester</a><a href="#">Retail og detaljhandel</a><a href="#">Eiendom</a><a href="#">Hotell og reiseliv</a></div><div class="mcol"><a class="mh" href="#">Næringsliv</a><a href="#">Bygg og anlegg</a><a href="#">Juridisk og rådgivning</a><a href="#">Media</a></div><div class="mcol"><p class="mn">Landingssider per bransje kommer.</p></div></div></div></div></div><div class="ni"><a href="fagekspertene.html">Fageksperter</a><div class="mega"><div class="wrap"><div class="mg" style="grid-template-columns:280px 1fr"><div class="ml"><h3>Fagekspertene</h3><p>Ett team med erfaring fra salg, ledelse og kultur.</p><a class="xl-lenke" href="fagekspertene.html">Se alle fagekspertene<span class="pil"></span></a></div><div class="mrow4"><a class="mcard" href="fagekspert.html"><span class="mi p"><img src="img/portrett-per-kjetil.jpg" alt=""></span><b>Per Kjetil Parr</b><i>Administrerende direktør</i></a><a class="mcard" href="fagekspert.html"><span class="mi p"><img src="img/portrett-perchristian.jpg" alt=""></span><b>Per Christian Svae</b><i>Teknologidirektør</i></a><a class="mcard" href="fagekspert.html"><span class="mi p"><img src="img/portrett-anne.jpg" alt=""></span><b>Anne Katrine Brånen</b><i>Senior prosjektplanlegger</i></a><a class="mcard" href="fagekspert.html"><span class="mi p"><img src="img/portrett-tom.jpg" alt=""></span><b>Tom Hope</b><i>Kommersiell leder</i></a></div></div></div></div></div><div class="ni"><a href="#">Kunnskap</a><div class="mega"><div class="wrap"><div class="mg" style="grid-template-columns:280px 1fr 340px"><div class="ml"><h3>Kunnskapssenter</h3><p>Artikler, guider og arrangementer fra fagekspertene.</p><a class="xl-lenke" href="#">Åpne kunnskapssenteret<span class="pil"></span></a></div><div class="mcol"><a class="mh" href="#">Artikler</a><a href="#">Fagartikler</a><a class="mh" href="#" style="margin-top:14px">Guider</a><a href="#">Webinarer og arrangementer</a></div><a class="mcard" href="#"><span class="mi"><img src="img/kunnskap-guide.jpg" alt=""></span><i>Guide</i><b>Rådgivende verdisalg: prinsipper og beste praksis i B2B-salg</b></a></div></div></div></div><div class="ni"><a href="#">Referanser</a><div class="mega"><div class="wrap"><div class="mg" style="grid-template-columns:280px repeat(3,1fr)"><div class="ml"><h3>Referanser</h3><p>Resultater hos kunder, med tall vi kan stå inne for.</p><a class="xl-lenke" href="#">Alle referanser<span class="pil"></span></a></div><a class="mcard" href="#"><span class="mi"><img src="img/case-thon.jpg" alt=""></span><b>Thon Hotels: et kommersielt kulturløft</b></a><a class="mcard" href="#"><span class="mi"><img src="img/case-boligpartner.jpg" alt=""></span><b>BoligPartner: leder- og salgsutvikling</b></a><a class="mcard" href="#"><span class="mi"><img src="img/case-wikborg.jpg" alt=""></span><b>Wikborg Rein: forenklet kompetanseutvikling</b></a></div></div></div></div><div class="ni"><a href="#">Om oss</a><div class="mega"><div class="wrap"><div class="mg" style="grid-template-columns:280px 1fr 1fr"><div class="ml"><h3>Om oss</h3><p>Vi hjelper deg å finne, vinne og beholde de rette kundene – og å bygge organisasjonen som klarer det, dag etter dag.</p><a class="xl-lenke" href="#">Les mer om oss<span class="pil"></span></a></div><div class="mcol"><a class="mh" href="#">Om Excellerate</a><a href="#">Siden 1988</a><a class="mh" href="fagekspertene.html" style="margin-top:14px">Fagekspertene</a></div><div class="mcol"><a class="mh" href="#">Kontakt</a><a href="#">+47 22 49 00 00</a><a href="#">post@excellerate.no</a></div></div></div></div></div></nav>
 <div style="display:flex;align-items:center;gap:28px">
 <button class="mbtn" id="mbtn" aria-expanded="false">Meny</button>
-<a class="xl-btn-l" href="#samtale">Book en samtale</a>
+<a class="hk" href="#samtale">Kontakt</a>
 </div>
 </div>
 <div id="mpanel" style="display:none">
-<div class="wrap" style="display:grid;grid-template-columns:1fr 1fr 1.3fr 1fr;gap:48px;padding-top:40px;padding-bottom:48px">
+<div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-top:32px;padding-bottom:40px">
 <div class="mc"><h4>Tjenester</h4><a href="#">Salgsutvikling</a><a href="#">Lederutvikling</a><a href="#">Kulturutvikling</a><a href="#">KI, adopsjon og sikkerhet</a></div>
-<div class="mc"><h4>Referanser</h4><a href="#">Alle kundecaser</a><a href="#">Thon Hotels</a><a href="#">BoligPartner</a><a href="#">Saint-Gobain</a></div>
-<div class="mc"><h4>Fagekspertene</h4><a class="mx" href="fagekspert.html"><img src="img/portrett-per-kjetil.jpg" alt=""><span><b>Per Kjetil Parr</b><i>Administrerende direktør</i></span></a><a class="mx" href="fagekspert.html"><img src="img/portrett-leif.jpg" alt=""><span><b>Leif Ottesen</b><i>Partner og hovedspesialist</i></span></a><a class="mx" href="fagekspert.html"><img src="img/portrett-carl.jpg" alt=""><span><b>Carl Haakon Klafstad</b><i>Partner</i></span></a><a class="mx" href="fagekspert.html"><img src="img/portrett-erik.jpg" alt=""><span><b>Erik Simensen</b><i>Fagekspert</i></span></a><a href="fagekspertene.html" style="font-size:16px;color:#356A89">Se alle fagekspertene</a></div>
-<div class="mc"><h4>Kunnskapssenter</h4><a href="#">Artikler</a><a href="#">Fagartikler</a><a href="#">Guider</a><a href="#">Webinarer og arrangementer</a></div>
+<div class="mc"><h4>Mer</h4><a href="#">Bransjer</a><a href="fagekspertene.html">Fagekspertene</a><a href="#">Kunnskap</a><a href="#">Referanser</a><a href="#">Om oss</a></div>
 </div>
-<div style="background:#F3F6F5;border-top:1px solid #D3DCDF"><div class="wrap" style="padding-top:20px;padding-bottom:20px;display:flex;gap:32px;align-items:center;flex-wrap:wrap">
-<div style="flex:0 0 420px;border:1px solid #6B818C;background:#fff;padding:12px 16px;color:#566B76">Søk i tjenester, caser og fagekspertene</div>
-<div><a class="chip" href="#">Når kundene bare snakker om pris</a><a class="chip" href="#">Strategi til handling</a><a class="chip" href="#">AI Act</a><a class="chip" href="#">Rådgivende verdisalg</a></div>
-</div></div>
 </div>
 </header>
 <section class="dyp" style="position:relative;overflow:hidden;background:#1B3A4B;color:#fff">
