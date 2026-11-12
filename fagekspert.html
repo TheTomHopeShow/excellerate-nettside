@@ -199,6 +199,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,.tog:focus-visible{outl
 @media(max-width:900px){.hnav{display:none}.hk{display:none}}
 @media(min-width:901px){.mbtn{display:none}}
 
+.lrows{display:flex;flex-direction:column;gap:20px}
+.lrow{overflow:hidden;cursor:grab;user-select:none;-webkit-user-select:none}
+.lrow:active{cursor:grabbing}
+.ltrack{display:flex;gap:20px;width:max-content;animation:lm 70s linear infinite}
+.lrow.r .ltrack{animation-direction:reverse;animation-duration:80s}
+.lrow:hover .ltrack{animation-play-state:paused}
+@keyframes lm{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 10px))}}
+.lg2{flex:none;width:200px;height:96px;background:#fff;display:flex;align-items:center;justify-content:center;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%)}
+.lg2 img{max-width:132px;max-height:50px;width:auto;height:auto;filter:grayscale(1);opacity:.6;transition:filter .3s,opacity .3s,transform .3s;pointer-events:none;-webkit-user-drag:none}
+.lg2:hover img{filter:none;opacity:1;transform:scale(1.08)}
+@media(prefers-reduced-motion:reduce){.ltrack{animation:none}}
+
 </style></head><body>
 <div style="width:100%;background:#fff;position:relative">
 <header class="hdr">

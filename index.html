@@ -199,6 +199,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,.tog:focus-visible{outl
 @media(max-width:900px){.hnav{display:none}.hk{display:none}}
 @media(min-width:901px){.mbtn{display:none}}
 
+.lrows{display:flex;flex-direction:column;gap:20px}
+.lrow{overflow:hidden;cursor:grab;user-select:none;-webkit-user-select:none}
+.lrow:active{cursor:grabbing}
+.ltrack{display:flex;gap:20px;width:max-content;animation:lm 70s linear infinite}
+.lrow.r .ltrack{animation-direction:reverse;animation-duration:80s}
+.lrow:hover .ltrack{animation-play-state:paused}
+@keyframes lm{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 10px))}}
+.lg2{flex:none;width:200px;height:96px;background:#fff;display:flex;align-items:center;justify-content:center;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%)}
+.lg2 img{max-width:132px;max-height:50px;width:auto;height:auto;filter:grayscale(1);opacity:.6;transition:filter .3s,opacity .3s,transform .3s;pointer-events:none;-webkit-user-drag:none}
+.lg2:hover img{filter:none;opacity:1;transform:scale(1.08)}
+@media(prefers-reduced-motion:reduce){.ltrack{animation:none}}
+
 </style></head><body>
 <div style="width:100%;background:#fff;position:relative">
 <header class="hdr">
@@ -228,10 +240,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,.tog:focus-visible{outl
 <div class="snitt"><img src="img/hero.jpg" alt="Mann i samtale med kolleger" style="height:520px;clip-path:polygon(0 0,calc(100% - 48px) 0,100% 48px,100% 100%,0 100%)"><span class="dot" style="width:24px;height:24px"></span></div>
 </div>
 </section>
-<section style="background:#F3F6F5"><div class="wrap" style="padding-top:36px;padding-bottom:36px">
-<p style="font-size:15px;line-height:20px;font-weight:600;color:#566B76;margin-bottom:16px">Virksomheter vi har jobbet med</p>
-<div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px"><div class="lg"><img src="img/logo-dn.png" alt="Dagens Næringsliv"></div><div class="lg"><img src="img/logo-ramirent.jpg" alt="Ramirent"></div><div class="lg"><img src="img/logo-maxbo.jpg" alt="Maxbo"></div><div class="lg"><img src="img/logo-olivia.jpg" alt="Olivia"></div><div class="lg"><img src="img/logo-synsam.jpg" alt="Synsam"></div><div class="lg"><img src="img/logo-polarn.jpg" alt="Polarn O. Pyret"></div></div>
-</div></section>
+<section style="background:#F3F6F5;overflow:hidden"><div class="wrap" style="padding-top:64px;padding-bottom:28px"><h2 style="font-size:32px;line-height:38px;font-weight:500">Takk for tilliten</h2><p style="margin-top:8px;font-size:19px;line-height:28px;color:#566B76;max-width:34em">Noen av virksomhetene vi har fått lov til å jobbe sammen med.</p></div>
+<div class="lrows"><div class="lrow "><div class="ltrack"><div class="lg2"><img src="img/logo-dn.png" alt="Dagens Næringsliv"></div><div class="lg2"><img src="img/logo-ramirent.png" alt="Ramirent"></div><div class="lg2"><img src="img/logo-maxbo.png" alt="Maxbo"></div><div class="lg2"><img src="img/logo-olivia.png" alt="Olivia"></div><div class="lg2"><img src="img/logo-synsam.png" alt="Synsam"></div><div class="lg2"><img src="img/logo-polarn.png" alt="Polarn O. Pyret"></div><div class="lg2"><img src="img/logo-thon.png" alt="Thon Hotels"></div><div class="lg2"><img src="img/logo-boligpartner.png" alt="BoligPartner"></div><div class="lg2"><img src="img/logo-dn.png" alt="Dagens Næringsliv"></div><div class="lg2"><img src="img/logo-ramirent.png" alt="Ramirent"></div><div class="lg2"><img src="img/logo-maxbo.png" alt="Maxbo"></div><div class="lg2"><img src="img/logo-olivia.png" alt="Olivia"></div><div class="lg2"><img src="img/logo-synsam.png" alt="Synsam"></div><div class="lg2"><img src="img/logo-polarn.png" alt="Polarn O. Pyret"></div><div class="lg2"><img src="img/logo-thon.png" alt="Thon Hotels"></div><div class="lg2"><img src="img/logo-boligpartner.png" alt="BoligPartner"></div></div></div><div class="lrow r"><div class="ltrack"><div class="lg2"><img src="img/logo-wikborg.png" alt="Wikborg Rein"></div><div class="lg2"><img src="img/logo-fargerike.png" alt="Fargerike"></div><div class="lg2"><img src="img/logo-ferda.png" alt="Ferda"></div><div class="lg2"><img src="img/logo-tv2.png" alt="TV 2"></div><div class="lg2"><img src="img/logo-ark.png" alt="Ark"></div><div class="lg2"><img src="img/logo-ruter.png" alt="Ruter"></div><div class="lg2"><img src="img/logo-hertz.png" alt="Hertz"></div><div class="lg2"><img src="img/logo-extra.png" alt="Coop Extra"></div><div class="lg2"><img src="img/logo-wikborg.png" alt="Wikborg Rein"></div><div class="lg2"><img src="img/logo-fargerike.png" alt="Fargerike"></div><div class="lg2"><img src="img/logo-ferda.png" alt="Ferda"></div><div class="lg2"><img src="img/logo-tv2.png" alt="TV 2"></div><div class="lg2"><img src="img/logo-ark.png" alt="Ark"></div><div class="lg2"><img src="img/logo-ruter.png" alt="Ruter"></div><div class="lg2"><img src="img/logo-hertz.png" alt="Hertz"></div><div class="lg2"><img src="img/logo-extra.png" alt="Coop Extra"></div></div></div></div><div style="height:64px"></div></section>
 <section id="mangler" class="sec"><div class="wrap">
 <h2 style="font-size:40px;line-height:46px;font-weight:500;max-width:18em">Hva mangler for at dere skal lykkes?</h2>
 <p style="margin-top:16px;font-size:21px;line-height:32px;font-weight:500;color:#566B76;max-width:34em">Gjør dere det dere alltid har gjort, får dere det dere alltid har fått. Velg det som ligner mest på deres hverdag.</p>
@@ -301,4 +311,4 @@ const STEG=[
  {t:"Innsikt og fakta",x:"Vi starter med å forstå hvor dere står, før vi foreslår noe. Fakta fra kunder, selgere og ledere gir et felles utgangspunkt.",d:"Et felles faktagrunnlag. En tydelig beskrivelse av hva som mangler."},
  {t:"Rådgivning og metodeverk",x:"Metoder og verktøy tilpasset deres marked og deres folk. Vi bygger det sammen med dere, ikke over hodet på dere.",d:"Et metodeverk som passer dere. Valg dere kan stå inne for."},
  {t:"Kompetanseheving og implementering",x:"Systematisk opplæring og støtte, helt til det virker i hverdagen. Det er her endringen blir varig.",d:"Ferdigheter som brukes. Oppfølging til resultatene kommer."}
-];document.querySelectorAll('button.st').forEach(x=>x.addEventListener('click',()=>{const i=+x.dataset.i;document.querySelectorAll('button.st').forEach(y=>y.className='st'+(y===x?' on':''));sT.textContent=STEG[i].t;sX.textContent=STEG[i].x;sD.textContent=STEG[i].d}));</script></body></html>
+];document.querySelectorAll('button.st').forEach(x=>x.addEventListener('click',()=>{const i=+x.dataset.i;document.querySelectorAll('button.st').forEach(y=>y.className='st'+(y===x?' on':''));sT.textContent=STEG[i].t;sX.textContent=STEG[i].x;sD.textContent=STEG[i].d}));document.querySelectorAll('.lrow').forEach((row,k)=>{const tr=row.firstElementChild;tr.style.animation='none';let half=0,hov=false,drag=false,lx=0;const h=()=>{half=(tr.scrollWidth+20)/2};h();addEventListener('load',h);row.scrollLeft=k?half:0;row.addEventListener('mouseenter',()=>hov=true);row.addEventListener('mouseleave',()=>{hov=false;drag=false});row.addEventListener('pointerdown',e=>{drag=true;lx=e.clientX});addEventListener('pointerup',()=>drag=false);row.addEventListener('pointermove',e=>{if(!drag)return;row.scrollLeft-=e.clientX-lx;lx=e.clientX});const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;const step=()=>{if(!hov&&!drag&&!rm)row.scrollLeft+=k?-0.45:0.45;if(row.scrollLeft>=half)row.scrollLeft-=half;if(row.scrollLeft<=0)row.scrollLeft+=half;requestAnimationFrame(step)};step()});</script></body></html>
