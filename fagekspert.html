@@ -266,6 +266,39 @@ a:focus-visible,button:focus-visible,input:focus-visible,.tog:focus-visible{outl
 .ty{display:block;font-size:15px;line-height:20px;font-weight:600;color:#356A89}
 .tl p{margin:4px 0 0;font-size:20px;line-height:30px}
 
+.ph-hero{position:relative;overflow:hidden;background:#F3F6F5;margin-top:24px}
+.ph-x{position:absolute;right:-180px;top:-60px;width:640px;height:640px}
+.ph-g{position:relative;padding-top:64px;padding-bottom:64px;display:grid;grid-template-columns:300px 1fr;gap:72px;align-items:center}
+.ph-r{font-size:17px;line-height:24px;font-weight:600;color:#356A89}
+.ph-n{margin-top:4px;font-size:56px;line-height:62px;font-weight:600;letter-spacing:-0.02em}
+.ph-v{margin-top:20px;font-size:24px;line-height:34px;font-weight:500;max-width:24em}
+.ph-body{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:88px;padding-top:72px;padding-bottom:80px;align-items:start}
+.ph-main section{padding:36px 0;border-top:1px solid #D3DCDF}
+.ph-main section:first-child{padding-top:0;border-top:0}
+.ph-main h2{font-size:24px;line-height:32px;font-weight:600;margin:0 0 16px}
+.ph-main p{font-size:19px;line-height:30px;color:#2B3A42;margin:0 0 14px;max-width:38em}
+.ph-main details summary{cursor:pointer;font-weight:600;color:#356A89;font-size:17px;list-style:none;margin-top:4px}
+.ph-main details summary::-webkit-details-marker{display:none}
+.ph-main details[open] summary{margin-bottom:14px}
+.hj{display:grid;grid-template-columns:1fr 24px;gap:4px 16px;padding:20px 0;border-top:1px solid #E3E9EB;text-decoration:none;color:#231F20;align-items:center}
+.hj:first-of-type{border-top:0;padding-top:4px}
+.hj b{font-size:21px;line-height:28px;font-weight:600}
+.hj span{grid-column:1;font-size:17px;line-height:26px;color:#566B76}
+.hj .pil{grid-row:1/3;grid-column:2;transition:transform .3s}
+.hj:hover b{color:#356A89}.hj:hover .pil{transform:translateX(6px) rotate(45deg)}
+.kt{display:grid;grid-template-columns:1fr 1fr;gap:28px 40px}
+.kt b{display:block;font-size:17px;line-height:24px;font-weight:600;color:#356A89}
+.kt span{display:block;margin-top:4px;font-size:18px;line-height:27px}
+.akt{display:block;padding:24px 26px;background:#EAF0EC;text-decoration:none;color:#231F20;clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,0 100%);transition:background .3s}
+.akt:hover{background:#DCE7E0}
+.akt b{display:block;margin-top:2px;font-size:22px;line-height:30px;font-weight:600}
+.akt span:last-child{display:block;margin-top:8px;font-size:17px;line-height:26px;color:#566B76}
+.ph-side{position:sticky;top:96px}
+.ph-card{padding:32px;border:1px solid #D3DCDF;background:#fff;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.ph-ct{font-size:22px;line-height:30px;font-weight:600;margin:0}
+.ph-l{display:inline-flex;gap:10px;align-items:center;font-size:17px;font-weight:600;color:#356A89;text-decoration:none}
+.ph-l:hover{text-decoration:underline}
+
 </style></head><body>
 <div style="width:100%;background:#fff;position:relative">
 <header class="hdr"><input type="checkbox" id="sk" class="skx" aria-hidden="true">
@@ -286,43 +319,56 @@ a:focus-visible,button:focus-visible,input:focus-visible,.tog:focus-visible{outl
 </div>
 </header>
 <div class="wrap" style="padding-top:32px"><p style="font-size:15px;line-height:20px;color:#566B76"><a href="fagekspertene.html" style="text-decoration:none">Fagekspertene</a> / Per Kjetil Parr</p></div>
-<section style="position:relative;overflow:hidden">
-<svg aria-hidden="true" viewBox="0 0 700 700" style="position:absolute;right:-160px;top:-40px;width:680px;height:680px"><line x1="80" y1="80" x2="620" y2="620" stroke="#EAF0EC" stroke-width="130"/><line x1="620" y1="80" x2="80" y2="620" stroke="#EAF0EC" stroke-width="130"/></svg>
-<div class="wrap" style="position:relative;padding-top:48px;padding-bottom:88px;display:grid;grid-template-columns:360px 1fr;gap:72px;align-items:center">
-<div class="snitt" style="width:360px"><img src="img/portrett-per-kjetil.jpg" alt="Per Kjetil Parr" style="height:450px;clip-path:polygon(0 0,calc(100% - 48px) 0,100% 48px,100% 100%,0 100%)"><span class="dot" style="width:24px;height:24px"></span></div>
+<section class="ph-hero"><svg aria-hidden="true" viewBox="0 0 700 700" class="ph-x"><line x1="80" y1="80" x2="620" y2="620" stroke="#E4ECE8" stroke-width="130"/><line x1="620" y1="80" x2="80" y2="620" stroke="#E4ECE8" stroke-width="130"/></svg>
+<div class="wrap ph-g">
+<div class="snitt" style="width:300px"><img src="img/portrett-per-kjetil.jpg" alt="Per Kjetil Parr" style="height:375px;clip-path:polygon(0 0,calc(100% - 44px) 0,100% 44px,100% 100%,0 100%)"><span class="dot" style="width:22px;height:22px"></span></div>
 <div>
-<p style="font-size:17px;line-height:24px;font-weight:600;color:#356A89">Administrerende direktør</p>
-<h1 style="margin-top:4px;font-size:56px;line-height:62px;font-weight:600;letter-spacing:-0.02em">Per Kjetil Parr</h1>
-<p style="margin-top:24px;font-size:26px;line-height:36px;font-weight:500;max-width:22em">Omsetter innsikt til lønnsomme prestasjoner. Faktabasert og kundesentrisk lederutvikling.</p>
-<div style="margin-top:36px;display:flex;gap:28px;flex-wrap:wrap;align-items:center"><a class="xl-btn-p" href="#samtale">Book en samtale med Per Kjetil</a><a class="xl-lenke" href="tel:+4790890509">Ring 908 90 509<span class="pil"></span></a></div>
+<p class="ph-r">Administrerende direktør</p>
+<h1 class="ph-n">Per Kjetil Parr</h1>
+<p class="ph-v">Leder Excellerate. Gjør kundenes stemme om til konkrete utviklingsplaner for salg og ledelse.</p>
+<div style="margin-top:28px"><a class="chip" href="#">Salgsutvikling</a><a class="chip" href="#">Lederutvikling</a><a class="chip" href="#">Organisasjonsutvikling</a><a class="chip" href="#">GAP Vision</a></div>
 </div></div></section>
 
-<section style="background:#F3F6F5"><div class="wrap" style="padding-top:88px;padding-bottom:88px;display:grid;grid-template-columns:1fr 1.15fr;gap:88px">
-<div><h2 style="font-size:40px;line-height:46px;font-weight:500">Slik jobber Per Kjetil</h2>
-<p style="margin-top:20px;font-size:19px;line-height:30px;color:#566B76;max-width:26em">Han tror at gode resultater skapes gjennom mennesker som får utvikle seg og jobbe sammen. Kundens stemme styrer hva som prioriteres.</p></div>
-<div class="arb">
-<div><b>Fakta og innsikt før tiltak</b><p>Organisasjonen lærer av de beste i egen virksomhet, sett med kundens øyne.</p></div>
-<div><b>Utviklingsplaner for ledere</b><p>Konkrete grep ledere kan ta i bruk i sine team.</p></div>
-<div><b>Langsiktige samarbeid</b><p>Profesjonalisering av salgs- og leveranseverdikjeder i større virksomheter.</p></div>
-</div></div></section>
+<div class="wrap ph-body">
+<div class="ph-main">
+<section><h2>Om Per Kjetil</h2>
+<p>Per Kjetil Parr har siden starten av 1990-tallet stått i front for det som har vært Norges største og mest kjente miljø for kompetanseheving innen salg, ledelse og organisasjonsutvikling. Han var med på oppstarten av Euro Business School og viderefører nå dette arbeidet som leder av Excellerate.</p>
+<p>Han er kjent for å kombinere tung faglig innsikt med en svært praktisk tilnærming, og er opptatt av hva som virker i virkeligheten, for kunder, medarbeidere og ledere.</p>
+<details><summary>Les mer</summary><p>Han har vært sentral i utviklingen av Excellerates metodikk og verktøy for kundedrevet kompetanseutvikling, der kundeopplevelse, prestasjoner og beste praksis fra de beste utøverne i organisasjonen kobles til konkrete utviklingsplaner og lederverktøy. Arbeidet har resultert i mange langsiktige samarbeid med større virksomheter som ville profesjonalisere salgs- og leveranseverdikjedene sine.</p></details></section>
 
-<section class="sec"><div class="wrap" style="display:grid;grid-template-columns:1fr 1.15fr;gap:88px">
-<div><h2 style="font-size:40px;line-height:46px;font-weight:500">Veien hit</h2>
-<p style="margin-top:20px;font-size:19px;line-height:30px;color:#566B76;max-width:26em">Per Kjetil har siden starten av 1990-tallet vært med på å bygge et av Norges største miljøer for salg, ledelse og organisasjonsutvikling.</p></div>
-<div class="tl">
-<div><span class="ty">Tidlig 1990-tall</span><p>Med på oppstarten av Euro Business School.</p></div>
-<div><span class="ty">1996 til 2021</span><p>Eier av Euro Business School.</p></div>
-<div><span class="ty">Fra 2023</span><p>Administrerende direktør i Excellerate.</p></div>
-<div><span class="ty">I dag</span><p>Daglig leder og styreleder i Excellerate AS. Styreleder i Gap Vision AS.</p></div>
-</div></div></section>
+<section><h2>Dette hjelper Per Kjetil med</h2>
+<a class="hj" href="#"><b>Kundedrevet kompetanseutvikling</b><span>Kundens stemme styrer hva som prioriteres. Organisasjonen lærer av de beste i egen virksomhet.</span><i class="pil"></i></a>
+<a class="hj" href="#"><b>Utviklingsplaner for ledere</b><span>Konkrete grep ledere kan bruke i sine team.</span><i class="pil"></i></a>
+<a class="hj" href="#"><b>Salgs- og leveranseverdikjeder</b><span>Profesjonalisering i større virksomheter, over tid.</span><i class="pil"></i></a>
+</section>
 
-<section class="dyp" style="background:#1B3A4B;color:#fff"><div class="wrap" style="padding-top:88px;padding-bottom:88px;max-width:900px"><span style="display:block;width:18px;height:18px;border-radius:50%;background:#7EA257;margin-bottom:24px"></span>
-<p style="font-size:30px;line-height:42px;font-weight:500">«[Sitat fra en kunde om å jobbe med Per Kjetil.]»</p><p style="margin-top:20px;font-size:15px;line-height:20px;color:#D3DCDF">[Navn, rolle, virksomhet]. Plassholder: venter på sitat og tillatelse.</p></div></section>
+<section><h2>I korte trekk</h2>
+<div class="kt">
+<div><b>Tidlig 1990-tall</b><span>Med på oppstarten av Euro Business School</span></div>
+<div><b>1996 til 2021</b><span>Eier av Euro Business School</span></div>
+<div><b>Fra 2023</b><span>Administrerende direktør i Excellerate</span></div>
+<div><b>I dag</b><span>Styreleder i Excellerate AS og Gap Vision AS</span></div>
+</div></section>
 
-<section class="sec"><div class="wrap">
-<h2 style="font-size:40px;line-height:46px;font-weight:500">Møt flere av fagekspertene</h2>
-<div class="g4" style="margin-top:40px"><a class="ex" href="fagekspert.html"><div class="pt"><div class="pi"><img src="img/portrett-leif.jpg" alt="Leif Ottesen"></div><span class="dot"></span></div><div class="tx"><h3>Leif Ottesen</h3><p class="r">Partner og hovedspesialist</p><p class="t">En av Norges mest kjente leder- og salgstrenere. Tilpassede programmer, ikke generelle modeller.</p></div><span class="lk"><span class="lesl">Les mer<span class="pil"></span></span></span></a><a class="ex" href="fagekspert.html"><div class="pt"><div class="pi"><img src="img/portrett-carl.jpg" alt="Carl Haakon Klafstad"></div><span class="dot"></span></div><div class="tx"><h3>Carl Haakon Klafstad</h3><p class="r">Partner</p><p class="t">Ekspert på retail, rådgivende verdisalg og operativt lederskap. Vil endre synet på konkurransekraft.</p></div><span class="lk"><span class="lesl">Les mer<span class="pil"></span></span></span></a><a class="ex" href="fagekspert.html"><div class="pt"><div class="pi"><img src="img/portrett-erik.jpg" alt="Erik Simensen"></div><span class="dot"></span></div><div class="tx"><h3>Erik Simensen</h3><p class="r">Fagekspert</p><p class="t">Møter ledere der de er. Opptatt av både mennesker og resultater i lederutvikling og coaching.</p></div><span class="lk"><span class="lesl">Les mer<span class="pil"></span></span></span></a><a class="ex" href="fagekspert.html"><div class="pt"><div class="pi"><img src="img/portrett-neda.jpg" alt="Neda Maria Kaizumi"></div><span class="dot"></span></div><div class="tx"><h3>Neda Maria Kaizumi</h3><p class="r">Fagekspert</p><p class="t">Gjør kunstig intelligens til praktisk forretningsverdi. Doktorgrad og videreutdanning fra Harvard Business School.</p></div><span class="lk"><span class="lesl">Les mer<span class="pil"></span></span></span></a></div>
-<div style="margin-top:40px"><a class="lesbtn" href="fagekspertene.html">Se alle fagekspertene<span class="pil"></span></a></div>
+<section><h2>Aktuelt</h2>
+<a class="akt" href="#"><span class="ty">3. juni</span><b>GAP Vision AI lansert sammen med Computas</b><span>Salgsorganisasjoner mister verdi når toppselgernes kunnskap blir hos noen få. Verktøyet gjør den kunnskapen synlig, delbar og målbar.</span></a>
+</section>
+
+</div>
+
+<aside class="ph-side"><div class="ph-card">
+<p class="ph-ct">Ta en samtale med Per Kjetil</p>
+<a class="xl-btn-p" href="#samtale">Book en samtale</a>
+<a class="ph-l" href="tel:+4790890509">Ring 908 90 509</a>
+<a class="ph-l" href="https://www.linkedin.com/in/per-kjetil-parr-71a56113/"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11.5H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.82-2.06 3.75-2.06 4 0 4.74 2.64 4.74 6.07v5.89h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.29h-4z"/></svg> Per Kjetil på LinkedIn</a>
+</div></aside>
+</div>
+
+<section style="background:#F3F6F5"><div class="wrap" style="padding-top:80px;padding-bottom:88px">
+<h2 style="font-size:32px;line-height:40px;font-weight:500">Fagekspertene han jobber sammen med</h2>
+<p style="margin-top:8px;font-size:18px;line-height:28px;color:#566B76">Fra arbeidet med GAP Vision.</p>
+<div class="g3" style="margin-top:36px"><a class="ex" href="fagekspert.html"><div class="pt"><div class="pi"><img src="img/portrett-leif.jpg" alt="Leif Ottesen"></div><span class="dot"></span></div><div class="tx"><h3>Leif Ottesen</h3><p class="r">Partner og hovedspesialist</p><p class="t">En av Norges mest kjente leder- og salgstrenere. Tilpassede programmer, ikke generelle modeller.</p></div><span class="lk"><span class="lesl">Les mer<span class="pil"></span></span></span></a><a class="ex" href="fagekspert.html"><div class="pt"><div class="pi"><img src="img/portrett-janick.jpg" alt="Janick Løwe"></div><span class="dot"></span></div><div class="tx"><h3>Janick Løwe</h3><p class="r">Fagekspert</p><p class="t">Bedre kommersielle resultater gjennom bedre personlige prestasjoner: innsikt, endring og eierskap.</p></div><span class="lk"><span class="lesl">Les mer<span class="pil"></span></span></span></a><a class="ex" href="fagekspert.html"><div class="pt"><div class="pi"><img src="img/portrett-perchristian.jpg" alt="Per Christian Svae"></div><span class="dot"></span></div><div class="tx"><h3>Per Christian Svae</h3><p class="r">Teknologidirektør</p><p class="t">Leder innsikt og teknologi. Nesten 20 år i selskapet og bak våre sentrale løsninger.</p></div><span class="lk"><span class="lesl">Les mer<span class="pil"></span></span></span></a></div>
+<div style="margin-top:36px"><a class="lesbtn" href="fagekspertene.html">Se alle fagekspertene<span class="pil"></span></a></div>
 </div></section>
 <section id="samtale" class="dyp" style="background:#1B3A4B;color:#fff"><div class="wrap" style="padding-top:88px;padding-bottom:88px;display:flex;justify-content:space-between;align-items:center;gap:48px;flex-wrap:wrap">
 <div style="max-width:30em"><h2 style="font-size:40px;line-height:46px;font-weight:500">La oss ta en samtale om hva som mangler for at dere skal lykkes</h2><p style="margin-top:16px;font-size:21px;line-height:32px;color:#D3DCDF">Ring oss på +47 22 49 00 00 eller skriv til post@excellerate.no.</p></div>
