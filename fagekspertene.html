@@ -210,6 +210,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,.tog:focus-visible{outl
 .lg2 img{max-width:132px;max-height:50px;width:auto;height:auto;filter:grayscale(1);opacity:.6;transition:filter .3s,opacity .3s,transform .3s;pointer-events:none;-webkit-user-drag:none}
 .lg2:hover img{filter:none;opacity:1;transform:scale(1.08)}
 @media(prefers-reduced-motion:reduce){.ltrack{animation:none}}
+@keyframes pop{0%{transform:translate(0,0) scale(1)}30%{transform:translate(6px,-12px) scale(1.7)}58%{transform:translate(0,1px) scale(1.3)}74%{transform:translate(1px,-4px) scale(1.4)}100%{transform:translate(0,0) scale(1.35)}}
+@keyframes pop2{0%{transform:translate(0,0) scale(1)}30%{transform:translate(8px,-16px) scale(1.5)}58%{transform:translate(0,2px) scale(1.15)}74%{transform:translate(1px,-5px) scale(1.2)}100%{transform:translate(0,0) scale(1.1)}}
+.xl-btn-p:hover::after{animation:pop .65s cubic-bezier(.3,.6,.4,1) forwards}
+.snitt .dot{transition:transform .25s}
+.snitt:hover .dot{animation:pop2 .7s cubic-bezier(.3,.6,.4,1) forwards}
+@media(prefers-reduced-motion:reduce){.xl-btn-p:hover::after,.snitt:hover .dot{animation:none}}
 
 </style></head><body>
 <div style="width:100%;background:#fff;position:relative">
