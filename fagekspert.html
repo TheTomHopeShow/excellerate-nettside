@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="nb"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fagekspert</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Schibsted Grotesk',system-ui,sans-serif;color:#231F20;background:#fff;-webkit-font-smoothing:antialiased;font-size:17px;line-height:27px}
+*{box-sizing:border-box}
+a{color:inherit}
+h1,h2,h3,h4,p{margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+.sec{padding:88px 0}
+.hdr{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #D3DCDF}
+.xl-btn-p{position:relative;display:inline-block;padding:15px 36px 15px 24px;color:#fff;font-weight:600;font-size:17px;line-height:24px;text-decoration:none;isolation:isolate;border:0;background:transparent;cursor:pointer;font-family:inherit}
+.xl-btn-p::before{content:"";position:absolute;inset:0;z-index:-1;background:#356A89;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 24px,100% 100%,0 100%);transition:background .2s}
+.xl-btn-p::after{content:"";position:absolute;top:2px;right:2px;width:12px;height:12px;border-radius:50%;background:#7EA257;transition:transform .2s}
+.xl-btn-p:hover::before{background:#294F67}
+.xl-btn-p:hover::after{transform:scale(1.35)}
+.xl-btn-g::before{background:#4F7A2B}
+.xl-btn-g:hover::before{background:#3f6322}
+.xl-btn-g::after{background:#fff}
+.xl-btn-s{position:relative;display:inline-block;padding:13px 40px 13px 22px;color:#356A89;font-weight:600;font-size:17px;line-height:24px;text-decoration:none;border:2px solid #356A89;background:#fff}
+.xl-btn-s::after{content:"";position:absolute;top:50%;right:16px;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:#7EA257;transition:transform .25s}
+.xl-btn-s:hover::after{transform:translateX(5px)}
+.xl-btn-l{position:relative;display:inline-block;padding:8px 30px 8px 16px;color:#356A89;font-weight:600;font-size:16px;line-height:22px;text-decoration:none;border:2px solid #356A89;background:#fff}
+.xl-btn-l::after{content:"";position:absolute;top:50%;right:11px;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:#7EA257;transition:transform .25s}
+.xl-btn-l:hover::after{transform:translateX(4px)}
+a:focus-visible,button:focus-visible,input:focus-visible,.tog:focus-visible{outline:3px solid #294F67;outline-offset:3px}
+.dyp a:focus-visible,.dyp button:focus-visible{outline-color:#7EA257}
+.xl-lenke{color:#356A89;font-weight:600;text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.pil{display:inline-block;width:9px;height:9px;border-top:2px solid #356A89;border-right:2px solid #356A89;transform:rotate(45deg);margin-left:2px}
+.nav{display:flex;gap:32px}
+.nav a,.mbtn{text-decoration:none;font-weight:500;font-size:16px;color:#231F20;background:none;border:0;cursor:pointer;font-family:inherit;padding:0}
+.nav a:hover,.mbtn:hover{color:#356A89}
+.snitt{position:relative}
+.snitt img{display:block;width:100%;object-fit:cover;clip-path:polygon(0 0,calc(100% - 36px) 0,100% 36px,100% 100%,0 100%)}
+.dot{position:absolute;top:2px;right:2px;width:18px;height:18px;border-radius:50%;background:#7EA257}
+.lg{height:72px;display:flex;align-items:center;justify-content:center;background:#fff}
+.lg img{max-height:44px;max-width:78%;object-fit:contain;filter:grayscale(1);opacity:.85;mix-blend-mode:multiply}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.ing{display:block;text-decoration:none}
+.ing h3{font-size:24px;line-height:30px;font-weight:500;margin:22px 0 6px}
+.ing p{color:#566B76;margin-bottom:14px}
+.ing:hover h3{color:#356A89}
+.cs{display:block;text-decoration:none}
+.cs h3{font-size:24px;line-height:30px;font-weight:500;margin:24px 0 10px}
+.cr{font-size:19px;line-height:28px}
+.ck{font-size:14px;line-height:21px;color:#566B76;margin:12px 0 16px}
+.cs:hover h3{color:#356A89}
+.mx{display:flex;gap:14px;align-items:center;text-decoration:none;padding:8px 0}
+.mx img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.mx b{display:block;font-size:16px;line-height:20px}
+.mx i{display:block;font-style:normal;font-size:14px;line-height:20px;color:#566B76}
+.mc h4{margin:0 0 12px;font-size:15px;line-height:20px;font-weight:600;color:#566B76}
+.mc>a{display:block;text-decoration:none;font-size:19px;line-height:26px;font-weight:600;padding:5px 0}
+.mc>a:hover{color:#356A89}
+.chip{display:inline-block;padding:6px 14px;border:1px solid #D3DCDF;border-radius:20px;font-size:15px;text-decoration:none;margin:0 8px 8px 0;background:#fff}
+.chip:hover{border-color:#356A89;color:#356A89}
+.fl a{display:block;color:#fff;text-decoration:none;padding:4px 0}
+.fl a:hover{text-decoration:underline}
+.tog{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x proximity;padding:48px max(40px,calc((100vw - 1160px)/2)) 24px;scroll-padding-inline:max(40px,calc((100vw - 1160px)/2));scrollbar-width:thin;scrollbar-color:#6B818C #EAF0EC;align-items:stretch}
+.grp{flex:0 0 220px;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding-right:16px}
+.grp h3{font-size:28px;line-height:34px;font-weight:500}
+.grp p{margin-top:10px;color:#566B76;font-size:17px;line-height:25px}
+.ex{flex:0 0 280px;scroll-snap-align:start;background:#fff;text-decoration:none;display:flex;flex-direction:column;text-align:center;color:#231F20}
+.g4 .ex{flex:none}
+.ex .pt{position:relative;aspect-ratio:4/5;background:#EAF0EC}
+.ex .pi{position:absolute;inset:0;overflow:hidden;clip-path:polygon(0 0,calc(100% - 32px) 0,100% 32px,100% 100%,0 100%)}
+.ex .pt img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.6,.2,1)}
+.ex:hover .pt img,.ex:focus-visible .pt img{transform:scale(1.06)}
+.ex .dot{transition:transform .3s}
+.ex:hover .dot{transform:scale(1.25)}
+.lesbtn{display:inline-flex;align-items:center;gap:10px;font-weight:600;color:#356A89;border:2px solid #356A89;padding:10px 22px;background:#fff;transition:background .25s,color .25s}
+.lesbtn .pil{transition:transform .3s}
+.ex:hover .lesbtn,.ex:focus-visible .lesbtn{background:#356A89;color:#fff}
+.ex:hover .lesbtn .pil,.ex:focus-visible .lesbtn .pil{border-color:#fff;transform:translateX(6px) rotate(45deg)}
+.ex .ph{width:100%;height:100%;background:#EAF0EC;display:flex;align-items:center;justify-content:center;font-size:72px;font-weight:800;color:#6B818C;clip-path:polygon(0 0,calc(100% - 32px) 0,100% 32px,100% 100%,0 100%)}
+.ex .tx{flex:1;padding:24px 22px 8px;text-align:left}
+.ex h3{font-size:20px;line-height:28px;font-weight:500;white-space:nowrap}
+.ex .r{font-size:15px;line-height:20px;color:#356A89;font-weight:600;margin-top:4px}
+.ex .t{margin-top:12px;font-size:16px;line-height:24px;color:#566B76}
+.ex .lk{padding:12px 22px 26px;display:block;text-align:left}
+.ex:hover h3{color:#356A89}
+.st{background:none;border:0;cursor:pointer;font-family:inherit;display:flex;flex-direction:column;align-items:flex-start;gap:14px;text-align:left;padding:0;position:relative;z-index:1;color:#566B76}
+.reise{position:relative;margin-top:48px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.track{position:absolute;left:28px;right:28px;top:27px;height:2px;background:#D3DCDF}
+.nodeb{width:56px;height:56px;border-radius:50%;background:#fff;border:2px solid #D3DCDF;display:flex;align-items:center;justify-content:center}
+.nn{font-size:20px;font-weight:500}
+.nt{font-size:20px;line-height:26px;font-weight:500;max-width:12em}
+.st:hover .nodeb{border-color:#356A89}
+.st.on{color:#231F20}
+.st.on .nodeb{background:#7EA257;border-color:#7EA257;color:#1B3A4B}
+.rpanel{margin-top:40px}
+.kat{display:flex;flex-direction:column;justify-content:space-between;gap:40px;min-height:150px;padding:24px;background:#fff;text-decoration:none}
+.knn{font-size:22px;line-height:28px;font-weight:500}
+.kat:hover .knn{color:#356A89}
+.pill{font-family:inherit;font-size:16px;font-weight:600;padding:10px 20px;border:2px solid #D3DCDF;background:#fff;color:#231F20;cursor:pointer}
+.pill:hover{border-color:#356A89;color:#356A89}
+.pill.on{background:#356A89;border-color:#356A89;color:#fff}
+.pl2{padding:14px 0;border-top:1px solid #D3DCDF;font-size:19px;font-weight:600}
+
+.vsep{flex:0 0 2px;background:#D3DCDF;margin:0 28px 0 4px;align-self:stretch}
+
+.ex .dot{display:none}
+.ex .t{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:72px}
+.ex .r{min-height:20px}
+.lesl{display:inline-flex;align-items:center;gap:10px;font-weight:600;color:#356A89}
+.lesl .pil{transition:transform .3s}
+.ex:hover .lesl .pil,.ing:hover .lesl .pil{transform:translateX(8px) rotate(45deg)}
+.ex .lk{border-top:1px solid #E3E9EB;margin:16px 22px 0;padding:16px 0 22px}
+.ing{display:flex;flex-direction:column;justify-content:space-between;min-height:300px;padding:28px 28px 26px;background:#EAF0EC;clip-path:polygon(0 0,calc(100% - 36px) 0,100% 36px,100% 100%,0 100%);transition:background .3s,color .3s}
+.ing .io{font-size:15px;line-height:20px;font-weight:600;color:#566B76}
+.ing h3{font-size:28px;line-height:34px;font-weight:500;margin:0;flex:1;padding-top:24px}
+.ing:hover{background:#1B3A4B}
+.ing:hover h3,.ing:hover .io{color:#fff}
+.ing:hover .lesl{color:#fff}
+.ing:hover .lesl .pil{border-color:#fff}
+
+.xl-lenke.lys{color:#fff}.xl-lenke.lys .pil{border-color:#fff}
+.bento{margin-top:40px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:230px;gap:20px}
+.bt{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:26px 26px 24px;text-decoration:none;color:#231F20;background:#fff;clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,0 100%);transition:background .25s,color .25s}
+.bt h3{font-size:22px;line-height:28px;font-weight:500;margin-top:8px;position:relative}
+.bk{font-size:14px;line-height:20px;font-weight:600;color:#566B76;position:relative}
+.bt .lesl{position:relative}
+.bt:hover .lesl .pil{transform:translateX(8px) rotate(45deg)}
+.b-stor{grid-column:span 2;grid-row:span 2;background:#1B3A4B;color:#fff;padding:36px}
+.b-stor h3{font-size:34px;line-height:40px;font-weight:500;max-width:14em}
+.b-stor .bk{color:#D3DCDF}.b-stor .lesl{color:#fff}.b-stor .lesl .pil{border-color:#fff}
+.b-stor .bx{position:absolute;right:-70px;bottom:-90px;width:380px;height:380px}
+.b-stor:hover{background:#294F67}
+.b-mint{background:#EAF0EC}.b-mint:hover,.b-hvit:hover{background:#fff;color:#356A89}
+.b-bred{grid-column:span 2}
+.b-nyhet{grid-column:span 2;background:#294F67;color:#fff;justify-content:flex-start;gap:0}
+.b-nyhet .bk{color:#D3DCDF}
+.b-nyhet .nf{display:flex;gap:12px;margin-top:18px;align-items:center}
+.b-nyhet input{flex:1;min-width:0;height:46px;padding:0 14px;border:0;background:#fff;font:inherit;font-size:16px;color:#231F20}
+.b-nyhet .nl{display:flex;gap:10px;align-items:center;margin-top:16px;font-size:14px;color:#D3DCDF;flex-wrap:wrap}
+.b-nyhet .nl button{font:inherit;font-size:14px;font-weight:600;color:#fff;background:transparent;border:1px solid #7C99AA;padding:6px 14px;cursor:pointer}
+.b-nyhet .nl button:hover{background:#356A89;border-color:#356A89}
+.b-bilde{padding:0;color:#fff;background:#231F20}
+.b-bilde img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.b-bilde:hover img{transform:scale(1.06)}
+.b-bilde .bo{position:absolute;left:0;right:0;bottom:0;padding:16px 22px 18px;background:#1B3A4B}
+.b-bilde .bk,.b-bilde h3{color:#fff}.b-bilde h3{font-size:19px;line-height:24px}
+@media(max-width:900px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}.b-stor,.b-nyhet,.b-bred{grid-column:span 2}}
+
+</style></head><body>
+<div style="width:100%;background:#fff;position:relative">
+<header class="hdr">
+<div class="wrap" style="display:flex;align-items:center;justify-content:space-between;height:80px;gap:24px">
+<a href="index.html" aria-label="Excellerate, til forsiden"><img src="img/logo-xl.png" alt="Excellerate" style="height:22px;display:block"></a>
+<nav class="nav" aria-label="Hovedmeny"><a href="#">Tjenester</a><a href="#">Referanser</a><a href="fagekspertene.html">Fagekspertene</a><a href="#">Kunnskap</a><a href="#">Om oss</a></nav>
+<div style="display:flex;align-items:center;gap:28px">
+<button class="mbtn" id="mbtn" aria-expanded="false">Meny</button>
+<a class="xl-btn-l" href="#samtale">Book en samtale</a>
+</div>
+</div>
+<div id="mpanel" style="display:none">
+<div class="wrap" style="display:grid;grid-template-columns:1fr 1fr 1.3fr 1fr;gap:48px;padding-top:40px;padding-bottom:48px">
+<div class="mc"><h4>Tjenester</h4><a href="#">Salgsutvikling</a><a href="#">Lederutvikling</a><a href="#">Kulturutvikling</a><a href="#">KI, adopsjon og sikkerhet</a></div>
+<div class="mc"><h4>Referanser</h4><a href="#">Alle kundecaser</a><a href="#">Thon Hotels</a><a href="#">BoligPartner</a><a href="#">Saint-Gobain</a></div>
+<div class="mc"><h4>Fagekspertene</h4><a class="mx" href="fagekspert.html"><img src="img/portrett-per-kjetil.jpg" alt=""><span><b>Per Kjetil Parr</b><i>Administrerende direktør</i></span></a><a class="mx" href="fagekspert.html"><img src="img/portrett-leif.jpg" alt=""><span><b>Leif Ottesen</b><i>Partner og hovedspesialist</i></span></a><a class="mx" href="fagekspert.html"><img src="img/portrett-carl.jpg" alt=""><span><b>Carl Haakon Klafstad</b><i>Partner</i></span></a><a class="mx" href="fagekspert.html"><img src="img/portrett-erik.jpg" alt=""><span><b>Erik Simensen</b><i>Fagekspert</i></span></a><a href="fagekspertene.html" style="font-size:16px;color:#356A89">Se alle fagekspertene</a></div>
+<div class="mc"><h4>Kunnskapssenter</h4><a href="#">Artikler</a><a href="#">Fagartikler</a><a href="#">Guider</a><a href="#">Webinarer og arrangementer</a></div>
+</div>
+<div style="background:#F3F6F5;border-top:1px solid #D3DCDF"><div class="wrap" style="padding-top:20px;padding-bottom:20px;display:flex;gap:32px;align-items:center;flex-wrap:wrap">
+<div style="flex:0 0 420px;border:1px solid #6B818C;background:#fff;padding:12px 16px;color:#566B76">Søk i tjenester, caser og fagekspertene</div>
+<div><a class="chip" href="#">Når kundene bare snakker om pris</a><a class="chip" href="#">Strategi til handling</a><a class="chip" href="#">AI Act</a><a class="chip" href="#">Rådgivende verdisalg</a></div>
+</div></div>
+</div>
+</header>
+<div class="wrap" style="padding-top:32px"><p style="font-size:15px;line-height:20px;color:#566B76"><a href="fagekspertene.html" style="text-decoration:none">Fagekspertene</a> / Per Kjetil Parr</p></div>
+<section style="position:relative;overflow:hidden">
+<svg aria-hidden="true" viewBox="0 0 700 700" style="position:absolute;right:-160px;top:-40px;width:680px;height:680px"><line x1="80" y1="80" x2="620" y2="620" stroke="#EAF0EC" stroke-width="130"/><line x1="620" y1="80" x2="80" y2="620" stroke="#EAF0EC" stroke-width="130"/></svg>
+<div class="wrap" style="position:relative;padding-top:48px;padding-bottom:88px;display:grid;grid-template-columns:360px 1fr;gap:72px;align-items:center">
+<div class="snitt" style="width:360px"><img src="img/portrett-per-kjetil.jpg" alt="Per Kjetil Parr" style="height:450px;clip-path:polygon(0 0,calc(100% - 48px) 0,100% 48px,100% 100%,0 100%)"><span class="dot" style="width:24px;height:24px"></span></div>
+<div>
+<p style="font-size:17px;line-height:24px;font-weight:600;color:#356A89">Administrerende direktør</p>
+<h1 style="margin-top:4px;font-size:56px;line-height:62px;font-weight:600;letter-spacing:-0.02em">Per Kjetil Parr</h1>
+<p style="margin-top:24px;font-size:26px;line-height:36px;font-weight:500;max-width:22em">Omsetter innsikt til lønnsomme prestasjoner. Faktabasert og kundesentrisk lederutvikling.</p>
+<div style="margin-top:36px;display:flex;gap:20px;flex-wrap:wrap"><a class="xl-btn-p" href="#samtale">Book en samtale med Per Kjetil</a><a class="xl-btn-s" href="#">Last ned kontaktinfo</a></div>
+</div></div></section>
+<section style="background:#F3F6F5"><div class="wrap" style="padding-top:72px;padding-bottom:72px;display:grid;grid-template-columns:1fr 1fr;gap:72px">
+<div><h2 style="font-size:28px;line-height:34px;font-weight:500">Dette hjelper jeg med</h2>
+<div class="pl2"><span>Salgsutvikling</span></div><div class="pl2"><span>Lederutvikling</span></div><div class="pl2"><span>[Områder fra fageksperten]</span></div></div>
+<div><h2 style="font-size:28px;line-height:34px;font-weight:500">Bakgrunn</h2>
+<p style="margin-top:16px;font-size:19px;line-height:28px;color:#566B76">[Fire til seks korte linjer om erfaring, skrevet av eller godkjent av fageksperten.]</p></div>
+</div></section>
+<section class="sec"><div class="wrap">
+<h2 style="font-size:40px;line-height:46px;font-weight:500">Resultater jeg har vært med på</h2>
+<div class="g3" style="margin-top:40px"><a class="cs" href="#"><div class="snitt"><img src="img/case-thon.jpg" alt="" style="height:260px"><span class="dot"></span></div><h3>Thon Hotels: et kommersielt kulturløft</h3><p class="cr">Pipeline økte fra 92 til 124 millioner kroner. Omsetningen vokste 5 prosent.</p><p class="ck">Kilde: excellerate.no, 2018</p><span class="xl-lenke">Les caset<span class="pil"></span></span></a><a class="cs" href="#"><div class="snitt"><img src="img/case-boligpartner.jpg" alt="" style="height:260px"><span class="dot"></span></div><h3>BoligPartner: leder- og salgsutvikling</h3><p class="cr">I 2014 falt bransjen 22 prosent. BoligPartner vokste 26 prosent.</p><p class="ck">Kilde: excellerate.no, 2014</p><span class="xl-lenke">Les caset<span class="pil"></span></span></a><a class="cs" href="#"><div class="snitt"><img src="img/case-wikborg.jpg" alt="" style="height:260px"><span class="dot"></span></div><h3>Wikborg Rein: forenklet kompetanseutvikling</h3><p class="cr">Alle advokater i Norge fikk opplæring i informasjonssikkerhet på 14 dager.</p><p class="ck">Kilde: excellerate.no, 2018</p><span class="xl-lenke">Les caset<span class="pil"></span></span></a></div>
+</div></section>
+<section class="dyp" style="background:#1B3A4B;color:#fff"><div class="wrap" style="padding-top:72px;padding-bottom:72px;max-width:900px"><span style="display:block;width:18px;height:18px;border-radius:50%;background:#7EA257;margin-bottom:24px"></span>
+<p style="font-size:26px;line-height:36px;font-weight:500">«[Sitat fra en kunde om å jobbe med fageksperten.]»</p><p style="margin-top:20px;font-size:15px;line-height:20px;color:#D3DCDF">[Navn, rolle, virksomhet]</p></div></section>
+<section style="background:#F3F6F5;overflow:hidden"><div style="padding-top:72px;padding-bottom:72px">
+<div class="wrap"><h2 style="font-size:28px;line-height:34px;font-weight:500">Flere fagekspertene</h2></div>
+<div class="tog" tabindex="0" aria-label="Flere fagekspertene, bla sidelengs"><a class="ex" href="fagekspert.html"><div class="pt"><div class="pi"><img src="img/portrett-leif.jpg" alt="Leif Ottesen"></div><span class="dot"></span></div><div class="tx"><h3>Leif Ottesen</h3><p class="r">Partner og hovedspesialist</p><p class="t">En av Norges mest kjente leder- og salgstrenere. Tilpassede programmer, ikke generelle modeller.</p></div><span class="lk"><span class="lesl">Les mer<span class="pil"></span></span></span></a><a class="ex" href="fagekspert.html"><div class="pt"><div class="pi"><img src="img/portrett-carl.jpg" alt="Carl Haakon Klafstad"></div><span class="dot"></span></div><div class="tx"><h3>Carl Haakon Klafstad</h3><p class="r">Partner</p><p class="t">Ekspert på retail, rådgivende verdisalg og operativt lederskap. Vil endre synet på konkurransekraft.</p></div><span class="lk"><span class="lesl">Les mer<span class="pil"></span></span></span></a><a class="ex" href="fagekspert.html"><div class="pt"><div class="pi"><img src="img/portrett-erik.jpg" alt="Erik Simensen"></div><span class="dot"></span></div><div class="tx"><h3>Erik Simensen</h3><p class="r">Fagekspert</p><p class="t">Møter ledere der de er. Opptatt av både mennesker og resultater i lederutvikling og coaching.</p></div><span class="lk"><span class="lesl">Les mer<span class="pil"></span></span></span></a><a class="ex" href="fagekspert.html"><div class="pt"><div class="pi"><img src="img/portrett-neda.jpg" alt="Neda Maria Kaizumi"></div><span class="dot"></span></div><div class="tx"><h3>Neda Maria Kaizumi</h3><p class="r">Fagekspert</p><p class="t">Gjør kunstig intelligens til praktisk forretningsverdi. Doktorgrad og videreutdanning fra Harvard Business School.</p></div><span class="lk"><span class="lesl">Les mer<span class="pil"></span></span></span></a><a class="ex" href="fagekspert.html"><div class="pt"><div class="pi"><img src="img/portrett-morten.jpg" alt="Morten Brandt"></div><span class="dot"></span></div><div class="tx"><h3>Morten Brandt</h3><p class="r">Fagekspert</p><p class="t">Vet hvordan bedre kommersielle resultater skapes. Utviklingsprogrammer som øker lønnsomheten.</p></div><span class="lk"><span class="lesl">Les mer<span class="pil"></span></span></span></a><a class="ex" href="fagekspert.html"><div class="pt"><div class="pi"><img src="img/portrett-petter.jpg" alt="Petter Kleppe"></div><span class="dot"></span></div><div class="tx"><h3>Petter Kleppe</h3><p class="r">Fagekspert</p><p class="t">25 års erfaring som toppleder, entreprenør og fagbokforfatter. Hjelper deg å bli den beste lederen.</p></div><span class="lk"><span class="lesl">Les mer<span class="pil"></span></span></span></a><a class="ex" href="fagekspert.html"><div class="pt"><div class="pi"><img src="img/portrett-arvid.jpg" alt="Arvid Madland Lyngnes"></div><span class="dot"></span></div><div class="tx"><h3>Arvid Madland Lyngnes</h3><p class="r">Fagekspert</p><p class="t">Gjør kommersielle ambisjoner til systematisk praksis, fra markedsinnsikt til vunne kunder.</p></div><span class="lk"><span class="lesl">Les mer<span class="pil"></span></span></span></a><a class="ex" href="fagekspert.html"><div class="pt"><div class="pi"><img src="img/portrett-rita.jpg" alt="Rita Berg Hansen"></div><span class="dot"></span></div><div class="tx"><h3>Rita Berg Hansen</h3><p class="r">Fagekspert</p><p class="t">Over 20 års erfaring fra eiendomsbransjen. Kommersiell vekst og prestasjonskultur.</p></div><span class="lk"><span class="lesl">Les mer<span class="pil"></span></span></span></a></div>
+</div></section>
+<section id="samtale" class="dyp" style="background:#1B3A4B;color:#fff"><div class="wrap" style="padding-top:88px;padding-bottom:88px;display:flex;justify-content:space-between;align-items:center;gap:48px;flex-wrap:wrap">
+<div style="max-width:30em"><h2 style="font-size:40px;line-height:46px;font-weight:500">La oss ta en samtale om hva som mangler for at dere skal lykkes</h2><p style="margin-top:16px;font-size:21px;line-height:32px;color:#D3DCDF">Ring oss på +47 22 49 00 00 eller skriv til post@excellerate.no.</p></div>
+<a class="xl-btn-p xl-btn-g" href="#">Book en samtale</a>
+</div></section>
+<footer class="dyp fl" style="background:#1B3A4B;color:#fff;border-top:1px solid #294F67"><div class="wrap" style="padding-top:56px;padding-bottom:56px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;font-size:16px;line-height:24px">
+<div><img src="img/logo-xl-hvit.png" alt="Excellerate" style="height:22px;display:block"><p style="margin-top:20px;color:#D3DCDF;max-width:22em">Vi hjelper deg å finne, vinne og beholde de rette kundene.</p></div>
+<div><a href="#">Salgsutvikling</a><a href="#">Lederutvikling</a><a href="#">Kulturutvikling</a><a href="#">KI og sikkerhet</a></div>
+<div><a href="#">Referanser</a><a href="fagekspertene.html">Fagekspertene</a><a href="#">Kunnskapssenter</a></div>
+<div><a href="#">Om oss</a><a href="#">Kontakt</a><a href="#">Personvern</a></div>
+</div></footer>
+</div>
+<script>
+const b=document.getElementById('mbtn'),p=document.getElementById('mpanel');
+b.addEventListener('click',()=>{const o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',o);b.textContent=o?'Lukk':'Meny';p.style.cssText=o?'position:absolute;left:0;right:0;top:80px;background:#fff;border-bottom:1px solid #D3DCDF':'display:none'});
+</script></body></html>
