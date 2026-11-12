@@ -145,6 +145,29 @@ a:focus-visible,button:focus-visible,input:focus-visible,.tog:focus-visible{outl
 .b-bilde .bk,.b-bilde h3{color:#fff}.b-bilde h3{font-size:19px;line-height:24px}
 @media(max-width:900px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}.b-stor,.b-nyhet,.b-bred{grid-column:span 2}}
 
+.bento{grid-auto-rows:250px}
+.b-stor{padding:0;background:#1B3A4B}
+.b-stor .bs{position:absolute;left:0;top:0;width:100%;height:58%;object-fit:cover;transition:transform .6s}
+.b-stor:hover .bs{transform:scale(1.05)}
+.b-stor .bp{position:absolute;left:0;right:0;bottom:0;height:42%;overflow:hidden;padding:26px 36px 28px;display:flex;flex-direction:column;justify-content:space-between;background:#1B3A4B;transition:background .25s}
+.b-stor:hover .bp{background:#294F67}
+.b-stor .bx{right:-60px;bottom:-110px;width:300px;height:300px}
+.b-stor h3{font-size:28px;line-height:34px;margin-top:6px}
+.b-stor .bk,.b-stor h3,.b-stor .lesl{position:relative}
+.b-bla{background:#356A89;color:#fff}.b-bla .bk{color:#D3DCDF}.b-bla .lesl{color:#fff}.b-bla .lesl .pil{border-color:#fff}
+.b-bla:hover{background:#294F67;color:#fff}
+.b-bla .bx,.b-nyhet .bx{position:absolute;right:-60px;bottom:-80px;width:260px;height:260px}
+.b-bla h3,.b-bla .bk,.b-bla .lesl,.b-nyhet>*:not(.bx){position:relative}
+.b-split{padding:0;flex-direction:row;justify-content:flex-start;grid-column:span 2}
+.b-split img{width:46%;height:100%;object-fit:cover;flex:none;transition:transform .6s}
+.b-split{overflow:hidden}
+.b-split .bp{flex:1;padding:26px 28px;display:flex;flex-direction:column;justify-content:space-between;background:#fff;position:relative;z-index:1;transition:background .25s,color .25s}
+.b-split:hover img{transform:scale(1.05)}
+.b-split:hover .bp{color:#356A89}
+.b-bilde .bo{background:#1B3A4B;transition:background .25s}
+.b-bilde:hover .bo{background:#356A89}
+.b-bilde .bo h3{margin-top:4px}
+
 </style></head><body>
 <div style="width:100%;background:#fff;position:relative">
 <header class="hdr">

@@ -145,6 +145,29 @@ a:focus-visible,button:focus-visible,input:focus-visible,.tog:focus-visible{outl
 .b-bilde .bk,.b-bilde h3{color:#fff}.b-bilde h3{font-size:19px;line-height:24px}
 @media(max-width:900px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}.b-stor,.b-nyhet,.b-bred{grid-column:span 2}}
 
+.bento{grid-auto-rows:250px}
+.b-stor{padding:0;background:#1B3A4B}
+.b-stor .bs{position:absolute;left:0;top:0;width:100%;height:58%;object-fit:cover;transition:transform .6s}
+.b-stor:hover .bs{transform:scale(1.05)}
+.b-stor .bp{position:absolute;left:0;right:0;bottom:0;height:42%;overflow:hidden;padding:26px 36px 28px;display:flex;flex-direction:column;justify-content:space-between;background:#1B3A4B;transition:background .25s}
+.b-stor:hover .bp{background:#294F67}
+.b-stor .bx{right:-60px;bottom:-110px;width:300px;height:300px}
+.b-stor h3{font-size:28px;line-height:34px;margin-top:6px}
+.b-stor .bk,.b-stor h3,.b-stor .lesl{position:relative}
+.b-bla{background:#356A89;color:#fff}.b-bla .bk{color:#D3DCDF}.b-bla .lesl{color:#fff}.b-bla .lesl .pil{border-color:#fff}
+.b-bla:hover{background:#294F67;color:#fff}
+.b-bla .bx,.b-nyhet .bx{position:absolute;right:-60px;bottom:-80px;width:260px;height:260px}
+.b-bla h3,.b-bla .bk,.b-bla .lesl,.b-nyhet>*:not(.bx){position:relative}
+.b-split{padding:0;flex-direction:row;justify-content:flex-start;grid-column:span 2}
+.b-split img{width:46%;height:100%;object-fit:cover;flex:none;transition:transform .6s}
+.b-split{overflow:hidden}
+.b-split .bp{flex:1;padding:26px 28px;display:flex;flex-direction:column;justify-content:space-between;background:#fff;position:relative;z-index:1;transition:background .25s,color .25s}
+.b-split:hover img{transform:scale(1.05)}
+.b-split:hover .bp{color:#356A89}
+.b-bilde .bo{background:#1B3A4B;transition:background .25s}
+.b-bilde:hover .bo{background:#356A89}
+.b-bilde .bo h3{margin-top:4px}
+
 </style></head><body>
 <div style="width:100%;background:#fff;position:relative">
 <header class="hdr">
@@ -227,12 +250,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,.tog:focus-visible{outl
 <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px"><h2 style="font-size:40px;line-height:46px;font-weight:500">Kunnskapssenter</h2><a class="xl-lenke" href="#">Åpne kunnskapssenteret<span class="pil"></span></a></div>
 <p style="margin-top:12px;font-size:21px;line-height:32px;font-weight:500;color:#566B76;max-width:34em">Artikler, fagartikler, guider og arrangementer fra fagekspertene. Kunnskap skal deles.</p>
 <div class="bento">
-<a class="bt b-stor" href="#"><svg aria-hidden="true" viewBox="0 0 300 300" class="bx"><line x1="40" y1="40" x2="260" y2="260" stroke="#294F67" stroke-width="64"/><line x1="260" y1="40" x2="40" y2="260" stroke="#294F67" stroke-width="64"/></svg><span class="bk">Guide</span><h3>Rådgivende verdisalg: prinsipper og beste praksis i B2B-salg</h3><span class="lesl">Last ned<span class="pil"></span></span></a>
-<a class="bt b-mint" href="#"><span class="bk">Artikler</span><h3>Siste fra fagekspertene</h3><span class="lesl">Les<span class="pil"></span></span></a>
-<a class="bt b-hvit" href="#"><span class="bk">Fagartikler</span><h3>Fordypning for ledere og selgere</h3><span class="lesl">Les<span class="pil"></span></span></a>
-<form class="bt b-nyhet" onsubmit="return false"><span class="bk">Nyhetsbrev</span><h3>Få ny innsikt rett i innboksen</h3><div class="nf"><input type="email" placeholder="Din e-postadresse" aria-label="E-postadresse"><button type="submit" class="xl-btn-p xl-btn-g" style="padding:13px 28px 13px 20px">Abonner</button></div><div class="nl"><span>Eller fortsett med</span><button type="button">LinkedIn</button><button type="button">Google</button><button type="button">Apple</button></div></form>
-<a class="bt b-hvit" href="#"><span class="bk">Webinarer og arrangementer</span><h3>Kommende webinarer</h3><span class="lesl">Se kommende<span class="pil"></span></span></a>
-<a class="bt b-hvit b-bred" href="#"><span class="bk">Guide</span><h3>Kundeinnsikten som gir bedre salgsresultater</h3><span class="lesl">Last ned<span class="pil"></span></span></a>
+<a class="bt b-stor" href="#"><img class="bs" src="img/kunnskap-guide.jpg" alt=""><div class="bp"><svg aria-hidden="true" viewBox="0 0 300 300" class="bx"><line x1="40" y1="40" x2="260" y2="260" stroke="#294F67" stroke-width="64"/><line x1="260" y1="40" x2="40" y2="260" stroke="#294F67" stroke-width="64"/></svg><span class="bk">Guide</span><h3>Rådgivende verdisalg: prinsipper og beste praksis i B2B-salg</h3><span class="lesl">Last ned<span class="pil"></span></span></div></a>
+<a class="bt b-bilde" href="#"><img src="img/kunnskap-artikler.jpg" alt=""><span class="bo"><span class="bk">Artikler</span><h3>Siste fra fagekspertene</h3></span></a>
+<a class="bt b-bla" href="#"><svg aria-hidden="true" viewBox="0 0 300 300" class="bx"><line x1="40" y1="40" x2="260" y2="260" stroke="#4A83A3" stroke-width="64"/><line x1="260" y1="40" x2="40" y2="260" stroke="#4A83A3" stroke-width="64"/></svg><span class="bk">Fagartikler</span><h3>Fordypning for ledere og selgere</h3><span class="lesl">Les<span class="pil"></span></span></a>
+<form class="bt b-nyhet" onsubmit="return false"><svg aria-hidden="true" viewBox="0 0 300 300" class="bx"><line x1="40" y1="40" x2="260" y2="260" stroke="#356A89" stroke-width="64"/><line x1="260" y1="40" x2="40" y2="260" stroke="#356A89" stroke-width="64"/></svg><span class="bk">Nyhetsbrev</span><h3>Få ny innsikt rett i innboksen</h3><div class="nf"><input type="email" placeholder="Din e-postadresse" aria-label="E-postadresse"><button type="submit" class="xl-btn-p xl-btn-g" style="padding:13px 28px 13px 20px">Abonner</button></div><div class="nl"><span>Eller fortsett med</span><button type="button">LinkedIn</button><button type="button">Google</button><button type="button">Apple</button></div></form>
+<a class="bt b-bilde" href="#"><img src="img/kunnskap-webinar.jpg" alt=""><span class="bo"><span class="bk">Webinarer og arrangementer</span><h3>Kommende webinarer</h3></span></a>
+<a class="bt b-split" href="#"><img src="img/salg.jpg" alt=""><div class="bp"><span class="bk">Guide</span><h3>Kundeinnsikten som gir bedre salgsresultater</h3><span class="lesl">Last ned<span class="pil"></span></span></div></a>
 <a class="bt b-bilde" href="#"><img src="img/case-thon.jpg" alt=""><span class="bo"><span class="bk">Resultat hos kunde</span><h3>Thon Hotels: et kommersielt kulturløft</h3></span></a>
 </div></div></section>
 <section id="samtale" class="dyp" style="background:#1B3A4B;color:#fff"><div class="wrap" style="padding-top:88px;padding-bottom:88px;display:flex;justify-content:space-between;align-items:center;gap:48px;flex-wrap:wrap">
