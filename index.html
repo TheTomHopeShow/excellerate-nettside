@@ -362,11 +362,15 @@ h1,h2,h3,h4{letter-spacing:-0.035em}
 .hph img{height:clamp(240px,56vh,520px)}
 @media (max-width:860px){.hero{min-height:0;display:block}.hero .hgrid{grid-template-columns:1fr;padding-top:40px;padding-bottom:72px}.hph{margin-right:24px;margin-bottom:24px}.hph::before{left:24px;top:24px;right:-24px;bottom:-24px}.hph img{height:clamp(220px,50vw,360px)}.hpill{left:-8px}}
 /* kundelogoer: 2 rader a 6, i farger, i ro */
-.lgrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;padding-bottom:72px}
+.lgrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;padding-bottom:40px}
 .lc{height:104px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:18px 22px}
 .lc img{max-width:100%;max-height:52px;width:auto;height:auto;object-fit:contain}
 @media (max-width:900px){.lgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:520px){.lgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* hover: forlatt kort slipper raskt, nytt kort tones inn, så to kort ikke tones om hverandre samtidig */
+.ing,.ing *,.ing .ix line,.bt,.bt *{transition-duration:.08s!important}
+.ing:hover,.ing:hover *,.ing:hover .ix line,.bt:hover,.bt:hover *{transition-duration:.25s!important}
 
 </style></head><body>
 <div style="width:100%;background:#fff;position:relative">
@@ -395,7 +399,7 @@ h1,h2,h3,h4{letter-spacing:-0.035em}
 <div class="hph"><img src="img/hero.jpg" alt="Mann i samtale med kolleger"><div class="hpill"><i></i><div><b>Siden 1988</b>Salg og ledelse</div></div></div>
 </div></section>
 <section style="background:#F3F6F5;overflow:hidden"><div class="wrap" style="padding-top:64px;padding-bottom:28px"><h2 style="font-size:32px;line-height:38px;font-weight:500">Takk for tilliten</h2><p style="margin-top:8px;font-size:19px;line-height:28px;color:#566B76;max-width:34em">Noen av virksomhetene vi har fått lov til å jobbe sammen med.</p></div>
-<div class="wrap"><div class="lgrid"><div class="lc"><img src="img/logo-thon.png" alt="Thon Hotels"></div><div class="lc"><img src="img/logo-maxbo.png" alt="Maxbo"></div><div class="lc"><img src="img/logo-ramirent.png" alt="Ramirent"></div><div class="lc"><img src="img/logo-synsam.png" alt="Synsam"></div><div class="lc"><img src="img/logo-wikborg.png" alt="Wikborg Rein"></div><div class="lc"><img src="img/logo-boligpartner.png" alt="BoligPartner"></div><div class="lc"><img src="img/logo-dn.png" alt="Dagens Næringsliv"></div><div class="lc"><img src="img/logo-fargerike.png" alt="Fargerike"></div><div class="lc"><img src="img/logo-ruter.png" alt="Ruter"></div><div class="lc"><img src="img/logo-hertz.png" alt="Hertz"></div><div class="lc"><img src="img/logo-extra.png" alt="Coop Extra"></div><div class="lc"><img src="img/logo-polarn.png" alt="Polarn O. Pyret"></div></div></div><div style="height:64px"></div></section>
+<div class="wrap"><div class="lgrid"><div class="lc"><img src="img/logo-thon.png" alt="Thon Hotels"></div><div class="lc"><img src="img/logo-maxbo.png" alt="Maxbo"></div><div class="lc"><img src="img/logo-ramirent.png" alt="Ramirent"></div><div class="lc"><img src="img/logo-synsam.png" alt="Synsam"></div><div class="lc"><img src="img/logo-wikborg.png" alt="Wikborg Rein"></div><div class="lc"><img src="img/logo-boligpartner.png" alt="BoligPartner"></div><div class="lc"><img src="img/logo-dn.png" alt="Dagens Næringsliv"></div><div class="lc"><img src="img/logo-fargerike.png" alt="Fargerike"></div><div class="lc"><img src="img/logo-ruter.png" alt="Ruter"></div><div class="lc"><img src="img/logo-hertz.png" alt="Hertz"></div><div class="lc"><img src="img/logo-extra.png" alt="Coop Extra"></div><div class="lc"><img src="img/logo-polarn.png" alt="Polarn O. Pyret"></div></div></div><div style="height:8px"></div></section>
 <section id="mangler" class="sec"><div class="wrap">
 <h2 style="font-size:40px;line-height:46px;font-weight:500;max-width:18em">Hva mangler for at dere skal lykkes?</h2>
 <p style="margin-top:16px;font-size:21px;line-height:32px;font-weight:500;color:#566B76;max-width:34em">Gjør dere det dere alltid har gjort, får dere det dere alltid har fått. Velg det som ligner mest på deres hverdag.</p>
