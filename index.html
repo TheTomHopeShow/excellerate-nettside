@@ -314,7 +314,7 @@ h1,h2,h3,h4{letter-spacing:-0.035em}
 .xl-lenke.lys{color:#fff;background-image:linear-gradient(#9CC06F,#9CC06F)}
 /* hero */
 .hero{background:#1B3A4B;position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:52px;background:#F3F6F5;border-radius:52px 52px 0 0}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:28px;background:#F3F6F5;border-radius:28px 28px 0 0}
 .hero h1{font-size:68px!important;line-height:68px!important;font-weight:500!important;letter-spacing:-0.04em!important}
 .hero h1 em{font-style:normal;color:#9CC06F}
 .hph{position:relative;margin:0 36px 36px 0}.hph::before{content:"";position:absolute;left:36px;top:36px;right:-36px;bottom:-36px;background:#356A89;border-radius:18px}
@@ -353,6 +353,21 @@ h1,h2,h3,h4{letter-spacing:-0.035em}
 .dyp .kn:focus-visible{outline-color:#9CC06F}
 .av img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
 
+/* hero tilpasser seg skjermen: fyller visningsvinduet under menyen */
+.hero{min-height:calc(100vh - 81px);min-height:calc(100svh - 81px);display:flex;align-items:center}
+.hero .hgrid{position:relative;z-index:1;width:100%;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,72px);align-items:center;padding-top:clamp(24px,5vh,72px);padding-bottom:clamp(48px,9vh,112px)}
+.hero h1{font-size:clamp(36px,min(5.2vw,9vh),72px)!important;line-height:1!important}
+.hlead{margin-top:clamp(14px,2.5vh,24px);font-size:clamp(16px,min(1.5vw,2.8vh),20px);line-height:1.55;color:#C5D2D8;max-width:28em}
+.hbtn{margin-top:clamp(20px,4vh,36px);display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+.hph img{height:clamp(240px,56vh,520px)}
+@media (max-width:860px){.hero{min-height:0;display:block}.hero .hgrid{grid-template-columns:1fr;padding-top:40px;padding-bottom:72px}.hph{margin-right:24px;margin-bottom:24px}.hph::before{left:24px;top:24px;right:-24px;bottom:-24px}.hph img{height:clamp(220px,50vw,360px)}.hpill{left:-8px}}
+/* kundelogoer: 2 rader a 6, i farger, i ro */
+.lgrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;padding-bottom:72px}
+.lc{height:104px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:18px 22px}
+.lc img{max-width:100%;max-height:52px;width:auto;height:auto;object-fit:contain}
+@media (max-width:900px){.lgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:520px){.lgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
 </style></head><body>
 <div style="width:100%;background:#fff;position:relative">
 <header class="hdr"><input type="checkbox" id="sk" class="skx" aria-hidden="true">
@@ -373,14 +388,14 @@ h1,h2,h3,h4{letter-spacing:-0.035em}
 </div>
 </header>
 <section class="dyp hero" style="color:#fff">
-<div class="wrap" style="position:relative;z-index:1;padding-top:72px;padding-bottom:128px;display:grid;grid-template-columns:1.05fr .95fr;gap:72px;align-items:center">
+<div class="wrap hgrid">
 <div><h1>Hvem vil dere <em>vinne</em> neste gang?</h1>
-<p style="margin-top:24px;font-size:20px;line-height:31px;font-weight:400;color:#C5D2D8;max-width:28em">Excellerate hjelper ledere med å styrke konkurransekraften gjennom salgsutvikling og lederutvikling. Vi finner, vinner og beholder flere kunder sammen med dere. Siden 1988.</p>
-<div style="margin-top:36px;display:flex;gap:24px;flex-wrap:wrap;align-items:center"><a class="kn g" href="#samtale">Book en samtale</a><a class="xl-lenke lys" href="#mangler">Hva mangler hos dere?<span class="pil"></span></a></div></div>
+<p class="hlead">Excellerate hjelper ledere med å styrke konkurransekraften gjennom salgsutvikling og lederutvikling. Vi finner, vinner og beholder flere kunder sammen med dere. Siden 1988.</p>
+<div class="hbtn"><a class="kn g" href="#samtale">Book en samtale</a><a class="xl-lenke lys" href="#mangler">Hva mangler hos dere?<span class="pil"></span></a></div></div>
 <div class="hph"><img src="img/hero.jpg" alt="Mann i samtale med kolleger"><div class="hpill"><i></i><div><b>Siden 1988</b>Salg og ledelse</div></div></div>
 </div></section>
 <section style="background:#F3F6F5;overflow:hidden"><div class="wrap" style="padding-top:64px;padding-bottom:28px"><h2 style="font-size:32px;line-height:38px;font-weight:500">Takk for tilliten</h2><p style="margin-top:8px;font-size:19px;line-height:28px;color:#566B76;max-width:34em">Noen av virksomhetene vi har fått lov til å jobbe sammen med.</p></div>
-<div class="lrows"><div class="lrow "><div class="ltrack"><div class="lg2"><img src="img/logo-dn.png" alt="Dagens Næringsliv"></div><div class="lg2"><img src="img/logo-ramirent.png" alt="Ramirent"></div><div class="lg2"><img src="img/logo-maxbo.png" alt="Maxbo"></div><div class="lg2"><img src="img/logo-olivia.png" alt="Olivia"></div><div class="lg2"><img src="img/logo-synsam.png" alt="Synsam"></div><div class="lg2"><img src="img/logo-polarn.png" alt="Polarn O. Pyret"></div><div class="lg2"><img src="img/logo-thon.png" alt="Thon Hotels"></div><div class="lg2"><img src="img/logo-boligpartner.png" alt="BoligPartner"></div><div class="lg2"><img src="img/logo-dn.png" alt="Dagens Næringsliv"></div><div class="lg2"><img src="img/logo-ramirent.png" alt="Ramirent"></div><div class="lg2"><img src="img/logo-maxbo.png" alt="Maxbo"></div><div class="lg2"><img src="img/logo-olivia.png" alt="Olivia"></div><div class="lg2"><img src="img/logo-synsam.png" alt="Synsam"></div><div class="lg2"><img src="img/logo-polarn.png" alt="Polarn O. Pyret"></div><div class="lg2"><img src="img/logo-thon.png" alt="Thon Hotels"></div><div class="lg2"><img src="img/logo-boligpartner.png" alt="BoligPartner"></div></div></div><div class="lrow r"><div class="ltrack"><div class="lg2"><img src="img/logo-wikborg.png" alt="Wikborg Rein"></div><div class="lg2"><img src="img/logo-fargerike.png" alt="Fargerike"></div><div class="lg2"><img src="img/logo-ferda.png" alt="Ferda"></div><div class="lg2"><img src="img/logo-tv2.png" alt="TV 2"></div><div class="lg2"><img src="img/logo-ark.png" alt="Ark"></div><div class="lg2"><img src="img/logo-ruter.png" alt="Ruter"></div><div class="lg2"><img src="img/logo-hertz.png" alt="Hertz"></div><div class="lg2"><img src="img/logo-extra.png" alt="Coop Extra"></div><div class="lg2"><img src="img/logo-wikborg.png" alt="Wikborg Rein"></div><div class="lg2"><img src="img/logo-fargerike.png" alt="Fargerike"></div><div class="lg2"><img src="img/logo-ferda.png" alt="Ferda"></div><div class="lg2"><img src="img/logo-tv2.png" alt="TV 2"></div><div class="lg2"><img src="img/logo-ark.png" alt="Ark"></div><div class="lg2"><img src="img/logo-ruter.png" alt="Ruter"></div><div class="lg2"><img src="img/logo-hertz.png" alt="Hertz"></div><div class="lg2"><img src="img/logo-extra.png" alt="Coop Extra"></div></div></div></div><div style="height:64px"></div></section>
+<div class="wrap"><div class="lgrid"><div class="lc"><img src="img/logo-thon.png" alt="Thon Hotels"></div><div class="lc"><img src="img/logo-maxbo.png" alt="Maxbo"></div><div class="lc"><img src="img/logo-ramirent.png" alt="Ramirent"></div><div class="lc"><img src="img/logo-synsam.png" alt="Synsam"></div><div class="lc"><img src="img/logo-wikborg.png" alt="Wikborg Rein"></div><div class="lc"><img src="img/logo-boligpartner.png" alt="BoligPartner"></div><div class="lc"><img src="img/logo-dn.png" alt="Dagens Næringsliv"></div><div class="lc"><img src="img/logo-fargerike.png" alt="Fargerike"></div><div class="lc"><img src="img/logo-ruter.png" alt="Ruter"></div><div class="lc"><img src="img/logo-hertz.png" alt="Hertz"></div><div class="lc"><img src="img/logo-extra.png" alt="Coop Extra"></div><div class="lc"><img src="img/logo-polarn.png" alt="Polarn O. Pyret"></div></div></div><div style="height:64px"></div></section>
 <section id="mangler" class="sec"><div class="wrap">
 <h2 style="font-size:40px;line-height:46px;font-weight:500;max-width:18em">Hva mangler for at dere skal lykkes?</h2>
 <p style="margin-top:16px;font-size:21px;line-height:32px;font-weight:500;color:#566B76;max-width:34em">Gjør dere det dere alltid har gjort, får dere det dere alltid har fått. Velg det som ligner mest på deres hverdag.</p>
