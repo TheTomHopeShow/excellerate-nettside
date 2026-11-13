@@ -371,6 +371,12 @@ h1,h2,h3,h4{letter-spacing:-0.035em}
 /* hover: forlatt kort slipper raskt, nytt kort tones inn, så to kort ikke tones om hverandre samtidig */
 .ing,.ing *,.ing .ix line,.bt,.bt *{transition-duration:.08s!important}
 .ing:hover,.ing:hover *,.ing:hover .ix line,.bt:hover,.bt:hover *{transition-duration:.25s!important}
+/* Hva mangler: 2 x 2 */
+#mangler .g4{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+#mangler .ing{min-height:220px;padding:32px 36px 30px}
+#mangler .ing h3{font-size:32px;line-height:38px;padding-top:20px;max-width:16em}
+#mangler .ing .ix{width:300px;height:300px;right:-80px;bottom:-130px}
+@media (max-width:640px){#mangler .g4{grid-template-columns:1fr}}
 
 </style></head><body>
 <div style="width:100%;background:#fff;position:relative">
