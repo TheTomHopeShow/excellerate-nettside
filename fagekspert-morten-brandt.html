@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="nb"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Morten Brandt | Excellerate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Schibsted Grotesk',system-ui,sans-serif;color:#231F20;background:#fff;-webkit-font-smoothing:antialiased;font-size:17px;line-height:27px}
+*{box-sizing:border-box}
+a{color:inherit}
+h1,h2,h3,h4,p{margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+.sec{padding:88px 0}
+.hdr{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #D5DFE5}
+.xl-btn-p{position:relative;display:inline-block;padding:15px 36px 15px 24px;color:#fff;font-weight:600;font-size:17px;line-height:24px;text-decoration:none;isolation:isolate;border:0;background:transparent;cursor:pointer;font-family:inherit}
+.xl-btn-p::before{content:"";position:absolute;inset:0;z-index:-1;background:#356A89;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 24px,100% 100%,0 100%);transition:background .2s}
+.xl-btn-p::after{content:"";position:absolute;top:2px;right:2px;width:12px;height:12px;border-radius:50%;background:#7EA257;transition:transform .2s}
+.xl-btn-p:hover::before{background:#294F67}
+.xl-btn-p:hover::after{transform:scale(1.35)}
+.xl-btn-g::before{background:#4F7A2B}
+.xl-btn-g:hover::before{background:#3f6322}
+.xl-btn-g::after{background:#fff}
+.xl-btn-s{position:relative;display:inline-block;padding:13px 40px 13px 22px;color:#356A89;font-weight:600;font-size:17px;line-height:24px;text-decoration:none;border:2px solid #356A89;background:#fff}
+.xl-btn-s::after{content:"";position:absolute;top:50%;right:16px;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:#7EA257;transition:transform .25s}
+.xl-btn-s:hover::after{transform:translateX(5px)}
+.xl-btn-l{position:relative;display:inline-block;padding:8px 30px 8px 16px;color:#356A89;font-weight:600;font-size:16px;line-height:22px;text-decoration:none;border:2px solid #356A89;background:#fff}
+.xl-btn-l::after{content:"";position:absolute;top:50%;right:11px;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:#7EA257;transition:transform .25s}
+.xl-btn-l:hover::after{transform:translateX(4px)}
+a:focus-visible,button:focus-visible,input:focus-visible,.tog:focus-visible{outline:3px solid #294F67;outline-offset:3px}
+.dyp a:focus-visible,.dyp button:focus-visible{outline-color:#7EA257}
+.xl-lenke{color:#356A89;font-weight:600;text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.pil{display:inline-block;width:9px;height:9px;border-top:2px solid #356A89;border-right:2px solid #356A89;transform:rotate(45deg);margin-left:2px}
+.nav{display:flex;gap:32px}
+.nav a,.mbtn{text-decoration:none;font-weight:500;font-size:16px;color:#231F20;background:none;border:0;cursor:pointer;font-family:inherit;padding:0}
+.nav a:hover,.mbtn:hover{color:#356A89}
+.snitt{position:relative}
+.snitt img{display:block;width:100%;object-fit:cover;clip-path:polygon(0 0,calc(100% - 36px) 0,100% 36px,100% 100%,0 100%)}
+.dot{position:absolute;top:2px;right:2px;width:18px;height:18px;border-radius:50%;background:#7EA257}
+.lg{height:72px;display:flex;align-items:center;justify-content:center;background:#fff}
+.lg img{max-height:44px;max-width:78%;object-fit:contain;filter:grayscale(1);opacity:.85;mix-blend-mode:multiply}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.ing{display:block;text-decoration:none}
+.ing h3{font-size:24px;line-height:30px;font-weight:500;margin:22px 0 6px}
+.ing p{color:#566B76;margin-bottom:14px}
+.ing:hover h3{color:#356A89}
+.cs{display:block;text-decoration:none}
+.cs h3{font-size:24px;line-height:30px;font-weight:500;margin:24px 0 10px}
+.cr{font-size:19px;line-height:28px}
+.ck{font-size:14px;line-height:21px;color:#566B76;margin:12px 0 16px}
+.cs:hover h3{color:#356A89}
+.mx{display:flex;gap:14px;align-items:center;text-decoration:none;padding:8px 0}
+.mx img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.mx b{display:block;font-size:16px;line-height:20px}
+.mx i{display:block;font-style:normal;font-size:14px;line-height:20px;color:#566B76}
+.mc h4{margin:0 0 12px;font-size:15px;line-height:20px;font-weight:600;color:#566B76}
+.mc>a{display:block;text-decoration:none;font-size:19px;line-height:26px;font-weight:600;padding:5px 0}
+.mc>a:hover{color:#356A89}
+.chip{display:inline-block;padding:6px 14px;border:1px solid #D5DFE5;border-radius:20px;font-size:15px;text-decoration:none;margin:0 8px 8px 0;background:#fff}
+.chip:hover{border-color:#356A89;color:#356A89}
+.fl a{display:block;color:#fff;text-decoration:none;padding:4px 0}
+.fl a:hover{text-decoration:underline}
+.tog{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x proximity;padding:48px max(40px,calc((100vw - 1160px)/2)) 24px;scroll-padding-inline:max(40px,calc((100vw - 1160px)/2));scrollbar-width:thin;scrollbar-color:#6B818C #EAF0EC;align-items:stretch}
+.grp{flex:0 0 220px;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding-right:16px}
+.grp h3{font-size:28px;line-height:34px;font-weight:500}
+.grp p{margin-top:10px;color:#566B76;font-size:17px;line-height:25px}
+.ex{flex:0 0 280px;scroll-snap-align:start;background:#fff;text-decoration:none;display:flex;flex-direction:column;text-align:center;color:#231F20}
+.g4 .ex{flex:none}
+.ex .pt{position:relative;aspect-ratio:4/5;background:#EAF0EC}
+.ex .pi{position:absolute;inset:0;overflow:hidden;clip-path:polygon(0 0,calc(100% - 32px) 0,100% 32px,100% 100%,0 100%)}
+.ex .pt img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.6,.2,1)}
+.ex:hover .pt img,.ex:focus-visible .pt img{transform:scale(1.06)}
+.ex .dot{transition:transform .3s}
+.ex:hover .dot{transform:scale(1.25)}
+.lesbtn{display:inline-flex;align-items:center;gap:10px;font-weight:600;color:#356A89;border:2px solid #356A89;padding:10px 22px;background:#fff;transition:background .25s,color .25s}
+.lesbtn .pil{transition:transform .3s}
+.ex:hover .lesbtn,.ex:focus-visible .lesbtn{background:#356A89;color:#fff}
+.ex:hover .lesbtn .pil,.ex:focus-visible .lesbtn .pil{border-color:#fff;transform:translateX(6px) rotate(45deg)}
+.ex .ph{width:100%;height:100%;background:#EAF0EC;display:flex;align-items:center;justify-content:center;font-size:72px;font-weight:800;color:#6B818C;clip-path:polygon(0 0,calc(100% - 32px) 0,100% 32px,100% 100%,0 100%)}
+.ex .tx{flex:1;padding:24px 22px 8px;text-align:left}
+.ex h3{font-size:20px;line-height:28px;font-weight:500;white-space:nowrap}
+.ex .r{font-size:15px;line-height:20px;color:#356A89;font-weight:600;margin-top:4px}
+.ex .t{margin-top:12px;font-size:16px;line-height:24px;color:#566B76}
+.ex .lk{padding:12px 22px 26px;display:block;text-align:left}
+.ex:hover h3{color:#356A89}
+.st{background:none;border:0;cursor:pointer;font-family:inherit;display:flex;flex-direction:column;align-items:flex-start;gap:14px;text-align:left;padding:0;position:relative;z-index:1;color:#566B76}
+.reise{position:relative;margin-top:48px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.track{position:absolute;left:28px;right:28px;top:27px;height:2px;background:#D5DFE5}
+.nodeb{width:56px;height:56px;border-radius:50%;background:#fff;border:2px solid #D5DFE5;display:flex;align-items:center;justify-content:center}
+.nn{font-size:20px;font-weight:500}
+.nt{font-size:20px;line-height:26px;font-weight:500;max-width:12em}
+.st:hover .nodeb{border-color:#356A89}
+.st.on{color:#231F20}
+.st.on .nodeb{background:#7EA257;border-color:#7EA257;color:#1B3A4B}
+.rpanel{margin-top:40px}
+.kat{display:flex;flex-direction:column;justify-content:space-between;gap:40px;min-height:150px;padding:24px;background:#fff;text-decoration:none}
+.knn{font-size:22px;line-height:28px;font-weight:500}
+.kat:hover .knn{color:#356A89}
+.pill{font-family:inherit;font-size:16px;font-weight:600;padding:10px 20px;border:2px solid #D5DFE5;background:#fff;color:#231F20;cursor:pointer}
+.pill:hover{border-color:#356A89;color:#356A89}
+.pill.on{background:#356A89;border-color:#356A89;color:#fff}
+.pl2{padding:14px 0;border-top:1px solid #D5DFE5;font-size:19px;font-weight:600}
+
+.vsep{flex:0 0 2px;background:#D5DFE5;margin:0 28px 0 4px;align-self:stretch}
+
+.ex .dot{display:none}
+.ex .t{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:72px}
+.ex .r{min-height:20px}
+.lesl{display:inline-flex;align-items:center;gap:10px;font-weight:600;color:#356A89}
+.lesl .pil{transition:transform .3s}
+.ex:hover .lesl .pil,.ing:hover .lesl .pil{transform:translateX(8px) rotate(45deg)}
+.ex .lk{border-top:1px solid #E3E9EB;margin:16px 22px 0;padding:16px 0 22px}
+.ing{display:flex;flex-direction:column;justify-content:space-between;min-height:300px;padding:28px 28px 26px;background:#EAF0EC;clip-path:polygon(0 0,calc(100% - 36px) 0,100% 36px,100% 100%,0 100%);transition:background .3s,color .3s}
+.ing .io{font-size:15px;line-height:20px;font-weight:600;color:#566B76;transition:color .3s}
+.ing .lesl{transition:color .3s}.ing .lesl .pil{transition:transform .3s,border-color .3s}
+.ing h3{font-size:28px;line-height:34px;font-weight:500;margin:0;flex:1;padding-top:24px;transition:color .3s}
+.ing:hover{background:#1B3A4B}
+.ing:hover h3,.ing:hover .io{color:#fff}
+.ing:hover .lesl{color:#fff}
+.ing:hover .lesl .pil{border-color:#fff}
+
+.xl-lenke.lys{color:#fff}.xl-lenke.lys .pil{border-color:#fff}
+.bento{margin-top:40px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:230px;gap:20px}
+.bt{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:26px 26px 24px;text-decoration:none;color:#231F20;background:#fff;clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,0 100%);transition:background .25s,color .25s}
+.bt h3{font-size:22px;line-height:28px;font-weight:500;margin-top:8px;position:relative}
+.bk{font-size:14px;line-height:20px;font-weight:600;color:#566B76;position:relative}
+.bt .lesl{position:relative}
+.bt:hover .lesl .pil{transform:translateX(8px) rotate(45deg)}
+.b-stor{grid-column:span 2;grid-row:span 2;background:#1B3A4B;color:#fff;padding:36px}
+.b-stor h3{font-size:34px;line-height:40px;font-weight:500;max-width:14em}
+.b-stor .bk{color:#D5DFE5}.b-stor .lesl{color:#fff}.b-stor .lesl .pil{border-color:#fff}
+.b-stor .bx{position:absolute;right:-70px;bottom:-90px;width:380px;height:380px}
+.b-stor:hover{background:#294F67}
+.b-mint{background:#EAF0EC}.b-mint:hover,.b-hvit:hover{background:#fff;color:#356A89}
+.b-bred{grid-column:span 2}
+.b-nyhet{grid-column:span 2;background:#294F67;color:#fff;justify-content:flex-start;gap:0}
+.b-nyhet .bk{color:#D5DFE5}
+.b-nyhet .nf{display:flex;gap:12px;margin-top:18px;align-items:center}
+.b-nyhet input{flex:1;min-width:0;height:46px;padding:0 14px;border:0;background:#fff;font:inherit;font-size:16px;color:#231F20}
+.b-nyhet .nl{display:flex;gap:10px;align-items:center;margin-top:16px;font-size:14px;color:#D5DFE5;flex-wrap:wrap}
+.b-nyhet .nl button{font:inherit;font-size:14px;font-weight:600;color:#fff;background:transparent;border:1px solid #7C99AA;padding:6px 14px;cursor:pointer}
+.b-nyhet .nl button:hover{background:#356A89;border-color:#356A89}
+.b-bilde{padding:0;color:#fff;background:#231F20}
+.b-bilde img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.b-bilde:hover img{transform:scale(1.06)}
+.b-bilde .bo{position:absolute;left:0;right:0;bottom:0;padding:16px 22px 18px;background:#1B3A4B}
+.b-bilde .bk,.b-bilde h3{color:#fff}.b-bilde h3{font-size:19px;line-height:24px}
+@media(max-width:900px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}.b-stor,.b-nyhet,.b-bred{grid-column:span 2}}
+
+.bento{grid-auto-rows:250px}
+.b-stor{padding:0;background:#1B3A4B}
+.b-stor .bs{position:absolute;left:0;top:0;width:100%;height:58%;object-fit:cover;transition:transform .6s}
+.b-stor:hover .bs{transform:scale(1.05)}
+.b-stor .bp{position:absolute;left:0;right:0;bottom:0;height:42%;overflow:hidden;padding:26px 36px 28px;display:flex;flex-direction:column;justify-content:space-between;background:#1B3A4B;transition:background .25s}
+.b-stor:hover .bp{background:#294F67}
+.b-stor .bx{right:-60px;bottom:-110px;width:300px;height:300px}
+.b-stor h3{font-size:28px;line-height:34px;margin-top:6px}
+.b-stor .bk,.b-stor h3,.b-stor .lesl{position:relative}
+.b-bla{background:#356A89;color:#fff}.b-bla .bk{color:#D5DFE5}.b-bla .lesl{color:#fff}.b-bla .lesl .pil{border-color:#fff}
+.b-bla:hover{background:#294F67;color:#fff}
+.b-bla .bx,.b-nyhet .bx{position:absolute;right:-60px;bottom:-80px;width:260px;height:260px}
+.b-bla h3,.b-bla .bk,.b-bla .lesl,.b-nyhet>*:not(.bx){position:relative}
+.b-split{padding:0;flex-direction:row;justify-content:flex-start;grid-column:span 2}
+.b-split img{width:46%;height:100%;object-fit:cover;flex:none;transition:transform .6s}
+.b-split{overflow:hidden}
+.b-split .bp{flex:1;padding:26px 28px;display:flex;flex-direction:column;justify-content:space-between;background:#fff;position:relative;z-index:1;transition:background .25s,color .25s}
+.b-split:hover img{transform:scale(1.05)}
+.b-split:hover .bp{color:#356A89}
+.b-bilde .bo{background:#1B3A4B;transition:background .25s}
+.b-bilde:hover .bo{background:#356A89}
+.b-bilde .bo h3{margin-top:4px}
+
+.hnav{display:flex;align-self:stretch;gap:2px}
+.ni{display:flex}
+.ni>a{display:flex;align-items:center;position:relative;padding:0 14px;font-size:15px;font-weight:500;color:#231F20;text-decoration:none}
+.ni>a::after{content:"";position:absolute;left:14px;right:14px;bottom:24px;height:2px;background:#356A89;transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.ni:hover>a,.ni:focus-within>a{color:#356A89}
+.ni:hover>a::after,.ni:focus-within>a::after{transform:scaleX(1)}
+.hk{font-size:15px;font-weight:500;color:#231F20;text-decoration:none}.hk:hover{color:#356A89}
+.mega{position:absolute;left:0;right:0;top:100%;background:#fff;border-top:1px solid #D5DFE5;border-bottom:1px solid #D5DFE5;visibility:hidden;opacity:0;transition:opacity .18s,visibility 0s .18s}
+.ni:hover .mega,.ni:focus-within .mega{visibility:visible;opacity:1;transition:opacity .18s}
+.mg{display:grid;gap:48px;padding:40px 0 48px}
+.ml h3{font-size:28px;line-height:34px;font-weight:500}
+.ml p{margin-top:10px;font-size:16px;line-height:24px;color:#566B76}
+.ml .xl-lenke{margin-top:18px;font-size:16px}
+.mcol a{display:block;text-decoration:none;font-size:16px;line-height:22px;color:#566B76;padding:5px 0}
+.mcol a:hover{color:#356A89}
+.mcol a.mh{font-size:17px;font-weight:600;color:#231F20;padding-bottom:8px}
+.mcol a.mh:hover{color:#356A89}
+.mn{font-size:15px;line-height:22px;color:#566B76}
+.mrow4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.mcard{display:block;text-decoration:none}
+.mi{display:block;overflow:hidden;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%);aspect-ratio:4/3;background:#EAF0EC}
+.mi.p{aspect-ratio:4/4.4}
+.mi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.mcard:hover .mi img{transform:scale(1.06)}
+.mcard b{display:block;margin-top:10px;font-size:16px;line-height:22px;font-weight:500;color:#231F20}
+.mcard i{display:block;margin-top:10px;font-style:normal;font-size:14px;line-height:20px;color:#566B76}
+.mcard i+b{margin-top:2px}
+.mcard:hover b{color:#356A89}
+@media(max-width:900px){.hnav{display:none}.hk{display:none}}
+@media(min-width:901px){.mbtn{display:none}}
+
+.lrows{display:flex;flex-direction:column;gap:20px}
+.lrow{overflow:hidden;cursor:grab;user-select:none;-webkit-user-select:none}
+.lrow:active{cursor:grabbing}
+.ltrack{display:flex;gap:20px;width:max-content;animation:lm 70s linear infinite}
+.lrow.r .ltrack{animation-direction:reverse;animation-duration:80s}
+.lrow:hover .ltrack{animation-play-state:paused}
+@keyframes lm{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 10px))}}
+.lg2{flex:none;width:200px;height:96px;background:#fff;display:flex;align-items:center;justify-content:center;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%)}
+.lg2 img{max-width:132px;max-height:50px;width:auto;height:auto;filter:grayscale(1);opacity:.6;transition:filter .3s,opacity .3s,transform .3s;pointer-events:none;-webkit-user-drag:none}
+.lg2:hover img{filter:none;opacity:1;transform:scale(1.08)}
+@media(prefers-reduced-motion:reduce){.ltrack{animation:none}}
+@keyframes pop{0%{transform:translate(0,0) scale(1)}30%{transform:translate(6px,-12px) scale(1.7)}58%{transform:translate(0,1px) scale(1.3)}74%{transform:translate(1px,-4px) scale(1.4)}100%{transform:translate(0,0) scale(1.35)}}
+@keyframes pop2{0%{transform:translate(0,0) scale(1)}30%{transform:translate(8px,-16px) scale(1.5)}58%{transform:translate(0,2px) scale(1.15)}74%{transform:translate(1px,-5px) scale(1.2)}100%{transform:translate(0,0) scale(1.1)}}
+.hero .xl-btn-p:hover::after{animation:pop .65s cubic-bezier(.3,.6,.4,1) forwards}
+.snitt .dot{transition:transform .25s}
+.hero .snitt:hover .dot{animation:pop2 .7s cubic-bezier(.3,.6,.4,1) forwards}
+@media(prefers-reduced-motion:reduce){.hero .xl-btn-p:hover::after,.hero .snitt:hover .dot{animation:none}}
+
+.skx{position:absolute;opacity:0;pointer-events:none}
+.sbtn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;cursor:pointer;color:#231F20;transition:background .2s,color .2s}
+.sbtn:hover{background:#EAF0EC;color:#356A89}
+.sbtn .s2{display:none}.skx:checked ~ .wrap .sbtn .s1{display:none}.skx:checked ~ .wrap .sbtn .s2{display:block}
+.skx:focus-visible ~ .wrap .sbtn{outline:2px solid #356A89}
+.sok{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-top:1px solid #D5DFE5;border-bottom:1px solid #D5DFE5}
+.skx:checked ~ .sok{display:block}
+.sok .wrap{padding-top:36px;padding-bottom:44px}
+.sf{display:flex;align-items:center;gap:16px;border-bottom:2px solid #356A89;padding:8px 0 14px}
+.sf input{flex:1;border:0;outline:0;font:inherit;font-size:28px;line-height:36px;font-weight:500;color:#231F20;background:transparent}
+.sf input::placeholder{color:#8A9BA4}
+.sg{display:grid;grid-template-columns:300px 1fr;gap:48px;margin-top:32px}
+.kt{font-size:14px;line-height:20px;font-weight:600;color:#566B76;margin-bottom:12px}
+.sl .chip{display:block;margin:0 0 8px;width:max-content;max-width:100%}
+.sirk{display:grid;grid-template-columns:repeat(5,1fr);gap:20px 12px}
+.scard{display:block;text-decoration:none;text-align:center}
+.sc{display:block;width:84px;height:84px;margin:0 auto;border-radius:50%;overflow:hidden;background:#EAF0EC;box-shadow:0 0 0 2px #fff,0 0 0 3px #D5DFE5;transition:box-shadow .25s,transform .25s}
+.sc img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block;transition:transform .5s}
+.scard:hover .sc{box-shadow:0 0 0 2px #fff,0 0 0 4px #7EA257}
+.scard:hover .sc img{transform:scale(1.1)}
+.scard b{display:block;margin-top:10px;font-size:14px;line-height:19px;font-weight:500;color:#231F20}
+.scard i{display:block;font-style:normal;font-size:13px;line-height:18px;color:#566B76}
+.scard:hover b{color:#356A89}
+.sir{grid-template-columns:repeat(4,1fr);gap:28px 16px}
+.sir .sc{width:104px;height:104px}
+.vcard{display:flex;flex-direction:column}
+.vi{display:block;overflow:hidden;aspect-ratio:16/9;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%)}
+.vi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.vcard:hover .vi img{transform:scale(1.05)}
+.vcard a{text-decoration:none;color:#566B76;font-size:16px;line-height:22px;padding:4px 0}
+.vcard a:hover{color:#356A89}
+.vcard .vh{margin:14px 0 6px;font-size:20px;line-height:26px;font-weight:600;color:#231F20}
+.kk .kt{margin-bottom:10px}
+.kk a{font-size:17px;line-height:24px;font-weight:500;color:#231F20;padding:5px 0}
+.kk a:hover{color:#356A89}
+.ad{display:block;margin-top:8px;font-size:16px;line-height:24px;color:#566B76}
+
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.arb>div{padding:24px 0;border-top:1px solid #D5DFE5}
+.arb b{display:block;font-size:22px;line-height:30px;font-weight:600}
+.arb p{margin:6px 0 0;font-size:18px;line-height:28px;color:#566B76}
+.tl{position:relative;padding-left:32px;border-left:2px solid #D5DFE5}
+.tl>div{position:relative;padding:0 0 32px}
+.tl>div::before{content:"";position:absolute;left:-41px;top:7px;width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid #356A89}
+.tl>div:last-child{padding-bottom:0}.tl>div:last-child::before{background:#7EA257;border-color:#7EA257}
+.ty{display:block;font-size:15px;line-height:20px;font-weight:600;color:#356A89}
+.tl p{margin:4px 0 0;font-size:20px;line-height:30px}
+
+.ph-hero{position:relative;overflow:hidden;background:#F3F6F5;margin-top:24px}
+.ph-x{position:absolute;right:-180px;top:-60px;width:640px;height:640px}
+.ph-g{position:relative;padding-top:64px;padding-bottom:64px;display:grid;grid-template-columns:300px 1fr;gap:72px;align-items:center}
+.ph-r{font-size:17px;line-height:24px;font-weight:600;color:#356A89}
+.ph-n{margin-top:4px;font-size:56px;line-height:62px;font-weight:600;letter-spacing:-0.02em}
+.ph-v{margin-top:20px;font-size:24px;line-height:34px;font-weight:500;max-width:24em}
+.ph-body{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:88px;padding-top:72px;padding-bottom:80px;align-items:start}
+.ph-main section{padding:36px 0;border-top:1px solid #D5DFE5}
+.ph-main section:first-child{padding-top:0;border-top:0}
+.ph-main h2{font-size:24px;line-height:32px;font-weight:600;margin:0 0 16px}
+.ph-main p{font-size:19px;line-height:30px;color:#2B3A42;margin:0 0 14px;max-width:38em}
+.ph-main details summary{cursor:pointer;font-weight:600;color:#356A89;font-size:17px;list-style:none;margin-top:4px}
+.ph-main details summary::-webkit-details-marker{display:none}
+.ph-main details[open] summary{margin-bottom:14px}
+.hj{display:grid;grid-template-columns:1fr 24px;gap:4px 16px;padding:20px 0;border-top:1px solid #E3E9EB;text-decoration:none;color:#231F20;align-items:center}
+.hj:first-of-type{border-top:0;padding-top:4px}
+.hj b{font-size:21px;line-height:28px;font-weight:600}
+.hj span{grid-column:1;font-size:17px;line-height:26px;color:#566B76}
+.hj .pil{grid-row:1/3;grid-column:2;transition:transform .3s}
+.hj:hover b{color:#356A89}.hj:hover .pil{transform:translateX(6px) rotate(45deg)}
+.kt{display:grid;grid-template-columns:1fr 1fr;gap:28px 40px}
+.kt b{display:block;font-size:17px;line-height:24px;font-weight:600;color:#356A89}
+.kt span{display:block;margin-top:4px;font-size:18px;line-height:27px}
+.akt{display:block;padding:24px 26px;background:#EAF0EC;text-decoration:none;color:#231F20;clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,0 100%);transition:background .3s}
+.akt:hover{background:#DCE7E0}
+.akt b{display:block;margin-top:2px;font-size:22px;line-height:30px;font-weight:600}
+.akt span:last-child{display:block;margin-top:8px;font-size:17px;line-height:26px;color:#566B76}
+.ph-side{position:sticky;top:96px}
+.ph-card{padding:32px;border:1px solid #D5DFE5;background:#fff;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.ph-ct{font-size:22px;line-height:30px;font-weight:600;margin:0}
+.ph-l{display:inline-flex;gap:10px;align-items:center;font-size:17px;font-weight:600;color:#356A89;text-decoration:none}
+.ph-l:hover{text-decoration:underline}
+/* Ny meny (godkjent design, nov 2026): arver skrift fra siden */
+.hnav{display:flex;align-self:stretch;gap:6px}
+.ni{display:flex}
+.ni>a{white-space:nowrap;display:flex;align-items:center;position:relative;padding:0 14px;font-size:16px;font-weight:500;color:#1B3A4B;text-decoration:none;transition-duration:.08s}
+.ni>a::after{content:"";position:absolute;left:14px;right:14px;bottom:22px;height:2px;background:#7EA257;transform:scaleX(0);transform-origin:left;transition:transform .2s}
+.ni:hover>a,.ni:focus-within>a{color:#356A89}.ni:hover>a::after,.ni:focus-within>a::after{transform:scaleX(1)}
+.mega{position:absolute;left:0;right:0;top:100%;background:#fff;border-top:1px solid #DDE5E8;border-bottom:0;box-shadow:0 30px 50px -20px rgba(27,58,75,.22);visibility:hidden;opacity:0;transform:translateY(-6px);transition:opacity .08s,transform .08s,visibility 0s .08s}
+.ni:hover .mega,.ni:focus-within .mega{visibility:visible;opacity:1;transform:none;transition:opacity .22s,transform .22s,visibility 0s}
+.mega .wrap{padding-top:32px;padding-bottom:40px}
+.mxg{display:grid;gap:40px;align-items:stretch}
+.mxl{position:relative;overflow:hidden;background:#EAF0EC;border-radius:4px 20px 4px 20px;padding:28px 28px 30px;display:flex;flex-direction:column;gap:12px;min-height:300px}
+.mxx{position:absolute;pointer-events:none;right:-120px;bottom:-130px;width:300px;height:300px}
+.mxl h3{font-size:30px;line-height:34px;color:#1B3A4B;position:relative;font-weight:500;letter-spacing:-.04em;margin:0}
+.mxl p{color:#4A5F6A;font-size:16px;line-height:24px;position:relative;font-weight:500;margin:0}
+.mxl .xl-lenke{margin-top:auto;position:relative;align-self:flex-start}
+.mxs{display:grid;grid-template-columns:1fr 1fr;gap:26px 36px;align-content:start}.mxs.three{grid-template-columns:repeat(3,1fr)}
+.mxh{font-size:15px;font-weight:600;color:#1B3A4B;margin:0 0 10px 12px;padding-bottom:8px;position:relative}
+.mxh::after{content:"";position:absolute;left:0;bottom:0;width:24px;height:2px;background:#7EA257}
+.mxi{display:block;padding:9px 12px;border-radius:4px 12px 4px 12px;text-decoration:none;transition:background .08s}
+.mxi b{display:block;font-size:16px;font-weight:500;color:#1B3A4B;line-height:22px}
+.mxi i{display:block;font-style:normal;font-size:14px;color:#566B76;line-height:20px;margin-top:1px;font-weight:500}
+.mxi:hover{background:#EAF0EC;transition:background .22s}.mxi:hover b{color:#356A89}
+.mxad{display:block;font-size:14px;line-height:22px;color:#566B76;padding:9px 12px}
+.mxf{display:flex;flex-direction:column;gap:10px;text-decoration:none}
+.mxfi{display:block;border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:#EAF0EC}
+.mxfi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}.mxf:hover img{transform:scale(1.04)}
+.mxf i{font-style:normal;font-size:14px;font-weight:600;color:#566B76}
+.mxf b{font-size:18px;line-height:24px;font-weight:500;color:#1B3A4B;letter-spacing:-.02em}.mxf:hover b{color:#356A89}
+.mxb{display:flex;flex-direction:column;gap:10px}
+.mxbi{display:block;border-radius:18px;overflow:hidden;aspect-ratio:4/3}
+.mxbi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}.mxbi:hover img{transform:scale(1.04)}
+.mxbh{display:flex;align-items:center;gap:8px;font-size:18px;line-height:24px;font-weight:500;color:#1B3A4B;letter-spacing:-.02em;text-decoration:none}
+.mxbh .pil{flex:0 0 8px;color:#7EA257}.mxbh:hover{color:#356A89}
+.mxbl{display:flex;flex-wrap:wrap;gap:4px 14px}.mxbl a{font-size:14px;color:#566B76;font-weight:500;padding:2px 0;text-decoration:none}.mxbl a:hover{color:#356A89}
+.mxpg{display:grid;grid-template-columns:repeat(4,1fr);gap:20px 24px;align-content:start}
+.mxpp{display:flex;align-items:center;gap:14px;text-decoration:none;padding:6px;border-radius:4px 12px 4px 12px;transition:background .08s}
+.mxpp:hover{background:#EAF0EC;transition:background .22s}
+.mxpc{display:block;flex:none;width:52px;height:52px;border-radius:50%;overflow:hidden;background:#EAF0EC}
+.mxpc img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block}
+.mxpt{display:flex;flex-direction:column;min-width:0}.mxpt b{font-size:15px;line-height:20px;color:#1B3A4B;font-weight:500}.mxpt i{font-style:normal;font-size:13px;line-height:18px;color:#566B76;font-weight:500}
+/* søk */
+.mxsf{display:flex;align-items:center;gap:14px;border:1px solid #C6D2D8;border-radius:8px;padding:0 18px;height:60px}
+.mxsf:focus-within{border-color:#356A89;box-shadow:0 0 0 3px #DCE7EE}
+.mxsf input{flex:1;border:0;outline:0;font:inherit;font-size:20px;font-weight:500;color:#231F20;background:none}
+.sok .wrap{display:flex;flex-direction:column;gap:28px;padding-top:32px;padding-bottom:40px}
+.mxkt{font-size:15px;font-weight:600;color:#1B3A4B;margin:0 0 12px}
+.mxch{display:flex;gap:10px;flex-wrap:wrap}
+.mxc{background:#EAF0EC;color:#1B3A4B;border-radius:4px 12px 4px 12px;padding:9px 16px;font-size:15px;text-decoration:none;transition:background .08s,color .08s}.mxc:hover{background:#1B3A4B;color:#fff;transition:background .22s,color .22s}
+.mxsi{display:grid;grid-template-columns:repeat(9,1fr);gap:18px 10px}
+.mxsk{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;text-decoration:none}
+.mxsk .mxpc{width:64px;height:64px}.mxsk b{font-size:13px;line-height:17px;color:#1B3A4B;font-weight:500}
+.mxsk:hover .mxpc{box-shadow:0 0 0 3px #fff,0 0 0 5px #7EA257}
+@media(max-width:1100px){.mxg{gap:24px}.ni>a{padding:0 9px}.ni>a::after{left:9px;right:9px}}
+@media(max-width:900px){.mxsi{grid-template-columns:repeat(4,1fr)}}
+.mxl .xl-lenke{display:inline-flex;gap:8px;align-items:center;font-weight:600;font-size:15px;color:#356A89;text-decoration:none;padding:4px 0;background:linear-gradient(#7EA257,#7EA257) left bottom/100% 2px no-repeat;border:0}
+.mxl .xl-lenke .pil{width:8px;height:8px;border-right:2px solid currentColor;border-top:2px solid currentColor;transform:rotate(45deg);transition:transform .25s;display:inline-block;background:none}
+.mxl .xl-lenke:hover .pil{transform:translateX(4px) rotate(45deg)}
+
+/* ===== V2 (kun forside, til gjennomsyn) ===== */
+body,.hdr,input,button{font-family:Inter,system-ui,sans-serif}
+h1,h2,h3,h4{letter-spacing:-0.035em}
+.kn{display:inline-flex;gap:10px;align-items:center;font:600 16px Inter,sans-serif;padding:14px 22px;border-radius:4px 12px 4px 12px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .2s,border-color .2s,color .2s}
+.kn.g{background:#547B35;color:#fff}.kn.g:hover{background:#628C3F}
+.kn.g::after{content:"";width:9px;height:9px;border-radius:50%;background:currentColor;transition:transform .3s}.kn.g:hover::after{transform:translate(3px,-5px) scale(1.5)}
+.kn.o{background:#F8FAFB;border-color:#D5DFE5;color:#231F20}.kn.o:hover{border-color:#356A89;color:#356A89}
+.kn.l{background:transparent;border-color:#4D6C7D;color:#fff}.kn.l:hover{border-color:#fff}
+/* tertiær: tekstlenke med grønn strek, ingen fyll ved hover */
+.xl-lenke,.kn.t{display:inline-flex;gap:8px;align-items:center;font-weight:600;font-size:16px;color:#356A89;text-decoration:none;padding:6px 2px;border-radius:0;border:0;background:linear-gradient(#7EA257,#7EA257) left bottom/100% 2px no-repeat}
+.xl-lenke .pil,.kn.t .pil{margin-left:2px;transition:transform .25s}
+.xl-lenke:hover .pil,.kn.t:hover .pil{transform:translateX(4px) rotate(45deg)}
+.xl-lenke.lys{color:#fff;background-image:linear-gradient(#9CC06F,#9CC06F)}
+/* hero */
+.hero{background:#1B3A4B;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:28px;background:#F3F6F5;border-radius:28px 28px 0 0}
+.hero h1{font-size:68px!important;line-height:68px!important;font-weight:500!important;letter-spacing:-0.04em!important}
+.hero h1 em{font-style:normal;color:#9CC06F}
+.hph{position:relative;margin:0 36px 36px 0}.hph::before{content:"";position:absolute;left:36px;top:36px;right:-36px;bottom:-36px;background:#356A89;border-radius:18px}
+.hph img{position:relative;display:block;width:100%;height:480px;object-fit:cover;border-radius:18px}
+.hpill{position:absolute;left:-24px;bottom:28px;background:#fff;color:#231F20;border-radius:12px;padding:14px 18px;box-shadow:0 12px 30px rgba(0,0,0,.22);display:flex;gap:12px;align-items:center;font-size:14px;line-height:18px}.hpill b{display:block;font-size:16px;letter-spacing:-.02em;font-weight:600}.hpill i{width:12px;height:12px;border-radius:50%;background:#7EA257}
+/* inngangskort */
+.ing{clip-path:none;border-radius:4px 20px 4px 20px;position:relative;overflow:hidden}
+.ing .ix{position:absolute;right:-70px;bottom:-100px;width:250px;height:250px;pointer-events:none}
+.ing .ix line{stroke:#DCE7E0;transition:stroke .3s}.ing:hover .ix line{stroke:#294F67}
+.ing h3,.ing .lesl,.ing .io{position:relative}
+/* sitat */
+.qs{background:#F3F6F5}
+.qk{background:#fff;border-radius:4px 20px 4px 20px;border-left:6px solid #7EA257;box-shadow:0 8px 30px rgba(27,58,75,.08);padding:36px 36px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;position:relative;overflow:hidden}
+.qk .ix{position:absolute;right:-60px;top:-80px;width:240px;height:240px}.qk .ix line{stroke:#EAF0EC}
+.avw{position:relative;width:96px;height:96px;flex:none}.avw::before{content:"";position:absolute;left:9px;top:9px;width:88px;height:88px;border-radius:50%;background:#DCE7E0}
+.av{position:relative;width:88px;height:88px;border-radius:50%;background:#EAF0EC;color:#356A89;display:grid;place-items:center;font:600 28px Inter,sans-serif}
+.av::after{content:"";position:absolute;right:0;top:0;width:16px;height:16px;border-radius:50%;background:#7EA257;border:3px solid #fff}
+.qk p.l{position:relative;font-size:22px;line-height:32px;letter-spacing:-.025em;font-weight:500}.qk .n{margin-top:16px;font-weight:600;font-size:16px}.qk .r{color:#566B76;font-size:14px;line-height:20px}
+/* bilder */
+.cs .snitt img,.snitt img{clip-path:none;border-radius:18px}
+.cs .dot{display:none}
+/* fagekspertkort */
+.ex{border-radius:4px 20px 4px 20px;overflow:hidden}
+.ex .pi,.ex .ph{clip-path:none}
+/* bento */
+.bt{clip-path:none;border-radius:16px}
+.b-stor{border-radius:4px 20px 4px 20px}
+.lg2{clip-path:none;border-radius:12px}
+/* slik jobber vi: uten tall */
+.nn{display:none}
+.track{height:0;background:none;border-top:3px dotted #9CC06F;top:27px}
+.nodeb{width:22px;height:22px;margin:16px 0 0 17px;border:3px solid #1B3A4B;background:#fff}
+.st.on .nodeb{background:#7EA257;border-color:#7EA257}
+.rpanel>div{border-radius:4px 20px 4px 20px}
+.kn:focus-visible{outline:3px solid #294F67;outline-offset:3px}
+.dyp .kn:focus-visible{outline-color:#9CC06F}
+.av img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
+
+/* hero tilpasser seg skjermen: fyller visningsvinduet under menyen */
+.hero{min-height:calc(100vh - 81px);min-height:calc(100svh - 81px);display:flex;align-items:center}
+.hero .hgrid{position:relative;z-index:1;width:100%;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,72px);align-items:center;padding-top:clamp(24px,5vh,72px);padding-bottom:clamp(48px,9vh,112px)}
+.hero h1{font-size:clamp(36px,min(5.2vw,9vh),72px)!important;line-height:1!important}
+.hlead{margin-top:clamp(14px,2.5vh,24px);font-size:clamp(16px,min(1.5vw,2.8vh),20px);line-height:1.55;color:#C5D2D8;max-width:28em}
+.hbtn{margin-top:clamp(20px,4vh,36px);display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+.hph img{height:clamp(240px,56vh,520px)}
+@media (max-width:860px){.hero{min-height:0;display:block}.hero .hgrid{grid-template-columns:1fr;padding-top:40px;padding-bottom:72px}.hph{margin-right:24px;margin-bottom:24px}.hph::before{left:24px;top:24px;right:-24px;bottom:-24px}.hph img{height:clamp(220px,50vw,360px)}.hpill{left:-8px}}
+/* kundelogoer: 2 rader a 6, i farger, i ro */
+.lgrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;padding-bottom:40px}
+.lc{height:104px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:18px 22px}
+.lc img{max-width:100%;max-height:52px;width:auto;height:auto;object-fit:contain}
+@media (max-width:900px){.lgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:520px){.lgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* hover: forlatt kort slipper raskt, nytt kort tones inn, så to kort ikke tones om hverandre samtidig */
+.ing,.ing *,.ing .ix line,.bt,.bt *{transition-duration:.08s!important}
+.ing:hover,.ing:hover *,.ing:hover .ix line,.bt:hover,.bt:hover *{transition-duration:.25s!important}
+/* Hva mangler: 2 x 2 */
+#mangler .g4{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+#mangler .ing{min-height:220px;padding:32px 36px 30px}
+#mangler .ing h3{font-size:32px;line-height:38px;padding-top:20px;max-width:16em}
+#mangler .ing .ix{width:300px;height:300px;right:-80px;bottom:-130px}
+@media (max-width:640px){#mangler .g4{grid-template-columns:1fr}}
+
+/* sitat-karusell: én boks, myk overgang */
+.qrot{display:block;padding:48px 56px 40px;max-width:1000px;margin:0 auto}
+.qslides{display:grid;position:relative}
+.qslide{grid-area:1/1;display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .8s ease,transform .8s ease,visibility 0s linear .8s}
+.qslide.on{opacity:1;visibility:visible;transform:none;transition:opacity .8s ease,transform .8s ease,visibility 0s}
+.qrot .avw{width:132px;height:132px}.qrot .avw::before{left:12px;top:12px;width:120px;height:120px}.qrot .av{width:120px;height:120px;font-size:36px}
+.qrot .qslide p.l{font-size:28px;line-height:39px}.qrot .qslide .n{font-size:17px}.qrot .qslide .r{font-size:15px}
+.qdots{position:relative;display:flex;gap:10px;margin-top:28px;padding-left:168px}
+.qd{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:#C6D2D8;cursor:pointer;transition:background .3s,width .3s}
+.qd.on{background:#7EA257;width:28px;border-radius:6px}
+.qd:focus-visible{outline:3px solid #294F67;outline-offset:3px}
+@media (max-width:760px){.qrot{padding:32px 24px}.qslide{grid-template-columns:1fr;gap:20px}.qrot .qslide p.l{font-size:22px;line-height:32px}.qdots{padding-left:0}}
+@media (prefers-reduced-motion:reduce){.qslide,.qslide.on{transition:none;transform:none}}
+/* Hva mangler: samme to farger som før, bare byttet om (mørk blå i ro, lys grønn ved hover) */
+#mangler .ing{background:#1B3A4B;color:#fff}
+#mangler .ing:hover{background:#EAF0EC;color:#231F20}
+#mangler .ing h3,#mangler .ing .io{color:#fff}
+#mangler .ing .lesl{color:#fff}
+#mangler .ing .lesl .pil{border-color:#fff}
+#mangler .ing:hover h3{color:#231F20}
+#mangler .ing:hover .io{color:#566B76}
+#mangler .ing:hover .lesl{color:#356A89}
+#mangler .ing:hover .lesl .pil{border-color:#356A89}
+#mangler .ing .ix line{stroke:#294F67}
+#mangler .ing:hover .ix line{stroke:#DCE7E0}
+/* sitatboksen like bred som kortene over */
+.qrot{max-width:none}
+
+/* sitat: uten sekundærsirkel, blå kant */
+.qk{border-left-color:#356A89}
+.avw::before,.qrot .avw::before{display:none}
+.qrot .avw{width:120px;height:120px}
+.qdots{padding-left:156px}
+.qd.on{background:#356A89}
+.av::after{background:#356A89}
+/* hero-knapp: samme lysegrønne som «vinne» */
+
+/* sitat: mørk blå som i toppen og kortene over */
+.qk{border-left-color:#1B3A4B}
+.qd.on,.av::after{background:#1B3A4B}
+/* hero: mer luft over knappene, hvit tekst og prikk på knappen */
+.hbtn{margin-top:clamp(32px,6.5vh,56px)}
+
+/* sitat: tilbake til lys blå (#356A89) */
+.qk{border-left-color:#356A89}
+.qd.on,.av::after{background:#356A89}
+
+/* undertekster under overskrifter */
+[style*="font-size:21px"]{font-size:18px!important;line-height:28px!important}
+/* resultater */
+.rcg{gap:28px}
+.rc{position:relative;overflow:hidden;display:flex;flex-direction:column;background:#F3F6F5;border-radius:4px 20px 4px 20px;text-decoration:none;color:#231F20;transition:background .25s,color .25s}
+.rc .ix{position:absolute;right:-70px;bottom:-90px;width:230px;height:230px;pointer-events:none}.rc .ix line{stroke:#E4ECE8;transition:stroke .25s}
+.rci{height:230px;overflow:hidden}.rci img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.6,.2,1)}
+.rc:hover .rci img{transform:scale(1.05)}
+.rcb{position:relative;display:flex;flex-direction:column;flex:1;padding:26px 28px 28px}
+.rcl{font-size:14px;line-height:20px;font-weight:600;color:#566B76;transition:color .25s}
+.rct{margin-top:10px;font-size:42px;line-height:46px;letter-spacing:-.04em;font-weight:500;transition:color .25s}
+.rct small{font-size:18px;letter-spacing:-.01em;font-weight:500;margin-left:6px}
+.rcx{margin-top:12px;font-size:16px;line-height:24px;color:#3C4A52;flex:1;margin-bottom:20px;transition:color .25s}
+.rc .xl-lenke{align-self:flex-start;transition:color .25s}
+.rc:hover{background:#1B3A4B;color:#fff}.rc:hover .rcl,.rc:hover .rcx{color:#D3DCDF}.rc:hover .rct{color:#9CC06F}.rc:hover .xl-lenke{color:#fff}.rc:hover .xl-lenke .pil{border-color:#fff}.rc:hover .ix line{stroke:#294F67}
+.rc,.rc *,.rc .ix line{transition-duration:.08s!important}.rc:hover,.rc:hover *,.rc:hover .ix line{transition-duration:.25s!important}
+.rc:hover .rci img{transition-duration:.6s!important}
+/* fageksperter */
+.tgs{display:flex;gap:12px;align-items:center}
+.tgs .xl-lenke{margin-right:12px}
+.tgb{width:44px;height:44px;padding:0;border:1px solid #D5DFE5;background:#F8FAFB;border-radius:4px 12px 4px 12px;cursor:pointer;display:grid;place-items:center;transition:border-color .2s,opacity .2s}
+.tgb span{width:9px;height:9px;border-top:2px solid #356A89;border-right:2px solid #356A89;transform:rotate(45deg);margin-right:3px}
+.tgb[data-d="-1"] span{transform:rotate(-135deg);margin:0 0 0 3px}
+.tgb:hover:not(:disabled){border-color:#356A89}.tgb:disabled{opacity:.35;cursor:default}
+.tgb:focus-visible{outline:3px solid #294F67;outline-offset:3px}
+.fx{position:relative;overflow:hidden;flex:0 0 320px;scroll-snap-align:start;display:flex;flex-direction:column;background:#fff;border-radius:4px 20px 4px 20px;text-decoration:none;color:#231F20;transition:background .25s,color .25s}
+.fx .ix{position:absolute;right:-70px;bottom:-90px;width:230px;height:230px;pointer-events:none}.fx .ix line{stroke:#F0F4F2;transition:stroke .25s}
+.fxp{position:relative;aspect-ratio:4/4.2;background:#EAF0EC;overflow:hidden}
+.fxp img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.6,.2,1)}
+.fx:hover .fxp img{transform:scale(1.05)}
+.fxph{display:grid;place-items:center;height:100%;font-size:72px;font-weight:600;color:#6B818C}
+.fxa{position:absolute;right:14px;bottom:14px;width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 4px 14px rgba(27,58,75,.18);transition:background .25s}
+.fxa::after{content:"";width:8px;height:8px;border-top:2px solid #356A89;border-right:2px solid #356A89;transform:rotate(45deg);margin-right:3px;transition:border-color .25s}
+.fxt{position:relative;padding:22px 24px 26px;display:flex;flex-direction:column;flex:1;text-align:left}
+.fx h3{font-size:22px;line-height:28px;font-weight:500;white-space:normal;color:inherit}
+.fx .r{font-size:15px;line-height:20px;color:#356A89;font-weight:600;margin-top:4px;min-height:0}
+.fx .t{margin-top:10px;font-size:15px;line-height:23px;color:#566B76;min-height:69px;-webkit-line-clamp:3}
+.fxcs{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap}
+.fxch{font-size:13px;line-height:18px;font-weight:600;padding:3px 10px;border-radius:4px 10px 4px 10px;background:#EAF0EC;color:#356A89;transition:background .25s,color .25s}
+.fx:hover{background:#1B3A4B;color:#fff}.fx:hover .r{color:#9CC06F}.fx:hover .t{color:#D3DCDF}.fx:hover .fxch{background:#294F67;color:#fff}.fx:hover .ix line{stroke:#294F67}.fx:hover .fxa{background:#9CC06F}.fx:hover .fxa::after{border-color:#1B3A4B}
+.fx,.fx *,.fx .ix line{transition-duration:.08s!important}.fx:hover,.fx:hover *,.fx:hover .ix line{transition-duration:.25s!important}
+.fx:hover .fxp img{transition-duration:.6s!important}
+@media (max-width:900px){.rcg{grid-template-columns:1fr}.fx{flex-basis:280px}}
+
+/* slik jobber vi: trapp */
+.trp{position:relative;overflow:hidden;margin-top:40px;background:#1B3A4B;color:#fff;border-radius:4px 20px 4px 20px;padding:40px 48px 44px}
+.trp .ix{position:absolute;right:-90px;top:-120px;width:420px;height:420px;pointer-events:none}.trp .ix line{stroke:#244A5E}
+.trs{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:56px}
+.trn{position:relative;border-top:3px dashed #9CC06F;padding:30px 32px 0 28px}
+.trn.t0{margin-top:176px}.trn.t1{margin-top:88px}.trn.t2{margin-top:0}
+.trn::before{content:"";position:absolute;left:-9px;top:-10px;width:16px;height:16px;border-radius:50%;background:#1B3A4B;border:3px solid #fff}
+.trn.t0::before{background:#9CC06F;border-color:#9CC06F;width:20px;height:20px;left:-10px;top:-12px}
+.trn.t1::after,.trn.t2::after{content:"";position:absolute;left:0;top:0;height:88px;border-left:3px dashed #9CC06F}
+.trn h3{font-size:24px;line-height:30px;font-weight:500;max-width:11em}
+.trn .tx{margin-top:12px;font-size:16px;line-height:25px;color:#D3DCDF}
+.trn .tf{margin-top:16px;font-size:15px;line-height:23px;color:#fff}.trn .tf b{display:block;font-size:13px;line-height:18px;color:#9CC06F;font-weight:600;margin-bottom:2px}
+.tlab{position:absolute;font-weight:600;font-size:16px;color:#fff}
+.tl1{left:48px;top:152px;color:#9CC06F}.tl2{right:48px;top:40px}
+.trq{margin-top:36px;font-size:26px;line-height:36px;font-weight:500;letter-spacing:-.03em}
+@media (max-width:900px){.trs{grid-template-columns:1fr;margin-top:24px;gap:0}.trn,.trn.t0,.trn.t1,.trn.t2{margin-top:28px;padding-left:0}.trn::after{display:none!important}.trn::before{left:0}.tlab{display:none}.trp{padding:32px 24px}}
+/* kunnskapssenter */
+.kbg{margin-top:40px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:110px;gap:20px}
+.kb{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;color:#231F20;background:#fff;border-radius:4px 20px 4px 20px;padding:26px;transition:background .25s,color .25s}
+.kb h3{position:relative;font-size:22px;line-height:28px;font-weight:500;margin-top:8px}
+.kb .bk{position:relative;font-size:14px;line-height:20px;font-weight:600;color:#566B76}
+.kb .lesl{position:relative}.kb:hover .lesl .pil{transform:translateX(8px) rotate(45deg)}
+.kb .ix{position:absolute;right:-70px;bottom:-90px;width:260px;height:260px;pointer-events:none}.kb .ix line{stroke:#294F67}
+.kbi{display:block;width:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.6,.2,1)}
+.kb:hover .kbi{transform:scale(1.05)}
+.k-stor{grid-column:1/3;grid-row:1/5;background:#1B3A4B;color:#fff;padding:0}
+.k-stor .kbi{height:56%;flex:none}.k-stor .kbp{position:relative;display:flex;flex-direction:column;justify-content:space-between;flex:1;padding:28px 32px}
+.k-stor h3{font-size:32px;line-height:38px;max-width:15em}.k-stor .bk{color:#D3DCDF}.k-stor .lesl{color:#fff}.k-stor .lesl .pil{border-color:#fff}
+.k-stor:hover{background:#294F67}
+.k-art{grid-column:3;grid-row:1/5}
+.k-fag{grid-column:4;grid-row:1/5}.k-bla{background:#356A89;color:#fff}.k-bla .bk{color:#DCE7EC}.k-bla .lesl{color:#fff}.k-bla .lesl .pil{border-color:#fff}.k-bla .ix line{stroke:#4A83A3}.k-bla:hover{background:#2C5A75}
+.k-nyh{grid-column:4;grid-row:3/5;background:#EAF0EC;justify-content:flex-start;gap:0}.k-nyh .ix line{stroke:#DCE7E0}
+.k-nyh input{position:relative;margin-top:16px;height:44px;border:1px solid #D5DFE5;border-radius:4px 12px 4px 12px;background:#fff;padding:0 14px;font:inherit;font-size:15px;min-width:0}
+.k-nyh .kn{position:relative;margin-top:10px;justify-content:center;border:0}
+.k-split{grid-column:1/3;grid-row:5/7;flex-direction:row;padding:0;background:#fff}
+.k-split .kbi{width:42%;height:100%;flex:none}.k-split .kbp{position:relative;display:flex;flex-direction:column;justify-content:space-between;flex:1;padding:26px}
+.k-web{grid-column:3;grid-row:5/8}.k-case{grid-column:4;grid-row:5/8}
+.k-cta{grid-column:1/3;grid-row:7;background:#9CC06F;color:#1B3A4B;flex-direction:row;align-items:center;padding:0 32px}.k-cta .ix line{stroke:#AACB7F}
+.k-cta h3{margin:0;font-size:22px}.k-cta .lesl{color:#1B3A4B}.k-cta .lesl .pil{border-color:#1B3A4B}.k-cta:hover{background:#AACB7F}
+.k-foto{padding:0;background:#231F20;color:#fff}.k-foto .kbi{position:absolute;inset:0;height:100%}
+.k-foto .kbo{position:absolute;left:0;right:0;bottom:0;padding:70px 24px 24px;background:linear-gradient(to top,rgba(27,58,75,.95),rgba(27,58,75,0))}
+.k-foto .bk{color:#D3DCDF}.k-foto h3{color:#fff}
+.kb,.kb *{transition-duration:.08s!important}.kb:hover,.kb:hover *{transition-duration:.25s!important}.kb:hover .kbi{transition-duration:.6s!important}
+@media (max-width:900px){.kbg{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto}.kb{grid-column:auto!important;grid-row:auto!important;min-height:220px}.k-stor,.k-split{grid-column:1/3!important}.k-split{flex-direction:column}.k-split .kbi{width:100%;height:180px}.k-stor .kbi{height:260px}}
+@media (max-width:560px){.kbg{grid-template-columns:1fr}.k-stor,.k-split{grid-column:auto!important}}
+
+/* slik jobber vi: lik Backe-panelet */
+.trp2{position:relative;overflow:hidden;background:#1B3A4B;color:#fff;border-radius:4px 24px 4px 24px;display:grid;grid-template-columns:.85fr 1.15fr;min-height:540px;box-shadow:0 20px 50px rgba(27,58,75,.18)}
+.trp2>.ix{position:absolute;left:-90px;bottom:-140px;width:380px;height:380px;pointer-events:none}.trp2>.ix line{stroke:#21465A}
+.trl{position:relative;padding:56px 24px 56px 64px;display:flex;flex-direction:column;justify-content:center}
+.tey{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:#D3DCDF}.tey i{width:9px;height:9px;border-radius:50%;background:#9CC06F}
+.trl h2{margin-top:28px;font-size:clamp(38px,4.2vw,58px);line-height:1;letter-spacing:-.045em;font-weight:500}.trl h2 em{font-style:normal;color:#9CC06F}
+.trl p{margin-top:22px;font-size:18px;line-height:28px;color:#C5D2D8}
+.trl .xl-lenke{margin-top:34px;align-self:flex-start;font-size:17px}
+.trr{position:relative;padding:48px 56px 28px 24px;display:flex;flex-direction:column;justify-content:space-between;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:56px 56px}
+.stw{position:relative;aspect-ratio:560/400;width:100%}
+.stsv{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.stl{position:absolute;display:block;max-width:24%}
+.stl b{display:block;font-size:clamp(14px,1.35vw,18px);line-height:1.25;font-weight:600;color:#fff}
+.stl i{display:block;margin-top:3px;font-style:normal;font-size:clamp(12px,1vw,14px);line-height:1.35;color:#B6C6CE}
+.stl.s0 b{color:#fff}.stl.s4{transform:translateX(-100%);text-align:right}
+.trb{align-self:flex-end;display:flex;align-items:center;gap:14px;border:1px solid #2E566A;background:#163244;border-radius:4px 12px 4px 12px;padding:12px 18px}
+.trb img{height:16px;display:block}.trb span{font-size:13px;font-weight:600;color:#D3DCDF;border-left:1px solid #2E566A;padding-left:14px}
+@media (max-width:900px){.trp2{grid-template-columns:1fr}.trl{padding:40px 28px 8px}.trr{padding:16px 20px 24px}.stl{max-width:30%}}
+.stl{max-width:21%}.stl.s4{max-width:none;white-space:nowrap}.stl.s0{max-width:30%}
+
+.trm{display:none;list-style:none;margin:18px 0 0;padding:0}
+.trm li{position:relative;padding:0 0 14px 22px;font-size:14px;line-height:20px;color:#B6C6CE}.trm li::before{content:"";position:absolute;left:0;top:6px;width:9px;height:9px;border-radius:50%;background:#9CC06F}.trm b{display:block;font-size:16px;color:#fff;font-weight:600}
+@media (max-width:700px){.stl{display:none}.trm{display:block}.stw{aspect-ratio:560/260}.trb{margin-top:8px}.trl h2{font-size:38px}}
+
+.stc{position:absolute;left:calc(270/560*100% - 70px);top:calc(40/400*100%);width:140px;background:#163244;border:1px solid #2E566A;border-radius:4px 12px 4px 12px;padding:12px 16px}
+.stc b{display:block;font-size:clamp(14px,1.3vw,17px);font-weight:600;color:#fff}.stc i{display:block;margin-top:2px;font-style:normal;font-size:clamp(12px,1vw,14px);color:#B6C6CE}
+@media (max-width:700px){.stc{display:none}}
+#samtale .wrap>div:first-child{max-width:420px!important}#samtale .wrap{flex-wrap:nowrap!important}@media (max-width:1100px){#samtale .wrap{flex-wrap:wrap!important}}
+
+/* Nyhetsbrev-modul */
+.nbm{background:#EAF0EC;padding:88px 0}
+.nbi{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.nbm{position:relative;overflow:hidden}.nbm .ix{position:absolute;left:-140px;bottom:-200px;width:460px;height:460px;pointer-events:none}.nbm .ix line{stroke:#DCE7E0}.nbl,.nbf{position:relative}
+.nbl h2{font-size:44px;line-height:48px;color:#1B3A4B;margin-top:18px;max-width:11em}
+.nbl p{margin-top:18px;font-size:19px;line-height:30px;color:#4A5F6A;max-width:26em}
+.nbf{background:#fff;border-radius:4px 20px 4px 20px;padding:36px;box-shadow:0 18px 40px -22px rgba(27,58,75,.28)}
+.nbf label{display:block;font-size:15px;font-weight:600;color:#1B3A4B;margin-bottom:10px}
+.nbr{display:flex;gap:12px}
+.nbr input{flex:1;min-width:0;height:52px;border:1px solid #C6D2D8;border-radius:8px;padding:0 16px;font:inherit;font-size:16px;color:#231F20;background:#fff}
+.nbr input:focus{outline:0;border-color:#356A89;box-shadow:0 0 0 3px #DCE7EE}
+.nbr .kn{height:52px;padding:0 22px}
+.nbo{display:flex;align-items:center;gap:14px;margin:24px 0 18px;color:#566B76;font-size:14px}.nbo::before,.nbo::after{content:"";flex:1;height:1px;background:#DDE5E8}
+.nbb{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.nbs{display:flex;align-items:center;justify-content:center;gap:10px;height:48px;background:#fff;border:1px solid #D5DFE5;border-radius:4px 12px 4px 12px;font:600 15px Inter,sans-serif;color:#231F20;cursor:pointer;transition:border-color .08s,background .08s}
+.nbs:hover{border-color:#356A89;background:#F3F6F5;transition:border-color .25s,background .25s}
+.nbs svg{flex:none;height:20px;width:auto}
+.nbp{margin-top:20px;font-size:13px;line-height:20px;color:#566B76}.nbp a{color:#356A89;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){.nbi{grid-template-columns:1fr;gap:32px}.nbl h2{font-size:34px;line-height:38px}.nbm{padding:56px 0}}
+@media(max-width:560px){.nbr{flex-direction:column}.nbr .kn{justify-content:center}.nbb{grid-template-columns:1fr}.nbf{padding:24px}}
+.nbl .tey{color:#4A5F6A}
+@media(max-width:560px){.nbr input{flex:none;width:100%}}
+/* nyhetsbrev: ingen hvit boks, feltene går i ett med bakgrunnen */
+.nbf{background:none;box-shadow:none;border-radius:0;padding:0}
+.nbr input{background:transparent;border:1px solid #1B3A4B;transition:background .2s}
+.nbr input::placeholder{color:#566B76}
+.nbr input:focus{background:#fff;border-color:#356A89}
+.nbs{background:transparent;border:1px solid #1B3A4B}
+.nbs:hover{background:#fff;border-color:#356A89}
+.nbo{color:#4A5F6A}.nbo::before,.nbo::after{background:#1B3A4B;opacity:.35}
+.nbi{position:static;overflow:visible}
+.nbm .ix{left:-120px;bottom:-230px;top:auto;width:560px;height:560px}
+/* nyhetsbrev: tettere skjema */
+.nbi{grid-template-columns:1fr 440px;gap:72px}
+.nbf label{font-size:14px;margin-bottom:8px}
+.nbr{gap:10px}.nbr input{height:46px;font-size:15px}.nbr .kn{height:46px;padding:0 18px;font-size:15px}
+.nbo{margin:18px 0 14px;font-size:13px}
+.nbb{gap:10px}.nbs{height:42px;font-size:14px}.nbs svg{height:17px}
+.nbp{margin-top:14px;font-size:12px;line-height:18px}
+@media(max-width:900px){.nbi{grid-template-columns:1fr;gap:32px}}
+
+/* ===== Fagekspertene og Fagekspert i forsidens format ===== */
+.hero.kort{min-height:0;display:block}
+.hero.kort .kw{position:relative;z-index:1;padding-top:72px;padding-bottom:96px}
+.hero.kort h1{font-size:68px!important;line-height:68px!important}
+.hero.kort .hx{position:absolute;right:-110px;top:-150px;width:620px;height:620px;pointer-events:none}.hero.kort .hx line{stroke:#244A5E}
+.hero.kort .hl{margin-top:20px;font-size:20px;line-height:31px;color:#C5D2D8;max-width:30em}
+.fgr{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px}
+.fgr .fx{flex:none;width:auto}
+.fpl{display:flex;gap:10px;flex-wrap:wrap}
+.fpl .pill{font:600 15px Inter,sans-serif;padding:10px 18px;border:1px solid #D5DFE5;background:#fff;color:#231F20;border-radius:4px 12px 4px 12px;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.fpl .pill:hover{border-color:#356A89;color:#356A89}
+.fpl .pill.on{background:#1B3A4B;border-color:#1B3A4B;color:#fff}
+.fpl .pill:focus-visible{outline:3px solid #294F67;outline-offset:2px}
+.fgr .fx.gjem{display:none}
+/* fagekspert */
+.crb{font-size:15px;line-height:20px;color:#C5D2D8;margin-bottom:28px}.crb a{color:#C5D2D8;text-decoration:none;border-bottom:1px solid #4D6C7D}.crb a:hover{color:#fff}
+.pg2{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,72px);align-items:center}
+.pg2 .rl{font-size:17px;line-height:24px;font-weight:600;color:#9CC06F}
+.pg2 h1{margin-top:8px}
+.pg2 .vl{margin-top:20px;font-size:20px;line-height:31px;color:#C5D2D8;max-width:26em}
+.pg2 .cs{margin-top:26px;display:flex;gap:8px;flex-wrap:wrap}.pg2 .cs span{font-size:14px;line-height:20px;font-weight:600;padding:4px 12px;border-radius:4px 10px 4px 10px;background:#244A5E;color:#fff}
+.pg2 .bt2{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+.pg2 .pf{position:relative;max-width:420px;justify-self:end;width:100%}
+.pg2 .pf img{display:block;width:100%;aspect-ratio:4/4.6;object-fit:cover;object-position:50% 12%;border-radius:18px}
+.pg2 .pf .dt{position:absolute;right:-8px;top:-8px;width:22px;height:22px;border-radius:50%;background:#7EA257;border:4px solid #1B3A4B}
+.fk{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(32px,5vw,72px);align-items:start}
+.fk h2{font-size:36px;line-height:42px;font-weight:500}
+.fk p{margin-top:18px;font-size:18px;line-height:29px;color:#33383B;max-width:36em}
+.fkc{position:relative;overflow:hidden;background:#EAF0EC;border-radius:4px 20px 4px 20px;padding:32px}
+.fkc .ix{position:absolute;right:-70px;bottom:-90px;width:230px;height:230px;pointer-events:none}.fkc .ix line{stroke:#DCE7E0}
+.fkc>*{position:relative}
+.fkc h3{font-size:24px;line-height:30px;font-weight:500}
+.fkc .kn{margin-top:22px}
+.fkc .fl2{margin-top:18px;display:grid;gap:10px}.fkc .fl2 a{display:inline-flex;gap:10px;align-items:center;font-weight:600;color:#356A89;text-decoration:none;width:fit-content}.fkc .fl2 a:hover{text-decoration:underline}
+.hj3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
+.hj3 .ing{min-height:210px}
+@media (max-width:1000px){.fgr{grid-template-columns:repeat(2,1fr)}.pg2,.fk,.hj3{grid-template-columns:1fr}.pg2 .pf{justify-self:start;max-width:320px}.hero.kort h1{font-size:44px!important;line-height:46px!important}}
+@media (max-width:560px){.fgr{grid-template-columns:1fr}}
+.lm{margin-top:28px}.lm summary{list-style:none;cursor:pointer;display:inline-flex}.lm summary::-webkit-details-marker{display:none}
+.lm .m2{display:none}.lm[open] .m1{display:none}.lm[open] .m2{display:inline}
+.lmb{margin-top:8px;animation:lmin .35s ease both}.lmb h3{margin-top:40px;font-size:24px;line-height:30px;font-weight:500}
+@keyframes lmin{from{opacity:0}to{opacity:1}}@media (prefers-reduced-motion:reduce){.lmb{animation:none}}
+
+</style></head><body>
+<div style="width:100%;background:#fff;position:relative">
+<header class="hdr"><input type="checkbox" id="sk" class="skx" aria-hidden="true">
+<div class="wrap" style="display:flex;align-items:center;justify-content:space-between;height:80px;gap:24px">
+<a href="index.html" aria-label="Excellerate, til forsiden"><img src="img/logo-xl.png" alt="Excellerate" style="height:22px;display:block"></a>
+<nav class="hnav" aria-label="Hovedmeny"><div class="ni"><a href="#">Tjenester</a><div class="mega"><div class="wrap"><div class="mxg" style="grid-template-columns:280px 1fr 280px"><div class="mxl"><svg aria-hidden="true" class="mxx" viewBox="0 0 700 700"><line x1="80" y1="80" x2="620" y2="620" stroke="#DCE7E0" stroke-width="120"/><line x1="620" y1="80" x2="80" y2="620" stroke="#DCE7E0" stroke-width="120"/></svg><h3>Tjenester</h3><p>Fire områder som henger sammen. Velg der dere trenger mest.</p><a class="xl-lenke" href="#">Se alle tjenester<span class="pil"></span></a></div><div class="mxs"><div class="mxp"><p class="mxh">Salgsutvikling</p><a class="mxi" href="#"><b>Rådgivende verdisalg</b><i>Selg på verdi, ikke pris</i></a><a class="mxi" href="#"><b>Kunstig intelligens i salg</b><i>Mer tid til kundesamtaler</i></a><a class="mxi" href="#"><b>Salgsledelse</b><i>Ledere som løfter teamet</i></a><a class="mxi" href="#"><b>Kundeinnsikt</b><i>Fakta før møtet</i></a></div><div class="mxp"><p class="mxh">Lederutvikling</p><a class="mxi" href="#"><b>Strategi til handling</b><i>Fra plan til daglig praksis</i></a><a class="mxi" href="#"><b>Coaching</b><i>Én til én med en fagekspert</i></a><a class="mxi" href="#"><b>Organisasjonsutvikling</b><i>Struktur som bærer strategien</i></a></div><div class="mxp"><p class="mxh">Kulturutvikling</p><a class="mxi" href="#"><b>Prestasjonskultur</b><i>Vaner som gir resultater</i></a><a class="mxi" href="#"><b>Kommersiell kultur</b><i>Hele huset tenker kunde</i></a></div><div class="mxp"><p class="mxh">KI, adopsjon og sikkerhet</p><a class="mxi" href="#"><b>AI Act og compliance</b><i>Klar for regelverket</i></a><a class="mxi" href="#"><b>KI i hverdagen</b><i>Fra pilot til bruk</i></a><a class="mxi" href="#"><b>Informasjonssikkerhet</b><i>Trygg bruk av data</i></a></div></div><a class="mxf" href="#"><span class="mxfi"><img src="img/case-thon.jpg" alt=""></span><i>Referanse</i><b>Thon Hotels: et kommersielt kulturløft</b></a></div></div></div></div><div class="ni"><a href="#">Bransjer</a><div class="mega"><div class="wrap"><div class="mxg" style="grid-template-columns:280px repeat(4,1fr)"><div class="mxl"><svg aria-hidden="true" class="mxx" viewBox="0 0 700 700"><line x1="80" y1="80" x2="620" y2="620" stroke="#DCE7E0" stroke-width="120"/><line x1="620" y1="80" x2="80" y2="620" stroke="#DCE7E0" stroke-width="120"/></svg><h3>Bransjer</h3><p>Fire vertikaler med egne landingssider. KI-tilbudet gjelder alle fire.</p><a class="xl-lenke" href="#">Se alle bransjer<span class="pil"></span></a></div><div class="mxb"><a class="mxbi" href="#"><img src="img/salg.jpg" alt=""></a><a class="mxbh" href="#">Handel og forhandlernett<span class="pil"></span></a><div class="mxbl"><a href="#">Retail og faghandel</a><a href="#">Bil</a></div></div><div class="mxb"><a class="mxbi" href="#"><img src="img/kunnskap-artikler.jpg" alt=""></a><a class="mxbh" href="#">Bank, forsikring og eiendomsmegling<span class="pil"></span></a><div class="mxbl"><a href="#">Sparebank</a><a href="#">Forsikring</a><a href="#">Megling</a></div></div><div class="mxb"><a class="mxbi" href="#"><img src="img/kunnskap-guide.jpg" alt=""></a><a class="mxbh" href="#">Bygg og eiendom<span class="pil"></span></a><div class="mxbl"><a href="#">Entreprenør og anlegg</a><a href="#">Tekniske fag</a><a href="#">Utleie og drift</a></div></div><div class="mxb"><a class="mxbi" href="#"><img src="img/kunnskap-webinar.jpg" alt=""></a><a class="mxbh" href="#">IT og teknologi<span class="pil"></span></a><div class="mxbl"><a href="#">Programvare</a><a href="#">Konsulent</a><a href="#">Drift</a></div></div></div></div></div></div><div class="ni"><a href="fagekspertene.html">Fageksperter</a><div class="mega"><div class="wrap"><div class="mxg" style="grid-template-columns:280px 1fr"><div class="mxl"><svg aria-hidden="true" class="mxx" viewBox="0 0 700 700"><line x1="80" y1="80" x2="620" y2="620" stroke="#DCE7E0" stroke-width="120"/><line x1="620" y1="80" x2="80" y2="620" stroke="#DCE7E0" stroke-width="120"/></svg><h3>Fagekspertene</h3><p>Ett team med erfaring fra salg, ledelse og kultur.</p><a class="xl-lenke" href="fagekspertene.html">Se alle fagekspertene<span class="pil"></span></a></div><div class="mxpg"><a class="mxpp" href="Fagekspert.dc.html"><span class="mxpc"><img src="img/portrett-per-kjetil.jpg" alt=""></span><span class="mxpt"><b>Per Kjetil Parr</b><i>Administrerende direktør</i></span></a><a class="mxpp" href="Fagekspert.dc.html"><span class="mxpc"><img src="img/portrett-tom.jpg" alt=""></span><span class="mxpt"><b>Tom Hope</b><i>Kommersiell leder</i></span></a><a class="mxpp" href="Fagekspert.dc.html"><span class="mxpc"><img src="img/portrett-leif.jpg" alt=""></span><span class="mxpt"><b>Leif Ottesen</b><i>Partner og hovedspesialist</i></span></a><a class="mxpp" href="Fagekspert.dc.html"><span class="mxpc"><img src="img/portrett-carl.jpg" alt=""></span><span class="mxpt"><b>Carl Haakon Klafstad</b><i>Partner</i></span></a><a class="mxpp" href="Fagekspert.dc.html"><span class="mxpc"><img src="img/portrett-erik.jpg" alt=""></span><span class="mxpt"><b>Erik Simensen</b><i>Fagekspert</i></span></a><a class="mxpp" href="Fagekspert.dc.html"><span class="mxpc"><img src="img/portrett-neda.jpg" alt=""></span><span class="mxpt"><b>Neda Maria Kaizumi</b><i>Fagekspert</i></span></a><a class="mxpp" href="Fagekspert.dc.html"><span class="mxpc"><img src="img/portrett-petter.jpg" alt=""></span><span class="mxpt"><b>Petter Kleppe</b><i>Fagekspert</i></span></a><a class="mxpp" href="Fagekspert.dc.html"><span class="mxpc"><img src="img/portrett-arvid.jpg" alt=""></span><span class="mxpt"><b>Arvid Madland Lyngnes</b><i>Fagekspert</i></span></a><a class="mxpp" href="Fagekspert.dc.html"><span class="mxpc"><img src="img/portrett-atle.jpg" alt=""></span><span class="mxpt"><b>Atle Olsen</b><i>Fagekspert</i></span></a><a class="mxpp" href="Fagekspert.dc.html"><span class="mxpc"><img src="img/portrett-janick.jpg" alt=""></span><span class="mxpt"><b>Janick Løwe</b><i>Fagekspert</i></span></a><a class="mxpp" href="Fagekspert.dc.html"><span class="mxpc"><img src="img/portrett-bard.jpg" alt=""></span><span class="mxpt"><b>Bård Fossli Jensen</b><i>Fagekspert</i></span></a><a class="mxpp" href="Fagekspert.dc.html"><span class="mxpc"><img src="img/portrett-jorg.jpg" alt=""></span><span class="mxpt"><b>Jørg Lian</b><i>Fagekspert</i></span></a></div></div></div></div></div><div class="ni"><a href="#">Kunnskap</a><div class="mega"><div class="wrap"><div class="mxg" style="grid-template-columns:280px 1fr"><div class="mxl"><svg aria-hidden="true" class="mxx" viewBox="0 0 700 700"><line x1="80" y1="80" x2="620" y2="620" stroke="#DCE7E0" stroke-width="120"/><line x1="620" y1="80" x2="80" y2="620" stroke="#DCE7E0" stroke-width="120"/></svg><h3>Kunnskapssenter</h3><p>Artikler, guider og arrangementer fra fagekspertene.</p><a class="xl-lenke" href="#">Åpne kunnskapssenteret<span class="pil"></span></a></div><div class="mxs three"><div class="mxp"><p class="mxh">Les</p><a class="mxi" href="#"><b>Artikler</b><i>Korte tekster om salg og ledelse</i></a><a class="mxi" href="#"><b>Fagartikler</b><i>Dypere og mer faglig</i></a></div><div class="mxp"><p class="mxh">Lær</p><a class="mxi" href="#"><b>Guider</b><i>Steg for steg</i></a><a class="mxi" href="#"><b>Webinarer og arrangementer</b><i>Møt fagekspertene</i></a></div><div class="mxp"><p class="mxh">Hold deg oppdatert</p><a class="mxi" href="#"><b>Nyhetsbrev</b><i>Det nyeste fra oss</i></a><a class="mxi" href="#"><b>Siste fra fagekspertene</b></a></div></div></div></div></div></div><div class="ni"><a href="#">Referanser</a><div class="mega"><div class="wrap"><div class="mxg" style="grid-template-columns:280px repeat(3,1fr)"><div class="mxl"><svg aria-hidden="true" class="mxx" viewBox="0 0 700 700"><line x1="80" y1="80" x2="620" y2="620" stroke="#DCE7E0" stroke-width="120"/><line x1="620" y1="80" x2="80" y2="620" stroke="#DCE7E0" stroke-width="120"/></svg><h3>Referanser</h3><p>Resultater hos kunder, med tall vi kan stå inne for.</p><a class="xl-lenke" href="#">Alle referanser<span class="pil"></span></a></div><a class="mxf" href="#"><span class="mxfi"><img src="img/case-thon.jpg" alt=""></span><i>Referanse</i><b>Thon Hotels: et kommersielt kulturløft</b></a><a class="mxf" href="#"><span class="mxfi"><img src="img/case-boligpartner.jpg" alt=""></span><i>Referanse</i><b>BoligPartner: leder- og salgsutvikling</b></a><a class="mxf" href="#"><span class="mxfi"><img src="img/case-wikborg.jpg" alt=""></span><i>Referanse</i><b>Wikborg Rein: forenklet kompetanseutvikling</b></a></div></div></div></div><div class="ni"><a href="#">Om oss</a><div class="mega"><div class="wrap"><div class="mxg" style="grid-template-columns:280px 1fr 280px"><div class="mxl"><svg aria-hidden="true" class="mxx" viewBox="0 0 700 700"><line x1="80" y1="80" x2="620" y2="620" stroke="#DCE7E0" stroke-width="120"/><line x1="620" y1="80" x2="80" y2="620" stroke="#DCE7E0" stroke-width="120"/></svg><h3>Om oss</h3><p>Vi hjelper deg å finne, vinne og beholde de rette kundene.</p><a class="xl-lenke" href="#">Les mer om oss<span class="pil"></span></a></div><div class="mxs"><div class="mxp"><p class="mxh">Om Excellerate</p><a class="mxi" href="#"><b>Om oss</b></a><a class="mxi" href="#"><b>Vår historie – siden 1988</b></a><a class="mxi" href="#"><b>Verdier</b></a><a class="mxi" href="#"><b>Partnere</b></a></div><div class="mxp"><p class="mxh">Kontakt og karriere</p><a class="mxi" href="#"><b>Kontakt oss</b></a><a class="mxi" href="#"><b>Karriere</b></a></div></div><a class="mxf" href="#"><span class="mxfi"><img src="img/resepsjon.jpg" alt=""></span><i>Besøk oss</i><b>Stortorvet 7, Oslo</b></a></div></div></div></div></nav>
+<div style="display:flex;align-items:center;gap:20px">
+<button class="mbtn" id="mbtn" aria-expanded="false">Meny</button>
+<label for="sk" class="sbtn" aria-label="Søk"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" class="s1"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" class="s2"><path d="M5 5l14 14M19 5 5 19"/></svg></label>
+</div>
+</div>
+<div class="sok"><div class="wrap"><div class="mxsf"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#356A89" stroke-width="2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg><input id="sinp" type="search" placeholder="Søk i tjenester, caser og fagekspertene" aria-label="Søk"></div><div><p class="mxkt">Vanlige søk</p><div class="mxch"><a class="mxc" href="#">Når kundene bare snakker om pris</a><a class="mxc" href="#">Strategi til handling</a><a class="mxc" href="#">AI Act</a><a class="mxc" href="#">Rådgivende verdisalg</a></div></div><div><p class="mxkt">Fagekspertene</p><div class="mxsi"><a class="mxsk" href="Fagekspert.dc.html" data-n="per kjetil parr administrerende direktør"><span class="mxpc"><img src="img/portrett-per-kjetil.jpg" alt=""></span><b>Per Kjetil Parr</b></a><a class="mxsk" href="Fagekspert.dc.html" data-n="per christian svae teknologidirektør"><span class="mxpc"><img src="img/portrett-perchristian.jpg" alt=""></span><b>Per Christian Svae</b></a><a class="mxsk" href="Fagekspert.dc.html" data-n="anne katrine brånen senior prosjektplanlegger"><span class="mxpc"><img src="img/portrett-anne.jpg" alt=""></span><b>Anne Katrine Brånen</b></a><a class="mxsk" href="Fagekspert.dc.html" data-n="tom hope kommersiell leder"><span class="mxpc"><img src="img/portrett-tom.jpg" alt=""></span><b>Tom Hope</b></a><a class="mxsk" href="Fagekspert.dc.html" data-n="leif ottesen partner og hovedspesialist"><span class="mxpc"><img src="img/portrett-leif.jpg" alt=""></span><b>Leif Ottesen</b></a><a class="mxsk" href="Fagekspert.dc.html" data-n="carl haakon klafstad partner"><span class="mxpc"><img src="img/portrett-carl.jpg" alt=""></span><b>Carl Haakon Klafstad</b></a><a class="mxsk" href="Fagekspert.dc.html" data-n="erik simensen fagekspert"><span class="mxpc"><img src="img/portrett-erik.jpg" alt=""></span><b>Erik Simensen</b></a><a class="mxsk" href="Fagekspert.dc.html" data-n="neda maria kaizumi fagekspert"><span class="mxpc"><img src="img/portrett-neda.jpg" alt=""></span><b>Neda Maria Kaizumi</b></a><a class="mxsk" href="Fagekspert.dc.html" data-n="morten brandt fagekspert"><span class="mxpc"><img src="img/portrett-morten.jpg" alt=""></span><b>Morten Brandt</b></a><a class="mxsk" href="Fagekspert.dc.html" data-n="petter kleppe fagekspert"><span class="mxpc"><img src="img/portrett-petter.jpg" alt=""></span><b>Petter Kleppe</b></a><a class="mxsk" href="Fagekspert.dc.html" data-n="arvid madland lyngnes fagekspert"><span class="mxpc"><img src="img/portrett-arvid.jpg" alt=""></span><b>Arvid Madland Lyngnes</b></a><a class="mxsk" href="Fagekspert.dc.html" data-n="rita berg hansen fagekspert"><span class="mxpc"><img src="img/portrett-rita.jpg" alt=""></span><b>Rita Berg Hansen</b></a><a class="mxsk" href="Fagekspert.dc.html" data-n="atle olsen fagekspert"><span class="mxpc"><img src="img/portrett-atle.jpg" alt=""></span><b>Atle Olsen</b></a><a class="mxsk" href="Fagekspert.dc.html" data-n="janick løwe fagekspert"><span class="mxpc"><img src="img/portrett-janick.jpg" alt=""></span><b>Janick Løwe</b></a><a class="mxsk" href="Fagekspert.dc.html" data-n="bård fossli jensen fagekspert"><span class="mxpc"><img src="img/portrett-bard.jpg" alt=""></span><b>Bård Fossli Jensen</b></a><a class="mxsk" href="Fagekspert.dc.html" data-n="paal berg fagekspert"><span class="mxpc"><img src="img/portrett-paal.jpg" alt=""></span><b>Paal Berg</b></a><a class="mxsk" href="Fagekspert.dc.html" data-n="jørg lian fagekspert"><span class="mxpc"><img src="img/portrett-jorg.jpg" alt=""></span><b>Jørg Lian</b></a></div></div></div></div>
+<div id="mpanel" style="display:none">
+<div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-top:32px;padding-bottom:40px">
+<div class="mc"><h4>Tjenester</h4><a href="#">Salgsutvikling</a><a href="#">Lederutvikling</a><a href="#">Kulturutvikling</a><a href="#">KI, adopsjon og sikkerhet</a></div>
+<div class="mc"><h4>Mer</h4><a href="#">Bransjer</a><a href="fagekspertene.html">Fagekspertene</a><a href="#">Kunnskap</a><a href="#">Referanser</a><a href="#">Om oss</a></div>
+</div>
+</div>
+</header>
+<section class="dyp hero kort" style="color:#fff"><div class="wrap kw"><svg aria-hidden="true" viewBox="0 0 700 700" class="hx"><line x1="80" y1="80" x2="620" y2="620" stroke-width="110"/><line x1="620" y1="80" x2="80" y2="620" stroke-width="110"/></svg><p class="crb"><a href="fagekspertene.html">Fagekspertene</a> / Morten Brandt</p><div class="pg2"><div><p class="rl">Fagekspert</p><h1>Morten Brandt</h1><p class="vl">Norges beste på salg?</p><div class="cs"><span>Salgsutvikling</span></div><div class="bt2"><a class="kn g" href="mailto:mb@excellerate.no">Send e-post</a><a class="kn l" href="tel:+4791550606">Ring 915 50 606</a></div></div><div class="pf"><img src="img/portrett-morten.jpg" alt="Morten Brandt"><span class="dt"></span></div></div></div></section><section class="sec" style="padding-top:72px;padding-bottom:72px"><div class="wrap fk"><div><h2>Om Morten</h2><p>Morten har i hele sitt yrkesliv vært motivator og kompetanseutvikler. Han har jobbet langsiktig med sine kunder over mange år, og han har fylt konsertsaler med sine inspirerende foredrag. Han holdt sitt første kurs for 40 år siden og beskrives som energisk og engasjert konsulent som elsker å få det beste ut av mennesker gjennom sine utviklingsprogram. Salg er på mange måter synonymt med Morten og han er flere ganger som fremhevet som Norges beste innen området. I sitt virke er han særlig opptatt av kultur og verdier i bedriften, og elsker å finne svarene på hva det er som motiverer og driver de ansatte. Han har jobbet for alle typer bedrifter i nesten alle næringer og vet hvilke grep som må gjennomføres på tvers av bedriften om målet er å selge mer, til flere. Om du ønsker å bli kjent med hemmeligheten bak salg er Morten konsulenten du burde snakke med. Oppdragene han liker best er konseptutvikling og når han får jobbe med selve kulturen i bedriften.</p><details class="lm"><summary class="kn o"><span class="m1">Les mer om Morten</span><span class="m2">Les mindre</span></summary><div class="lmb"><h3>Noen av Morten sine erfaringer</h3><p>For en stor aktør i dagligvarehandelen har Morten definert hvordan alle ansatte skal jobbe. I dette langsiktige arbeidet har han vært med fra å definere det grunnleggende konseptet til å drive opplæring i alle nye butikker; fra den første til de 349 neste. Dette har skapt en reell utfordrer i dagligvarehandelen og en av Norges mest kjente varemerker. Viktige stikkord er motivasjon, inspirasjon og forankring av arbeidskultur.</p><p>Flytoget troner ofte øverst på Norsk kundebarometer over de virksomhetene som forbrukere er mest tilfreds mest. Her har Morten utviklet konseptet som definerer hvordan ansatte skal ivareta kundene for å skape de beste opplevelsene fra før reisen starter til etter at den har sluttet. I konseptet er ingenting overlatt til tilfeldigheter og det er skapt en høy grad av profesjonalitet i hele organisasjonen.</p><p>En lang rekke oppdrag har handlet om hvordan fagtunge organisasjoner og tjenestetilbydere skal tilnærme seg salg og skape økt kundetilfredshet. En felles utfordring i slike miljøer er skepsis til salg fordi en ikke ønsker å gå på kompromiss med egen integritet. Her har Morten bidratt til varige holdningsendringer gjennom å få hele organisasjonen til å tenke kundeservice og salg ved å fokusere på mersalg, flersalg og teamsalg.</p></div></details></div><aside class="fkc"><svg aria-hidden="true" viewBox="0 0 700 700" class="ix"><line x1="80" y1="80" x2="620" y2="620" stroke-width="110"/><line x1="620" y1="80" x2="80" y2="620" stroke-width="110"/></svg><h3>Ta en samtale med Morten</h3><p style="margin-top:10px;font-size:16px;line-height:25px;color:#4A5F6A">Velg et tidspunkt som passer, så tar dere samtalen direkte.</p><a class="kn g" href="#samtale">Book et møte</a></aside></div></section><section class="sec" style="position:relative;overflow:hidden;background:#EAF0EC;padding-top:96px;padding-bottom:96px"><svg aria-hidden="true" viewBox="0 0 700 700" style="position:absolute;right:-120px;bottom:-200px;width:620px;height:620px;pointer-events:none"><line x1="80" y1="80" x2="620" y2="620" stroke="#DCE7E0" stroke-width="110"/><line x1="620" y1="80" x2="80" y2="620" stroke="#DCE7E0" stroke-width="110"/></svg><div class="wrap" style="position:relative"><span style="display:block;width:18px;height:18px;border-radius:50%;background:#7EA257;margin-bottom:32px"></span><p style="font-size:clamp(22px,2.6vw,32px);line-height:1.28;letter-spacing:-.03em;font-weight:500;color:#1B3A4B;max-width:30em">«Jeg er veldig opptatt av mennesker og vet hvordan bedre kommersielle resultater skapes. Mine utviklingsprogrammer handler om å synliggjøre hva som må til i forretningen for at lønnsomheten skal øke, og hvilke tiltak som gir varige positive forandringer. Jeg tar ikke oppdrag som jeg ikke vet jeg vil lykkes med, og det skal være forankret i toppledelsen. Du vil aldri lykkes om ikke bedriften tar på alvor det å skape bedre opplevelser for sine kunder.»</p><div style="margin-top:36px;display:flex;gap:16px;align-items:center"><img src="img/portrett-morten.jpg" alt="Morten Brandt" style="width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:50% 14%"><div><b style="display:block;font-size:17px;font-weight:600">Morten Brandt</b><span style="font-size:15px;color:#566B76">Fagekspert</span></div></div></div></section><section id="samtale" class="dyp" style="background:#1B3A4B;color:#fff"><div class="wrap" style="padding-top:88px;padding-bottom:88px;display:flex;justify-content:space-between;align-items:center;gap:48px;flex-wrap:wrap">
+<div style="max-width:30em"><h2 style="font-size:40px;line-height:46px;font-weight:500">La oss ta en samtale om hva som mangler for at dere skal lykkes</h2><p style="margin-top:16px;font-size:21px;line-height:32px;color:#D3DCDF">Ring oss på +47 22 49 00 00 eller skriv til post@excellerate.no.</p></div>
+<a class="xl-btn-p xl-btn-g" href="#">Book en samtale</a>
+</div></section>
+<footer class="dyp fl" style="background:#1B3A4B;color:#fff;border-top:1px solid #294F67"><div class="wrap" style="padding-top:56px;padding-bottom:56px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;font-size:16px;line-height:24px">
+<div><img src="img/logo-xl-hvit.png" alt="Excellerate" style="height:22px;display:block"><p style="margin-top:20px;color:#D3DCDF;max-width:22em">Vi hjelper deg å finne, vinne og beholde de rette kundene.</p></div>
+<div><a href="#">Salgsutvikling</a><a href="#">Lederutvikling</a><a href="#">Kulturutvikling</a><a href="#">KI og sikkerhet</a></div>
+<div><a href="#">Referanser</a><a href="fagekspertene.html">Fagekspertene</a><a href="#">Kunnskapssenter</a></div>
+<div><a href="#">Om oss</a><a href="#">Kontakt</a><a href="#">Personvern</a></div>
+</div></footer>
+</div>
+<script>
+const b=document.getElementById('mbtn'),p=document.getElementById('mpanel');
+b.addEventListener('click',()=>{const o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',o);b.textContent=o?'Lukk':'Meny';p.style.cssText=o?'position:absolute;left:0;right:0;top:80px;background:#fff;border-bottom:1px solid #D3DCDF':'display:none'});
+const si=document.getElementById('sinp');if(si)si.addEventListener('input',()=>{const q=si.value.trim().toLowerCase();document.querySelectorAll('.mxsk').forEach(c=>{c.style.display=(!q||c.dataset.n.includes(q))?'':'none'})});</script></body></html>
