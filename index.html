@@ -299,6 +299,59 @@ a:focus-visible,button:focus-visible,input:focus-visible,.tog:focus-visible{outl
 .ph-l{display:inline-flex;gap:10px;align-items:center;font-size:17px;font-weight:600;color:#356A89;text-decoration:none}
 .ph-l:hover{text-decoration:underline}
 
+/* ===== V2 (kun forside, til gjennomsyn) ===== */
+body,.hdr,input,button{font-family:Inter,system-ui,sans-serif}
+h1,h2,h3,h4{letter-spacing:-0.035em}
+.kn{display:inline-flex;gap:10px;align-items:center;font:600 16px Inter,sans-serif;padding:14px 22px;border-radius:4px 12px 4px 12px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .2s,border-color .2s,color .2s}
+.kn.g{background:#547B35;color:#fff}.kn.g:hover{background:#628C3F}
+.kn.g::after{content:"";width:9px;height:9px;border-radius:50%;background:currentColor;transition:transform .3s}.kn.g:hover::after{transform:translate(3px,-5px) scale(1.5)}
+.kn.o{background:#F8FAFB;border-color:#D5DFE5;color:#231F20}.kn.o:hover{border-color:#356A89;color:#356A89}
+.kn.l{background:transparent;border-color:#4D6C7D;color:#fff}.kn.l:hover{border-color:#fff}
+/* tertiær: tekstlenke med grønn strek, ingen fyll ved hover */
+.xl-lenke,.kn.t{display:inline-flex;gap:8px;align-items:center;font-weight:600;font-size:16px;color:#356A89;text-decoration:none;padding:6px 2px;border-radius:0;border:0;background:linear-gradient(#7EA257,#7EA257) left bottom/100% 2px no-repeat}
+.xl-lenke .pil,.kn.t .pil{margin-left:2px;transition:transform .25s}
+.xl-lenke:hover .pil,.kn.t:hover .pil{transform:translateX(4px) rotate(45deg)}
+.xl-lenke.lys{color:#fff;background-image:linear-gradient(#9CC06F,#9CC06F)}
+/* hero */
+.hero{background:#1B3A4B;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:52px;background:#F3F6F5;border-radius:52px 52px 0 0}
+.hero h1{font-size:68px!important;line-height:68px!important;font-weight:500!important;letter-spacing:-0.04em!important}
+.hero h1 em{font-style:normal;color:#9CC06F}
+.hph{position:relative;margin:0 36px 36px 0}.hph::before{content:"";position:absolute;left:36px;top:36px;right:-36px;bottom:-36px;background:#356A89;border-radius:18px}
+.hph img{position:relative;display:block;width:100%;height:480px;object-fit:cover;border-radius:18px}
+.hpill{position:absolute;left:-24px;bottom:28px;background:#fff;color:#231F20;border-radius:12px;padding:14px 18px;box-shadow:0 12px 30px rgba(0,0,0,.22);display:flex;gap:12px;align-items:center;font-size:14px;line-height:18px}.hpill b{display:block;font-size:16px;letter-spacing:-.02em;font-weight:600}.hpill i{width:12px;height:12px;border-radius:50%;background:#7EA257}
+/* inngangskort */
+.ing{clip-path:none;border-radius:4px 20px 4px 20px;position:relative;overflow:hidden}
+.ing .ix{position:absolute;right:-70px;bottom:-100px;width:250px;height:250px;pointer-events:none}
+.ing .ix line{stroke:#DCE7E0;transition:stroke .3s}.ing:hover .ix line{stroke:#294F67}
+.ing h3,.ing .lesl,.ing .io{position:relative}
+/* sitat */
+.qs{background:#F3F6F5}
+.qk{background:#fff;border-radius:4px 20px 4px 20px;border-left:6px solid #7EA257;box-shadow:0 8px 30px rgba(27,58,75,.08);padding:36px 36px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;position:relative;overflow:hidden}
+.qk .ix{position:absolute;right:-60px;top:-80px;width:240px;height:240px}.qk .ix line{stroke:#EAF0EC}
+.avw{position:relative;width:96px;height:96px;flex:none}.avw::before{content:"";position:absolute;left:9px;top:9px;width:88px;height:88px;border-radius:50%;background:#DCE7E0}
+.av{position:relative;width:88px;height:88px;border-radius:50%;background:#EAF0EC;color:#356A89;display:grid;place-items:center;font:600 28px Inter,sans-serif}
+.av::after{content:"";position:absolute;right:0;top:0;width:16px;height:16px;border-radius:50%;background:#7EA257;border:3px solid #fff}
+.qk p.l{position:relative;font-size:22px;line-height:32px;letter-spacing:-.025em;font-weight:500}.qk .n{margin-top:16px;font-weight:600;font-size:16px}.qk .r{color:#566B76;font-size:14px;line-height:20px}
+/* bilder */
+.cs .snitt img,.snitt img{clip-path:none;border-radius:18px}
+.cs .dot{display:none}
+/* fagekspertkort */
+.ex{border-radius:4px 20px 4px 20px;overflow:hidden}
+.ex .pi,.ex .ph{clip-path:none}
+/* bento */
+.bt{clip-path:none;border-radius:16px}
+.b-stor{border-radius:4px 20px 4px 20px}
+.lg2{clip-path:none;border-radius:12px}
+/* slik jobber vi: uten tall */
+.nn{display:none}
+.track{height:0;background:none;border-top:3px dotted #9CC06F;top:27px}
+.nodeb{width:22px;height:22px;margin:16px 0 0 17px;border:3px solid #1B3A4B;background:#fff}
+.st.on .nodeb{background:#7EA257;border-color:#7EA257}
+.rpanel>div{border-radius:4px 20px 4px 20px}
+.kn:focus-visible{outline:3px solid #294F67;outline-offset:3px}
+.dyp .kn:focus-visible{outline-color:#9CC06F}
+
 </style></head><body>
 <div style="width:100%;background:#fff;position:relative">
 <header class="hdr"><input type="checkbox" id="sk" class="skx" aria-hidden="true">
@@ -318,31 +371,21 @@ a:focus-visible,button:focus-visible,input:focus-visible,.tog:focus-visible{outl
 </div>
 </div>
 </header>
-<section class="dyp hero" style="position:relative;overflow:hidden;background:#1B3A4B;color:#fff">
-<svg aria-hidden="true" viewBox="0 0 700 700" style="position:absolute;right:-120px;top:-40px;width:780px;height:780px"><line x1="80" y1="80" x2="620" y2="620" stroke="#294F67" stroke-width="150"/><line x1="620" y1="80" x2="80" y2="620" stroke="#294F67" stroke-width="150"/></svg>
-<div class="wrap" style="position:relative;padding-top:80px;padding-bottom:88px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
-<div>
-<h1 style="font-size:56px;line-height:62px;font-weight:600;letter-spacing:-0.02em">Hvem vil dere vinne neste gang?</h1>
-<p style="margin-top:28px;font-size:21px;line-height:32px;font-weight:500;color:#D3DCDF;max-width:30em">Excellerate hjelper ledere med å styrke konkurransekraften gjennom salgsutvikling og lederutvikling. Vi finner, vinner og beholder flere kunder sammen med dere. Siden 1988.</p>
-<div style="margin-top:40px;display:flex;gap:20px;flex-wrap:wrap;align-items:center"><a class="xl-btn-p xl-btn-g" href="#samtale">Book en samtale</a><a class="xl-lenke lys" href="#mangler" style="font-size:18px">Hva mangler hos dere?<span class="pil"></span></a></div>
-</div>
-<div class="snitt"><img src="img/hero.jpg" alt="Mann i samtale med kolleger" style="height:520px;clip-path:polygon(0 0,calc(100% - 48px) 0,100% 48px,100% 100%,0 100%)"><span class="dot" style="width:24px;height:24px"></span></div>
-</div>
-</section>
+<section class="dyp hero" style="color:#fff">
+<div class="wrap" style="position:relative;z-index:1;padding-top:72px;padding-bottom:128px;display:grid;grid-template-columns:1.05fr .95fr;gap:72px;align-items:center">
+<div><h1>Hvem vil dere <em>vinne</em> neste gang?</h1>
+<p style="margin-top:24px;font-size:20px;line-height:31px;font-weight:400;color:#C5D2D8;max-width:28em">Excellerate hjelper ledere med å styrke konkurransekraften gjennom salgsutvikling og lederutvikling. Vi finner, vinner og beholder flere kunder sammen med dere. Siden 1988.</p>
+<div style="margin-top:36px;display:flex;gap:24px;flex-wrap:wrap;align-items:center"><a class="kn g" href="#samtale">Book en samtale</a><a class="xl-lenke lys" href="#mangler">Hva mangler hos dere?<span class="pil"></span></a></div></div>
+<div class="hph"><img src="img/hero.jpg" alt="Mann i samtale med kolleger"><div class="hpill"><i></i><div><b>Siden 1988</b>Salg og ledelse</div></div></div>
+</div></section>
 <section style="background:#F3F6F5;overflow:hidden"><div class="wrap" style="padding-top:64px;padding-bottom:28px"><h2 style="font-size:32px;line-height:38px;font-weight:500">Takk for tilliten</h2><p style="margin-top:8px;font-size:19px;line-height:28px;color:#566B76;max-width:34em">Noen av virksomhetene vi har fått lov til å jobbe sammen med.</p></div>
 <div class="lrows"><div class="lrow "><div class="ltrack"><div class="lg2"><img src="img/logo-dn.png" alt="Dagens Næringsliv"></div><div class="lg2"><img src="img/logo-ramirent.png" alt="Ramirent"></div><div class="lg2"><img src="img/logo-maxbo.png" alt="Maxbo"></div><div class="lg2"><img src="img/logo-olivia.png" alt="Olivia"></div><div class="lg2"><img src="img/logo-synsam.png" alt="Synsam"></div><div class="lg2"><img src="img/logo-polarn.png" alt="Polarn O. Pyret"></div><div class="lg2"><img src="img/logo-thon.png" alt="Thon Hotels"></div><div class="lg2"><img src="img/logo-boligpartner.png" alt="BoligPartner"></div><div class="lg2"><img src="img/logo-dn.png" alt="Dagens Næringsliv"></div><div class="lg2"><img src="img/logo-ramirent.png" alt="Ramirent"></div><div class="lg2"><img src="img/logo-maxbo.png" alt="Maxbo"></div><div class="lg2"><img src="img/logo-olivia.png" alt="Olivia"></div><div class="lg2"><img src="img/logo-synsam.png" alt="Synsam"></div><div class="lg2"><img src="img/logo-polarn.png" alt="Polarn O. Pyret"></div><div class="lg2"><img src="img/logo-thon.png" alt="Thon Hotels"></div><div class="lg2"><img src="img/logo-boligpartner.png" alt="BoligPartner"></div></div></div><div class="lrow r"><div class="ltrack"><div class="lg2"><img src="img/logo-wikborg.png" alt="Wikborg Rein"></div><div class="lg2"><img src="img/logo-fargerike.png" alt="Fargerike"></div><div class="lg2"><img src="img/logo-ferda.png" alt="Ferda"></div><div class="lg2"><img src="img/logo-tv2.png" alt="TV 2"></div><div class="lg2"><img src="img/logo-ark.png" alt="Ark"></div><div class="lg2"><img src="img/logo-ruter.png" alt="Ruter"></div><div class="lg2"><img src="img/logo-hertz.png" alt="Hertz"></div><div class="lg2"><img src="img/logo-extra.png" alt="Coop Extra"></div><div class="lg2"><img src="img/logo-wikborg.png" alt="Wikborg Rein"></div><div class="lg2"><img src="img/logo-fargerike.png" alt="Fargerike"></div><div class="lg2"><img src="img/logo-ferda.png" alt="Ferda"></div><div class="lg2"><img src="img/logo-tv2.png" alt="TV 2"></div><div class="lg2"><img src="img/logo-ark.png" alt="Ark"></div><div class="lg2"><img src="img/logo-ruter.png" alt="Ruter"></div><div class="lg2"><img src="img/logo-hertz.png" alt="Hertz"></div><div class="lg2"><img src="img/logo-extra.png" alt="Coop Extra"></div></div></div></div><div style="height:64px"></div></section>
 <section id="mangler" class="sec"><div class="wrap">
 <h2 style="font-size:40px;line-height:46px;font-weight:500;max-width:18em">Hva mangler for at dere skal lykkes?</h2>
 <p style="margin-top:16px;font-size:21px;line-height:32px;font-weight:500;color:#566B76;max-width:34em">Gjør dere det dere alltid har gjort, får dere det dere alltid har fått. Velg det som ligner mest på deres hverdag.</p>
-<div class="g4" style="margin-top:56px"><a class="ing" href="#"><span class="io">Salgsutvikling</span><h3>Når salget står stille</h3><span class="lesl">Se hva som mangler<span class="pil"></span></span></a><a class="ing" href="#"><span class="io">Lederutvikling</span><h3>Når strategien ikke blir til handling</h3><span class="lesl">Se hva som mangler<span class="pil"></span></span></a><a class="ing" href="#"><span class="io">Kulturutvikling</span><h3>Når kulturen står i veien for målene</h3><span class="lesl">Se hva som mangler<span class="pil"></span></span></a><a class="ing" href="#"><span class="io">KI, adopsjon og sikkerhet</span><h3>Når KI vokser fortere enn kontrollen</h3><span class="lesl">Se hva som mangler<span class="pil"></span></span></a></div>
+<div class="g4" style="margin-top:56px"><a class="ing" href="#"><svg aria-hidden="true" viewBox="0 0 700 700" class="ix"><line x1="80" y1="80" x2="620" y2="620" stroke-width="110"/><line x1="620" y1="80" x2="80" y2="620" stroke-width="110"/></svg><span class="io">Salgsutvikling</span><h3>Når salget står stille</h3><span class="lesl">Se hva som mangler<span class="pil"></span></span></a><a class="ing" href="#"><svg aria-hidden="true" viewBox="0 0 700 700" class="ix"><line x1="80" y1="80" x2="620" y2="620" stroke-width="110"/><line x1="620" y1="80" x2="80" y2="620" stroke-width="110"/></svg><span class="io">Lederutvikling</span><h3>Når strategien ikke blir til handling</h3><span class="lesl">Se hva som mangler<span class="pil"></span></span></a><a class="ing" href="#"><svg aria-hidden="true" viewBox="0 0 700 700" class="ix"><line x1="80" y1="80" x2="620" y2="620" stroke-width="110"/><line x1="620" y1="80" x2="80" y2="620" stroke-width="110"/></svg><span class="io">Kulturutvikling</span><h3>Når kulturen står i veien for målene</h3><span class="lesl">Se hva som mangler<span class="pil"></span></span></a><a class="ing" href="#"><svg aria-hidden="true" viewBox="0 0 700 700" class="ix"><line x1="80" y1="80" x2="620" y2="620" stroke-width="110"/><line x1="620" y1="80" x2="80" y2="620" stroke-width="110"/></svg><span class="io">KI, adopsjon og sikkerhet</span><h3>Når KI vokser fortere enn kontrollen</h3><span class="lesl">Se hva som mangler<span class="pil"></span></span></a></div>
 </div></section>
-<section class="dyp" style="background:#1B3A4B;color:#fff"><div class="wrap" style="padding-top:88px;padding-bottom:88px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
-<div><span style="display:block;width:18px;height:18px;border-radius:50%;background:#7EA257;margin-bottom:28px"></span>
-<p style="font-size:26px;line-height:36px;font-weight:500">«Vi har skapt nye verdier, etablert nye informasjonskanaler og har fått et eget årshjul med tiltak for å bygge kultur.»</p>
-<p style="margin-top:24px;font-size:15px;line-height:20px;color:#D3DCDF">Thomas Fehn, konserndirektør IT og digitalisering, Saint-Gobain Distribution</p></div>
-<div style="border-left:1px solid #566B76;padding-left:64px"><p style="font-size:26px;line-height:36px;font-weight:500">«Med dyktig ledelse og assistanse fra spesialister i Excellerate, har selskapet løftet den kommersielle kulturen til et nytt nivå.»</p>
-<p style="margin-top:24px;font-size:15px;line-height:20px;color:#D3DCDF">Per Griwell, kommersiell direktør, Thon Hotels</p></div>
-</div></section>
+<section class="qs"><div class="wrap" style="padding-top:80px;padding-bottom:80px;display:grid;grid-template-columns:1fr 1fr;gap:32px"><div class="qk"><svg aria-hidden="true" viewBox="0 0 700 700" class="ix"><line x1="80" y1="80" x2="620" y2="620" stroke-width="110"/><line x1="620" y1="80" x2="80" y2="620" stroke-width="110"/></svg><div class="avw"><div class="av">TF</div></div><div style="position:relative"><p class="l">«Vi har skapt nye verdier, etablert nye informasjonskanaler og har fått et eget årshjul med tiltak for å bygge kultur.»</p><p class="n">Thomas Fehn</p><p class="r">Konserndirektør IT og digitalisering, Saint-Gobain Distribution</p></div></div><div class="qk"><svg aria-hidden="true" viewBox="0 0 700 700" class="ix"><line x1="80" y1="80" x2="620" y2="620" stroke-width="110"/><line x1="620" y1="80" x2="80" y2="620" stroke-width="110"/></svg><div class="avw"><div class="av">PG</div></div><div style="position:relative"><p class="l">«Med dyktig ledelse og assistanse fra spesialister i Excellerate, har selskapet løftet den kommersielle kulturen til et nytt nivå.»</p><p class="n">Per Griwell</p><p class="r">Kommersiell direktør, Thon Hotels</p></div></div></div></section>
 <section class="sec"><div class="wrap">
 <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px"><h2 style="font-size:40px;line-height:46px;font-weight:500">Resultater hos kunder</h2><a class="xl-lenke" href="#">Alle referanser<span class="pil"></span></a></div>
 <div class="g3" style="margin-top:48px"><a class="cs" href="#"><div class="snitt"><img src="img/case-thon.jpg" alt="" style="height:260px"><span class="dot"></span></div><h3>Thon Hotels: et kommersielt kulturløft</h3><p class="cr">Pipeline økte fra 92 til 124 millioner kroner. Omsetningen vokste 5 prosent.</p><p class="ck">Kilde: excellerate.no, 2018</p><span class="xl-lenke">Les caset<span class="pil"></span></span></a><a class="cs" href="#"><div class="snitt"><img src="img/case-boligpartner.jpg" alt="" style="height:260px"><span class="dot"></span></div><h3>BoligPartner: leder- og salgsutvikling</h3><p class="cr">I 2014 falt bransjen 22 prosent. BoligPartner vokste 26 prosent. Treffprosenten økte fra 28 til 42,5.</p><p class="ck">Kilde: excellerate.no, 2014</p><span class="xl-lenke">Les caset<span class="pil"></span></span></a><a class="cs" href="#"><div class="snitt"><img src="img/case-wikborg.jpg" alt="" style="height:260px"><span class="dot"></span></div><h3>Wikborg Rein: forenklet kompetanseutvikling</h3><p class="cr">Alle advokater i Norge fikk opplæring i informasjonssikkerhet på 14 dager.</p><p class="ck">Kilde: excellerate.no, 2018</p><span class="xl-lenke">Les caset<span class="pil"></span></span></a></div>
@@ -377,14 +420,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,.tog:focus-visible{outl
 <a class="bt b-stor" href="#"><img class="bs" src="img/kunnskap-guide.jpg" alt=""><div class="bp"><svg aria-hidden="true" viewBox="0 0 300 300" class="bx"><line x1="40" y1="40" x2="260" y2="260" stroke="#294F67" stroke-width="64"/><line x1="260" y1="40" x2="40" y2="260" stroke="#294F67" stroke-width="64"/></svg><span class="bk">Guide</span><h3>Rådgivende verdisalg: prinsipper og beste praksis i B2B-salg</h3><span class="lesl">Last ned<span class="pil"></span></span></div></a>
 <a class="bt b-bilde" href="#"><img src="img/kunnskap-artikler.jpg" alt=""><span class="bo"><span class="bk">Artikler</span><h3>Siste fra fagekspertene</h3></span></a>
 <a class="bt b-bla" href="#"><svg aria-hidden="true" viewBox="0 0 300 300" class="bx"><line x1="40" y1="40" x2="260" y2="260" stroke="#4A83A3" stroke-width="64"/><line x1="260" y1="40" x2="40" y2="260" stroke="#4A83A3" stroke-width="64"/></svg><span class="bk">Fagartikler</span><h3>Fordypning for ledere og selgere</h3><span class="lesl">Les<span class="pil"></span></span></a>
-<form class="bt b-nyhet" onsubmit="return false"><svg aria-hidden="true" viewBox="0 0 300 300" class="bx"><line x1="40" y1="40" x2="260" y2="260" stroke="#356A89" stroke-width="64"/><line x1="260" y1="40" x2="40" y2="260" stroke="#356A89" stroke-width="64"/></svg><span class="bk">Nyhetsbrev</span><h3>Få ny innsikt rett i innboksen</h3><div class="nf"><input type="email" placeholder="Din e-postadresse" aria-label="E-postadresse"><button type="submit" class="xl-btn-p xl-btn-g" style="padding:13px 28px 13px 20px">Abonner</button></div><div class="nl"><span>Eller fortsett med</span><button type="button">LinkedIn</button><button type="button">Google</button><button type="button">Apple</button></div></form>
+<form class="bt b-nyhet" onsubmit="return false"><svg aria-hidden="true" viewBox="0 0 300 300" class="bx"><line x1="40" y1="40" x2="260" y2="260" stroke="#356A89" stroke-width="64"/><line x1="260" y1="40" x2="40" y2="260" stroke="#356A89" stroke-width="64"/></svg><span class="bk">Nyhetsbrev</span><h3>Få ny innsikt rett i innboksen</h3><div class="nf"><input type="email" placeholder="Din e-postadresse" aria-label="E-postadresse"><button type="submit" class="kn g" style="padding:13px 28px 13px 20px">Abonner</button></div><div class="nl"><span>Eller fortsett med</span><button type="button">LinkedIn</button><button type="button">Google</button><button type="button">Apple</button></div></form>
 <a class="bt b-bilde" href="#"><img src="img/kunnskap-webinar.jpg" alt=""><span class="bo"><span class="bk">Webinarer og arrangementer</span><h3>Kommende webinarer</h3></span></a>
 <a class="bt b-split" href="#"><img src="img/salg.jpg" alt=""><div class="bp"><span class="bk">Guide</span><h3>Kundeinnsikten som gir bedre salgsresultater</h3><span class="lesl">Last ned<span class="pil"></span></span></div></a>
 <a class="bt b-bilde" href="#"><img src="img/case-thon.jpg" alt=""><span class="bo"><span class="bk">Resultat hos kunde</span><h3>Thon Hotels: et kommersielt kulturløft</h3></span></a>
 </div></div></section>
 <section id="samtale" class="dyp" style="background:#1B3A4B;color:#fff"><div class="wrap" style="padding-top:88px;padding-bottom:88px;display:flex;justify-content:space-between;align-items:center;gap:48px;flex-wrap:wrap">
 <div style="max-width:30em"><h2 style="font-size:40px;line-height:46px;font-weight:500">La oss ta en samtale om hva som mangler for at dere skal lykkes</h2><p style="margin-top:16px;font-size:21px;line-height:32px;color:#D3DCDF">Ring oss på +47 22 49 00 00 eller skriv til post@excellerate.no.</p></div>
-<a class="xl-btn-p xl-btn-g" href="#">Book en samtale</a>
+<div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center"><a class="kn g" href="#">Book en samtale</a><a class="kn l" href="mailto:post@excellerate.no"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Send e-post</a><a class="kn l" href="tel:+4722490000"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> Ring oss</a></div>
 </div></section>
 <footer class="dyp fl" style="background:#1B3A4B;color:#fff;border-top:1px solid #294F67"><div class="wrap" style="padding-top:56px;padding-bottom:56px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;font-size:16px;line-height:24px">
 <div><img src="img/logo-xl-hvit.png" alt="Excellerate" style="height:22px;display:block"><p style="margin-top:20px;color:#D3DCDF;max-width:22em">Vi hjelper deg å finne, vinne og beholde de rette kundene.</p></div>
