@@ -623,6 +623,14 @@ h1,h2,h3,h4{letter-spacing:-0.035em}
 @media(max-width:560px){.nbr{flex-direction:column}.nbr .kn{justify-content:center}.nbb{grid-template-columns:1fr}.nbf{padding:24px}}
 .nbl .tey{color:#4A5F6A}
 @media(max-width:560px){.nbr input{flex:none;width:100%}}
+/* nyhetsbrev: ingen hvit boks, feltene går i ett med bakgrunnen */
+.nbf{background:none;box-shadow:none;border-radius:0;padding:0}
+.nbr input{background:transparent;border:1px solid #1B3A4B;transition:background .2s}
+.nbr input::placeholder{color:#566B76}
+.nbr input:focus{background:#fff;border-color:#356A89}
+.nbs{background:transparent;border:1px solid #1B3A4B}
+.nbs:hover{background:#fff;border-color:#356A89}
+.nbo{color:#4A5F6A}.nbo::before,.nbo::after{background:#1B3A4B;opacity:.35}
 
 </style></head><body>
 <div style="width:100%;background:#fff;position:relative">
