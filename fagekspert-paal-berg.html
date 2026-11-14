@@ -925,6 +925,12 @@ input,select,textarea,button{font-weight:500}
 .svrci img{position:absolute;inset:0;width:100%;height:100%;min-height:0;object-fit:cover}
 .svrct{align-self:center}
 .kcs+.svr,.kcs+.svsec{border-top:0}
+/* Lesbarhet: løpende tekst i vekt 400 og samme tekstfarge som artiklene (#33383B), ikke grå */
+:where(p,li,dd,blockquote){font-weight:400}
+.omi,.omd p,.svu,.svg p,.svjc p,.svtile p,.svk p,.svrc em,.svr p,.svsec .omi,.svsc2,.svdn ul,.svq p,.svsn,.svb p,.svin p,.rcn,.svf span,.kkt p{color:#33383B}
+.svg p,.svu,.omi,.svjc p,.svk p,.svrc em{font-weight:400}
+.svrc em,.svk p{color:#33383B}
+.svg{background:#E8EFEA}
 
 html,body{overflow-x:clip}</style></head><body>
 <div style="width:100%;background:#fff;position:relative">
