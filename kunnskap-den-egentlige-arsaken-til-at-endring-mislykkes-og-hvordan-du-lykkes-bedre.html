@@ -1636,6 +1636,7 @@ input,select,textarea,button{font-weight:500}
 .svhi .hpill.lap,.pg2 .pf .hpill.lap{left:-24px;bottom:44px;top:auto;right:auto}@media(max-width:860px){.svhi .hpill.lap,.pg2 .pf .hpill.lap{left:-6px;bottom:28px}}
 .hopp{background:#fff;border-bottom:1px solid #E4E9EC}.hopp .wrap{display:flex;gap:10px;flex-wrap:wrap;padding-top:18px;padding-bottom:18px}
 .hopp a{padding:9px 16px;border-radius:4px 12px 4px 12px;background:#EAF0EC;color:#1B3A4B;font-weight:600;font-size:15px;text-decoration:none;transition:background .08s}.hopp a:hover{background:#1B3A4B;color:#fff;transition:background .25s}
+.hdr.nomega .mega{visibility:hidden!important;opacity:0!important;transition:none!important}
 /*HEROBILDE-END*/
 
 html,body{overflow-x:clip}</style></head><body>
@@ -1749,4 +1750,4 @@ if(gr){
 /* skjema (demo, sender ingenting) */
 $$('.kfo form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();f.closest('.kfo').classList.add('ok');f.closest('.kfo').scrollIntoView({block:'nearest',behavior:'smooth'})}));
 })();
-document.querySelectorAll('a[href="#"]').forEach(a=>{a.title='Kommer';a.addEventListener('click',e=>e.preventDefault())});</script></body></html>
+document.querySelectorAll('a[href="#"]').forEach(a=>{a.title='Kommer';a.addEventListener('click',e=>e.preventDefault())});</script><script id="megalukk">(function(){var h=document.querySelector("header.hdr");if(!h)return;var K="megalukk";function lukk(){h.classList.add("nomega")}try{if(sessionStorage.getItem(K)){lukk()}}catch(e){}h.addEventListener("click",function(e){var a=e.target.closest(".mega a");if(!a)return;lukk();try{sessionStorage.setItem(K,"1")}catch(x){}if(document.activeElement&&document.activeElement.blur)document.activeElement.blur()});h.addEventListener("mouseleave",function(){h.classList.remove("nomega");try{sessionStorage.removeItem(K)}catch(e){}})})();</script></body></html>
