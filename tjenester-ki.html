@@ -1572,6 +1572,15 @@ input,select,textarea,button{font-weight:500}
 
 @media(max-width:900px){.svar[style*=repeat]{grid-template-columns:1fr!important}}
 
+/* Karriere: portrettvegg i toppen */
+.kwl{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+.kwl img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px 20px 4px 20px;display:block;background:#244A5E}
+.kwl img:nth-child(3n+2){margin-top:36px}.kwl img:nth-child(3n){margin-top:12px}
+@media(max-width:1000px){.kwl{grid-template-columns:repeat(3,1fr);gap:10px}.kwl img:nth-child(3n+2){margin-top:20px}}
+
+.kfet{background:#fff;padding:88px 0 24px}.kfet p{margin:0;max-width:20em;font-size:56px;line-height:62px;font-weight:500;letter-spacing:-.04em;color:#1B3A4B}
+@media(max-width:720px){.kfet{padding:56px 0 8px}.kfet p{font-size:34px;line-height:40px}}
+
 html,body{overflow-x:clip}</style></head><body>
 <div style="width:100%;background:#fff;position:relative">
 <a class="skip" href="#main">Hopp til innhold</a><header class="hdr"><input type="checkbox" id="sk" class="skx" aria-hidden="true">
