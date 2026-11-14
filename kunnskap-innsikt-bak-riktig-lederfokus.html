@@ -1075,6 +1075,16 @@ h1,h2,h3,h4{letter-spacing:-0.035em}
 @media(max-width:1100px){.ktabs{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:720px){.ksent{font-size:18px;line-height:36px}.ksent select{font-size:16px}.ktabs{display:flex;overflow-x:auto;gap:10px;padding-bottom:6px;margin-right:-20px;padding-right:20px}.ktab{flex:none;min-width:150px}.ktab svg{margin-bottom:8px}}
 .ksent select{box-sizing:content-box;text-overflow:clip}
+.kfl{color:#fff;background:#1B3A4B;border-color:#1B3A4B;justify-content:flex-end;padding:24px 28px}
+.kfl.dato{background:#1B3A4B;border-color:#1B3A4B}
+.kfl .kfi{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:transform .5s}
+.kfl::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(27,58,75,.12) 0%,rgba(27,58,75,.55) 45%,rgba(27,58,75,.92) 100%)}
+.kfl>*:not(.kfi){position:relative;z-index:2}
+.kfl .kfi{position:absolute}
+.kfl:hover .kfi{transform:scale(1.03)}.kfl:hover{border-color:#7EA257}
+.kfl .kmeta,.kfl .kmeta span{color:#C5D2D8}
+.kfl .ktag{align-self:flex-start;background:rgba(255,255,255,.14);color:#fff;padding:4px 10px;border-radius:4px 10px 4px 10px}
+@media(max-width:720px){.kfl{min-height:220px}}
 
 
 /* ===== Globale rettelser (lastes sist) ===== */
