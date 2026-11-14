@@ -1074,6 +1074,11 @@ input,select,textarea,button{font-weight:500}
 .fmc:hover h3,.fmc:hover p,.fmc:hover .xl-lenke{color:#fff;transition:color .25s}
 .fmc:hover .xl-lenke .pil{border-color:#fff}
 #bransjer .svtile>div>.kn{margin-top:auto}
+/* X i toppen: lik størrelse og plassering på alle sider, avskåret mot kanten, aldri utenfor toppen */
+.hero.kort{position:relative;overflow:hidden}
+.hero.kort .kw{position:static}
+.hero.kort .hx{top:50%;right:-150px;width:560px;height:560px;transform:translateY(-50%)}
+@media(max-width:720px){.hero.kort .hx{width:380px;height:380px;right:-170px}}
 
 html,body{overflow-x:clip}</style></head><body>
 <div style="width:100%;background:#fff;position:relative">
