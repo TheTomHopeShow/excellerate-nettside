@@ -1056,6 +1056,25 @@ h1,h2,h3,h4{letter-spacing:-0.035em}
 .ksrc a{color:#356A89}
 .kkv .knote2{font-size:14px;line-height:21px;color:#566B76;margin-top:14px}
 .kbd ol:not(.kkil) li,.kbd ul li{font-size:inherit;line-height:inherit}
+/* Kunnskapssenter: nytt filterpanel */
+.kfil2{margin-top:64px}
+.ksent{font-size:20px;line-height:40px;font-weight:500;letter-spacing:-.02em;display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px}
+.ksent select{font-weight:600;font-size:18px;background-color:#fff;border:1px solid #D5DFE5;border-bottom:3px solid #7EA257;border-radius:4px 12px 4px 12px;padding:6px 36px 6px 14px;background-position:right 12px center}
+.ksent .kn{margin-left:auto}
+.ktabs{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;border:0;margin-top:24px;overflow:visible}
+.ktab{position:relative;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;margin:0;padding:18px 16px 16px;background:#fff;border:1px solid #D5DFE5;border-radius:4px 16px 4px 16px;color:#356A89;transition:background .2s,border-color .2s}
+.ktab svg{margin-bottom:12px}
+.ktab b{font-size:17px;line-height:24px;font-weight:600;color:#231F20}
+.ktab small{font-size:14px;line-height:20px;font-weight:400;color:#566B76}
+.ktab .n{position:absolute;top:14px;right:14px;background:#EAF0EC}
+.ktab:hover{border-color:#7EA257;color:#356A89}
+.ktab.on{background:#1B3A4B;border-color:#1B3A4B;color:#9CC06F}
+.ktab.on b{color:#fff}.ktab.on small{color:#C5D2D8}.ktab.on .n{background:#7EA257;color:#fff}
+.ktab:focus-visible{outline:3px solid #9CC06F;outline-offset:3px}
+.kcount{margin-top:28px}
+@media(max-width:1100px){.ktabs{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:720px){.ksent{font-size:18px;line-height:36px}.ksent select{font-size:16px}.ktabs{display:flex;overflow-x:auto;gap:10px;padding-bottom:6px;margin-right:-20px;padding-right:20px}.ktab{flex:none;min-width:150px}.ktab svg{margin-bottom:8px}}
+.ksent select{box-sizing:content-box;text-overflow:clip}
 
 
 /* ===== Globale rettelser (lastes sist) ===== */
