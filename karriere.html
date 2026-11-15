@@ -1656,11 +1656,14 @@ input,select,textarea,button{font-weight:500}
 /* Om oss: det mørke GAP Vision-feltet ligger rett mot resultatfeltet, uten hvit stripe */
 .omgap{margin-top:0!important}
 
-/* Referanser: kundelogoer til høyre i heroen, små og tette, sort-hvitt */
-.rlogos{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-content:center;max-width:372px;margin-left:auto}
-.rlc{background:#fff;border-radius:4px 12px 4px 12px;height:46px;display:flex;align-items:center;justify-content:center;padding:0 12px}
-.rlc img{max-width:76px;max-height:21px;width:auto;height:auto;filter:grayscale(1);opacity:.78}
+/* Referanser: kundelogoer til høyre i heroen, i farge, med samme forskjøvne rytme som Karriere */
+.rlogos{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start;max-width:452px;margin-left:auto}
+.rlc{background:#fff;border-radius:4px 20px 4px 20px;height:66px;display:flex;align-items:center;justify-content:center;padding:0 16px}
+.rlc img{max-width:92px;max-height:34px;width:auto;height:auto}
+.rlc.sq img{max-height:44px}
+.rlogos .rlc:nth-child(3n+2){margin-top:28px}.rlogos .rlc:nth-child(3n){margin-top:10px}
 @media(max-width:1000px){.rlogos{max-width:none;margin-left:0}}
+@media(max-width:720px){.rlogos{gap:10px}.rlc{height:54px;padding:0 10px}.rlc img{max-width:66px;max-height:26px}.rlc.sq img{max-height:34px}.rlogos .rlc:nth-child(3n+2){margin-top:18px}.rlogos .rlc:nth-child(3n){margin-top:7px}}
 
 html,body{overflow-x:clip}</style></head><body>
 <div style="width:100%;background:#fff;position:relative">
