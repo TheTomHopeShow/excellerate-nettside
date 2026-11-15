@@ -435,7 +435,7 @@ h1,h2,h3,h4{letter-spacing:-0.035em}
 .hlead{margin-top:clamp(14px,2.5vh,24px);font-size:clamp(16px,min(1.5vw,2.8vh),20px);line-height:1.55;color:#C5D2D8;max-width:28em}
 .hbtn{margin-top:clamp(20px,4vh,36px);display:flex;gap:24px;flex-wrap:wrap;align-items:center}
 .hph img{height:clamp(240px,56vh,520px)}
-@media (max-width:860px){.hero{min-height:0;display:block}.hero .hgrid{grid-template-columns:1fr;padding-top:40px;padding-bottom:72px}.hph{margin-right:24px;margin-bottom:24px}.hph::before{left:24px;top:24px;right:-24px;bottom:-24px}.hph img{height:clamp(220px,50vw,360px)}.hpill{left:-8px}}
+@media (max-width:860px){.hero{min-height:0;display:block}.hero .hgrid{grid-template-columns:1fr;padding-top:40px;padding-bottom:72px}.hero .hgrid>div:first-child{order:2}.hph{order:1;margin-right:24px;margin-bottom:24px}.hph::before{left:24px;top:24px;right:-24px;bottom:-24px}.hph img{height:clamp(220px,50vw,360px)}.hpill{left:-8px}}
 /* kundelogoer: 2 rader a 6, i farger, i ro */
 .lgrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;padding-bottom:40px}
 .lc{height:104px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:18px 22px}
@@ -1066,6 +1066,20 @@ input,select,textarea,button{font-weight:500}
 .k-foto .kbo{background:linear-gradient(180deg,rgba(27,58,75,0),rgba(27,58,75,.9) 45%)!important;padding-top:44px!important}
 @media(max-width:900px){.k-split{grid-column:1/-1!important}}
 .k-split .kbi{width:34%!important}.k-split .kbp{background:#EAF0EC!important;padding:32px 40px!important;justify-content:center;gap:14px}.k-split h3{font-size:30px!important;line-height:38px!important;max-width:20em;margin:0}
+/* Kunnskapssenter på mobil: ekte ett-kolonnes stabling, ikke fire smale striper */
+@media(max-width:720px){
+ .kbg{grid-template-columns:1fr!important;grid-auto-rows:auto!important}
+ .kb{grid-column:auto!important;grid-row:auto!important}
+ .k-stor .kbi{height:220px!important}
+ .k-split{flex-direction:column!important}
+ .k-split .kbi{width:100%!important;height:200px!important}
+ .k-split .kbp{padding:24px!important}
+ .k-split h3{font-size:24px!important;line-height:30px!important}
+}
+/* Footer på mobil: var fire kolonner som rant utenfor skjermen (grid-template-columns satt inline), to av fire var usynlige */
+@media(max-width:700px){
+ footer.fl .wrap{grid-template-columns:1fr!important;gap:28px!important}
+}
 /* Forside: områdekort følger Områdekort i designmanualen (mint, snur til mørkt, ingen skygge) */
 .fmc{background:#EAF0EC!important;border:0!important;border-radius:4px 20px 4px 20px!important;box-shadow:none!important;transform:none!important;transition:background .08s!important}
 .fmc:hover{background:#1B3A4B!important;box-shadow:none!important;transform:none!important;transition:background .25s!important}

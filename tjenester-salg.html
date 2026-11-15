@@ -1555,6 +1555,20 @@ input,select,textarea,button{font-weight:500}
 .k-foto .kbo{background:linear-gradient(180deg,rgba(27,58,75,0),rgba(27,58,75,.9) 45%)!important;padding-top:44px!important}
 @media(max-width:900px){.k-split{grid-column:1/-1!important}}
 .k-split .kbi{width:34%!important}.k-split .kbp{background:#EAF0EC!important;padding:32px 40px!important;justify-content:center;gap:14px}.k-split h3{font-size:30px!important;line-height:38px!important;max-width:20em;margin:0}
+/* Kunnskapssenter på mobil: ekte ett-kolonnes stabling, ikke fire smale striper */
+@media(max-width:720px){
+ .kbg{grid-template-columns:1fr!important;grid-auto-rows:auto!important}
+ .kb{grid-column:auto!important;grid-row:auto!important}
+ .k-stor .kbi{height:220px!important}
+ .k-split{flex-direction:column!important}
+ .k-split .kbi{width:100%!important;height:200px!important}
+ .k-split .kbp{padding:24px!important}
+ .k-split h3{font-size:24px!important;line-height:30px!important}
+}
+/* Footer på mobil: var fire kolonner som rant utenfor skjermen (grid-template-columns satt inline), to av fire var usynlige */
+@media(max-width:700px){
+ footer.fl .wrap{grid-template-columns:1fr!important;gap:28px!important}
+}
 /* Forside: områdekort følger Områdekort i designmanualen (mint, snur til mørkt, ingen skygge) */
 .fmc{background:#EAF0EC!important;border:0!important;border-radius:4px 20px 4px 20px!important;box-shadow:none!important;transform:none!important;transition:background .08s!important}
 .fmc:hover{background:#1B3A4B!important;box-shadow:none!important;transform:none!important;transition:background .25s!important}
