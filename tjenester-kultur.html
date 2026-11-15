@@ -1556,7 +1556,7 @@ input,select,textarea,button{font-weight:500}
 @media(max-width:900px){.k-split{grid-column:1/-1!important}}
 .k-split .kbi{width:34%!important}.k-split .kbp{background:#EAF0EC!important;padding:32px 40px!important;justify-content:center;gap:14px}.k-split h3{font-size:30px!important;line-height:38px!important;max-width:20em;margin:0}
 /* Kunnskapssenter på mobil: ekte ett-kolonnes stabling, ikke fire smale striper */
-@media(max-width:720px){
+@media(max-width:900px){
  .kbg{grid-template-columns:1fr!important;grid-auto-rows:auto!important}
  .kb{grid-column:auto!important;grid-row:auto!important}
  .k-stor .kbi{height:220px!important}
@@ -1564,6 +1564,14 @@ input,select,textarea,button{font-weight:500}
  .k-split .kbi{width:100%!important;height:200px!important}
  .k-split .kbp{padding:24px!important}
  .k-split h3{font-size:24px!important;line-height:30px!important}
+}
+/* Kunnskapssenter på nettbrett: fire kolonner blir for smalt (ned mot 220-265px), to kolonner leser bedre */
+@media(min-width:901px) and (max-width:1200px){
+ .kbg{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-rows:auto!important}
+ .kb{grid-column:auto!important;grid-row:auto!important}
+ .k-stor,.k-art,.k-fag,.k-web,.k-case{grid-column:auto!important;grid-row:auto!important}
+ .k-stor .kbi{height:240px!important}
+ .k-split{grid-column:1/-1!important}
 }
 /* Footer på mobil: var fire kolonner som rant utenfor skjermen (grid-template-columns satt inline), to av fire var usynlige */
 @media(max-width:700px){
