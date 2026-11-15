@@ -1656,6 +1656,12 @@ input,select,textarea,button{font-weight:500}
 /* Om oss: det mørke GAP Vision-feltet ligger rett mot resultatfeltet, uten hvit stripe */
 .omgap{margin-top:0!important}
 
+/* Referanser: kundelogoer til høyre i heroen, sort-hvitt som utgangspunkt */
+.rlogos{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,1fr);gap:16px;align-items:center}
+.rlc{background:#fff;border-radius:4px 20px 4px 20px;padding:20px 16px;display:flex;align-items:center;justify-content:center;aspect-ratio:3/2}
+.rlc img{max-width:100%;max-height:36px;filter:grayscale(1);opacity:.78}
+@media(max-width:1000px){.rlogos{grid-template-columns:repeat(3,1fr)}.rlc{aspect-ratio:3/2}}
+
 html,body{overflow-x:clip}</style></head><body>
 <div style="width:100%;background:#fff;position:relative">
 <a class="skip" href="#main">Hopp til innhold</a><header class="hdr"><input type="checkbox" id="sk" class="skx" aria-label="Åpne søk">
