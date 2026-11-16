@@ -15,7 +15,7 @@ h1,h2,h3,h4{letter-spacing:-0.035em}
 .hero{background:#1B3A4B;position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:28px;background:#F3F6F5;border-radius:28px 28px 0 0}
 .hero h1{font-size:68px!important;line-height:68px!important;font-weight:500!important;letter-spacing:-0.04em!important}
-.hero h1 em{font-style:normal;color:#9CC06F}
+.hero h1 em{font-style:normal;color:#9CC06F;text-decoration:underline}
 .hph{position:relative;margin:0 36px 36px 0}.hph::before{content:"";position:absolute;left:36px;top:36px;right:-36px;bottom:-36px;background:#356A89;border-radius:18px}
 .hph img{position:relative;display:block;width:100%;height:480px;object-fit:cover;border-radius:18px}
 .hpill{position:absolute;left:-24px;bottom:28px;background:#fff;color:#231F20;border-radius:12px;padding:14px 18px;box-shadow:0 12px 30px rgba(0,0,0,.22);display:flex;gap:12px;align-items:center;font-size:14px;line-height:18px}.hpill b{display:block;font-size:16px;letter-spacing:-.02em;font-weight:600}.hpill i{width:12px;height:12px;border-radius:50%;background:#7EA257}
@@ -52,14 +52,13 @@ h1,h2,h3,h4{letter-spacing:-0.035em}
 .dyp .kn:focus-visible{outline-color:#9CC06F}
 .av img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
 
-/* hero tilpasser seg skjermen: fyller visningsvinduet under menyen */
-.hero{min-height:calc(100vh - 81px);min-height:calc(100svh - 81px);display:flex;align-items:center}
-.hero .hgrid{position:relative;z-index:1;width:100%;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,72px);align-items:center;padding-top:clamp(24px,5vh,72px);padding-bottom:clamp(48px,9vh,112px)}
-.hero h1{font-size:clamp(36px,min(5.2vw,9vh),72px)!important;line-height:1!important}
-.hlead{margin-top:clamp(14px,2.5vh,24px);font-size:clamp(16px,min(1.5vw,2.8vh),20px);line-height:1.55;color:#C5D2D8;max-width:28em}
-.hbtn{margin-top:clamp(20px,4vh,36px);display:flex;gap:24px;flex-wrap:wrap;align-items:center}
-.hph img{height:clamp(240px,56vh,520px)}
-@media (max-width:860px){.hero{min-height:0;display:block}.hero .hgrid{grid-template-columns:1fr;padding-top:40px;padding-bottom:72px}.hero .hgrid>div:first-child{order:2}.hph{order:1;margin-right:24px;margin-bottom:24px}.hph::before{left:24px;top:24px;right:-24px;bottom:-24px}.hph img{height:clamp(220px,50vw,360px)}.hpill{left:-8px}}
+/* hero: 16.11.2026 - tilbake til å følge modulens eget innhold i stedet for
+   å fylle visningsvinduet (100vh). På en stor skjerm ga 100vh mye tomt rom
+   rundt det samme, fast store innholdet - seksjonen så "naken" ut. */
+.hero .hgrid{position:relative;z-index:1;width:100%;display:grid;grid-template-columns:1.05fr .95fr;gap:72px;align-items:center;padding-top:72px;padding-bottom:112px}
+.hlead{margin-top:24px;font-size:20px;line-height:1.55;color:#C5D2D8;max-width:28em}
+.hbtn{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+@media (max-width:860px){.hero .hgrid{grid-template-columns:1fr;padding-top:40px;padding-bottom:72px}.hero .hgrid>div:first-child{order:2}.hph{order:1;margin-right:24px;margin-bottom:24px}.hph::before{left:24px;top:24px;right:-24px;bottom:-24px}.hph img{height:clamp(220px,50vw,360px)}.hpill{left:-8px}}
 /* kundelogoer: 2 rader a 6, i farger, i ro */
 .lgrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;padding-bottom:40px}
 .lc{height:104px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:18px 22px}
@@ -118,7 +117,7 @@ h1,h2,h3,h4{letter-spacing:-0.035em}
 .qk{border-left-color:#1B3A4B}
 .qd.on,.av::after{background:#1B3A4B}
 /* hero: mer luft over knappene, hvit tekst og prikk på knappen */
-.hbtn{margin-top:clamp(32px,6.5vh,56px)}
+.hbtn{margin-top:56px}
 
 /* sitat: tilbake til lys blå (#356A89) */
 .qk{border-left-color:#356A89}
