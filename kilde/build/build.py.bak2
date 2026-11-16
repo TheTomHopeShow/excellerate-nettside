@@ -1,0 +1,343 @@
+import json
+U=lambda i:"/_blob/"+i
+LOGO=U("ada7e947b5c8e2c12becc01388af3908");LOGOH=U("273ca0248b7b016d07f43035c6e9ccb9")
+IMG=dict(hero="449778221839df47ba9d0b43b87eccac",salg="849777fa2adc082495a1b5f2620cc53e",ledelse="3dd482f58feb92f14a52971fa7845551",kultur="b3d9c088da5d1044d73b85dbe9057571",ki="255b5cca6584341a1f9a46033ab2449b",
+thon="f2317b46c9c65fe0104ea745a8be3d6a",bolig="e8f05e9ae6dc33aa02e3441e383e7070",wik="4e3a10f6a89f893e0cc65fedfaae7499",conv="3d24bef9fc8777be8639d7fd9ebff4bf")
+LOGOS=[("5fb1805e66ec06e9da6eb737c86b1dd1","Dagens Næringsliv"),("dd0f6b3dbe64a82c946f35c6b139f8e1","Ramirent"),("07681bab1fcd02ca044f0e71633bfed6","Maxbo"),("9e079bec0053b60b96938fc4f0a7612a","Olivia"),("38f37a9f227f07e59481096aa4ba85ad","Synsam"),("89f98f465394b5fb5c744e31f07b416b","Polarn O. Pyret")]
+# navn, rolle, tekst, bilde, omrader(forslag)
+EX=[
+# navn, rolle, tekst, bilde, omrader(forslag), gruppe
+("Per Kjetil Parr","Administrerende direktør","Omsetter innsikt til lønnsomme prestasjoner. Faktabasert og kundesentrisk lederutvikling.","6e79c34f6888cf0540771ec6fd3725e6","ledelse","L"),
+("Per Christian Svae","Teknologidirektør","Leder innsikt og teknologi. Nesten 20 år i selskapet og bak våre sentrale løsninger.","a9f9978820a3587c847a40de24da0e26","ki","L"),
+("Anne Katrine Brånen","Senior prosjektplanlegger","Koordinerer prosjektene og er knutepunktet mellom kunder, deltakere og konsulenter.","be853d39f56f0feaa31720a0f8c0b638","","L"),
+("Leif Ottesen","Partner og hovedspesialist","En av Norges mest kjente leder- og salgstrenere. Tilpassede programmer, ikke generelle modeller.","969b476beb8395999267c78979871aa5","salg ledelse","E"),
+("Carl Haakon Klafstad","Partner","Ekspert på retail, rådgivende verdisalg og operativt lederskap. Vil endre synet på konkurransekraft.","a151209eaacecd8d6811f9016a082826","salg ledelse","E"),
+("Erik Simensen","Fagekspert","Møter ledere der de er. Opptatt av både mennesker og resultater i lederutvikling og coaching.","6cc98c6eaa36582248ae7c2544d2de76","salg ledelse kultur","E"),
+("Neda Maria Kaizumi","Fagekspert","Gjør kunstig intelligens til praktisk forretningsverdi. Doktorgrad og videreutdanning fra Harvard Business School.","8938c7306fc35962f98043cec2818075","ki","E"),
+("Morten Brandt","Fagekspert","Vet hvordan bedre kommersielle resultater skapes. Utviklingsprogrammer som øker lønnsomheten.","8c85eb7736a88bbde93365d7b58aba04","salg","E"),
+("Petter Kleppe","Fagekspert","25 års erfaring som toppleder, entreprenør og fagbokforfatter. Hjelper deg å bli den beste lederen.","6baef23b730b43fa4f20c43997c38364","salg ledelse","E"),
+("Arvid Madland Lyngnes","Fagekspert","Gjør kommersielle ambisjoner til systematisk praksis, fra markedsinnsikt til vunne kunder.","e42614462905675094d6d977aad41a30","salg","E"),
+("Rita Berg Hansen","Fagekspert","Over 20 års erfaring fra eiendomsbransjen. Kommersiell vekst og prestasjonskultur.","dae83e810e9026d82587b7c5dfb21804","salg kultur","E"),
+("Atle Olsen","Fagekspert","Dyp innsikt i organisasjonens behov. Spesialist på salg og servicemarked.","b769848d9f3cf7823afe4193d83e4ae5","salg","E"),
+("Janick Løwe","Fagekspert","Bedre kommersielle resultater gjennom bedre personlige prestasjoner: innsikt, endring og eierskap.","8bf2abf8b8ba92ef0ea3bfc857964c3f","ledelse kultur","E"),
+("Bård Fossli Jensen","Fagekspert","Tar vare på kunden ved å gi de ansatte de beste verktøyene. Doktorgrad i kommunikasjon.","7c00fbd36f0c419cd1f6fe68d8e7ae30","ledelse","E"),
+("Paal Berg","Fagekspert","Bred erfaring fra ledelse, forretningsutvikling og salg.","3085cddbc4f266ad4f047a10548ac1d9","salg ledelse","E"),
+("Jørg Lian","Fagekspert","38 års praktisk ledererfaring. God ledelse er å skape resultater gjennom andre.","83d996a6c37055cb52ba0b33b4f831d4","ledelse","E"),
+]
+TOM=("Tom Hope","Kommersiell leder","25 års erfaring innen salg, markedsføring og forretningsutvikling.","75486eeb0933d5c536faece725b36211","","L")
+LED=[e for e in EX if e[5]=="L"]+[TOM]
+EXP=[e for e in EX if e[5]=="E"]
+CSS=open("style.css").read()
+def head(title):
+    return '''<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<title>%s</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+%s
+</style>
+</helmet>
+<div style="width:100%%;background:#fff;position:relative">
+'''%(title,CSS)
+def kort(e):
+    return '<a class="mcard" href="Fagekspert.dc.html"><span class="mi p"><img src="%s" alt=""></span><b>%s</b><i>%s</i></a>'%(U(e[3]),e[0],e[1])
+def menyx():
+    return "".join(kort(e) for e in LED)
+def ccard(img,t):
+    return '<a class="mcard" href="#"><span class="mi"><img src="%s" alt=""></span><b>%s</b></a>'%(U(IMG[img]),t)
+def kol(t,items):
+    return '<div class="mcol"><a class="mh" href="#">%s</a>%s</div>'%(t,"".join('<a href="#">%s</a>'%i for i in items))
+def lead(t,p,l,href="#"):
+    return '<div class="ml"><h3>%s</h3><p>%s</p><a class="xl-lenke" href="%s">%s<span class="pil"></span></a></div>'%(t,p,href,l)
+def ni(t,inner,href="#"):
+    return '<div class="ni"><a href="%s">%s</a><div class="mega"><div class="wrap">%s</div></div></div>'%(href,t,inner)
+TJ=ni("Tjenester",'<div class="mg" style="grid-template-columns:280px repeat(4,1fr)">'+lead("Tjenester","Fire områder som henger sammen. Velg der dere trenger mest.","Se alle tjenester")
+ +kol("Salgsutvikling",["Rådgivende verdisalg","Kunstig intelligens i salg","Salgsledelse","Kundeinnsikt"])
+ +kol("Lederutvikling",["Strategi til handling","Coaching","Organisasjonsutvikling"])
+ +kol("Kulturutvikling",["Prestasjonskultur","Kommersiell kultur"])
+ +kol("KI, adopsjon og sikkerhet",["AI Act og compliance","KI i hverdagen","Informasjonssikkerhet"])+'</div>')
+def vert(img,t,items):
+    return '<div class="vcard"><a class="vi" href="#"><img src="%s" alt=""></a><a class="vh" href="#">%s</a>%s</div>'%(img,t,"".join('<a href="#">%s</a>'%i for i in items))
+BR=ni("Bransjer",'<div class="mg" style="grid-template-columns:240px repeat(4,1fr)">'+lead("Bransjer","Fire vertikaler med egne landingssider. KI-tilbudet gjelder alle fire.","Se alle bransjer")
+ +vert(U(IMG["salg"]),"Handel og forhandlernett",["Retail og faghandel","Bil"])
+ +vert("/_blob/6aee73de7614899efc4561a8f50ec8d6","Bank, forsikring og eiendomsmegling",["Sparebank","Forsikring","Megling"])
+ +vert("/_blob/db80b62da762e5e37fd701b9e92157de","Bygg og eiendom",["Entreprenør og anlegg","Tekniske fag","Utleie og drift"])
+ +vert("/_blob/0a081d31223ec6fa18fe5a9f2aa94d8b","IT og teknologi",["Programvare","Konsulent","Drift"])+'</div>')
+def sirkel(e):
+    return '<a class="scard" href="Fagekspert.dc.html"><span class="sc"><img src="%s" alt=""></span><b>%s</b><i>%s</i></a>'%(U(e[3]),e[0],e[1])
+MENYC="".join(sirkel(e) for e in [EX[0],EX[1],EX[2],TOM,EX[3],EX[4],EX[5],EX[6]])
+FA=ni("Fageksperter",'<div class="mg" style="grid-template-columns:240px 1fr">'+lead("Fagekspertene","Ett team med erfaring fra salg, ledelse og kultur.","Se alle fagekspertene","Fagekspertene.dc.html")+'<div class="mrow4 sir">'+MENYC+'</div></div>',"Fagekspertene.dc.html")
+def kk(t,items):
+    return '<div class="mcol kk"><p class="kt">%s</p>%s</div>'%(t,"".join('<a href="#">%s</a>'%i for i in items))
+KU=ni("Kunnskap",'<div class="mg" style="grid-template-columns:240px repeat(3,1fr) 300px;gap:36px">'+lead("Kunnskapssenter","Artikler, guider og arrangementer fra fagekspertene.","Åpne kunnskapssenteret")
+ +kk("Les",["Artikler","Fagartikler"])+kk("Lær",["Guider","Webinarer og arrangementer"])+kk("Hold deg oppdatert",["Nyhetsbrev","Siste fra fagekspertene"])
+ +'<a class="mcard" href="#"><span class="mi"><img src="/_blob/db80b62da762e5e37fd701b9e92157de" alt=""></span><i>Guide</i><b>Rådgivende verdisalg: prinsipper og beste praksis i B2B-salg</b></a></div>')
+RE=ni("Referanser",'<div class="mg" style="grid-template-columns:240px repeat(3,1fr)">'+lead("Referanser","Resultater hos kunder, med tall vi kan stå inne for.","Alle referanser")
+ +ccard("thon","Thon Hotels: et kommersielt kulturløft")+ccard("bolig","BoligPartner: leder- og salgsutvikling")+ccard("wik","Wikborg Rein: forenklet kompetanseutvikling")+'</div>')
+OM=ni("Om oss",'<div class="mg" style="grid-template-columns:240px 1fr 1fr 1fr 300px;gap:36px">'+lead("Om oss","Vi hjelper deg å finne, vinne og beholde de rette kundene – og å bygge organisasjonen som klarer det, dag etter dag.","Les mer om oss")
+ +kk("Om Excellerate",["Om oss","Vår historie – siden 1988","Verdier","Partnere"])
+ +kk("Mennesker",["Fagekspertene","Karriere"])
+ +'<div class="mcol kk"><p class="kt">Kontakt</p><a href="#">Kontakt oss</a><span class="ad">Stortorvet 7, Oslo<br>+47 22 49 00 00<br>post@excellerate.no</span></div>'
+ +'<a class="mcard" href="#"><span class="mi"><img src="/_blob/6c10bbc2090df8189f1fdb57970dafa0" alt=""></span><b>Besøk oss på Stortorvet 7</b></a></div>')
+SOK_SUG=["Når kundene bare snakker om pris","Strategi til handling","AI Act","Rådgivende verdisalg"]
+SOK='<div class="sok"><div class="wrap"><div class="sf"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#356A89" stroke-width="2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg><input id="sinp" type="search" placeholder="Søk i tjenester, caser og fagekspertene" aria-label="Søk"></div><div class="sg"><div class="sl"><p class="kt">Vanlige søk</p>'+"".join('<a class="chip" href="#">%s</a>'%c for c in SOK_SUG)+'</div><div><p class="kt">Fagekspertene</p><div class="sirk">'+"".join('<a class="scard" href="Fagekspert.dc.html" data-n="%s"><span class="sc"><img src="%s" alt=""></span><b>%s</b></a>'%((e[0]+" "+e[1]).lower(),U(e[3]),e[0]) for e in [EX[0],EX[1],EX[2],TOM,EX[3],EX[4],EX[5],EX[6],EX[7],EX[8]])+'</div></div></div></div></div>'
+HEADER='''<header class="hdr"><input type="checkbox" id="sk" class="skx" aria-hidden="true">
+<div class="wrap" style="display:flex;align-items:center;justify-content:space-between;height:80px;gap:24px">
+<a href="Forside.dc.html" aria-label="Excellerate, til forsiden"><img src="@@LOGO@@" alt="Excellerate" style="height:22px;display:block"></a>
+<nav class="hnav" aria-label="Hovedmeny">@@NAV@@</nav>
+<div style="display:flex;align-items:center;gap:20px">
+<button class="mbtn" onClick="{{toggleMeny}}" aria-expanded="{{menyAapen}}">{{menyTekst}}</button>
+<label for="sk" class="sbtn" aria-label="Søk"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" class="s1"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" class="s2"><path d="M5 5l14 14M19 5 5 19"/></svg></label>
+</div>
+</div>
+@@SOK@@
+<div style="{{menyStil}}">
+<div class="wrap" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-top:32px;padding-bottom:40px">
+<div class="mc"><h4>Tjenester</h4><a href="#">Salgsutvikling</a><a href="#">Lederutvikling</a><a href="#">Kulturutvikling</a><a href="#">KI, adopsjon og sikkerhet</a></div>
+<div class="mc"><h4>Mer</h4><a href="#">Bransjer</a><a href="Fagekspertene.dc.html">Fagekspertene</a><a href="#">Kunnskap</a><a href="#">Referanser</a><a href="#">Om oss</a></div>
+</div>
+</div>
+</header>
+'''.replace("@@NAV@@",TJ+BR+FA+KU+RE+OM).replace("@@SOK@@",SOK).replace("@@LOGO@@",LOGO).replace("@@MENYX@@",menyx()).replace("@@K2@@","/_blob/db80b62da762e5e37fd701b9e92157de")
+FOOTER='''<section id="samtale" class="dyp" style="background:#1B3A4B;color:#fff"><div class="wrap" style="padding-top:88px;padding-bottom:88px;display:flex;justify-content:space-between;align-items:center;gap:48px;flex-wrap:wrap">
+<div style="max-width:30em"><h2 style="font-size:40px;line-height:46px;font-weight:500">La oss ta en samtale om hva som mangler for at dere skal lykkes</h2><p style="margin-top:16px;font-size:21px;line-height:32px;color:#D3DCDF">Ring oss på +47 22 49 00 00 eller skriv til post@excellerate.no.</p></div>
+<a class="xl-btn-p xl-btn-g" href="#">Book en samtale</a>
+</div></section>
+<footer class="dyp fl" style="background:#1B3A4B;color:#fff;border-top:1px solid #294F67"><div class="wrap" style="padding-top:56px;padding-bottom:56px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;font-size:16px;line-height:24px">
+<div><img src="@@LOGOH@@" alt="Excellerate" style="height:22px;display:block"><p style="margin-top:20px;color:#D3DCDF;max-width:22em">Vi hjelper deg å finne, vinne og beholde de rette kundene.</p></div>
+<div><a href="#">Salgsutvikling</a><a href="#">Lederutvikling</a><a href="#">Kulturutvikling</a><a href="#">KI og sikkerhet</a></div>
+<div><a href="#">Referanser</a><a href="Fagekspertene.dc.html">Fagekspertene</a><a href="#">Kunnskapssenter</a></div>
+<div><a href="#">Om oss</a><a href="#">Kontakt</a><a href="#">Personvern</a></div>
+</div></footer>
+</div>
+</x-dc>
+'''.replace("@@LOGOH@@",LOGOH)
+def script(h,extra_state="",extra_vals="",extra_data=""):
+    return '''<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":%d}}'>
+%s
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { meny: false%s }; }
+  renderVals() {
+    const s = this.state;
+    const o = {
+      menyAapen: s.meny ? "true" : "false",
+      menyTekst: s.meny ? "Lukk" : "Meny",
+      toggleMeny: () => this.setState({ meny: !s.meny }),
+      menyStil: s.meny ? "position:absolute;left:0;right:0;top:80px;background:#fff;border-bottom:1px solid #D3DCDF" : "display:none"
+    };
+%s
+    return o;
+  }
+}
+</script>
+</body>
+</html>'''%(h,extra_data,extra_state,extra_vals)
+LOGOS2=[('dn', '75986caba0dfad1f626e6001440ce741'), ('ramirent', '073f67801711f3af9361815c73c48e45'), ('maxbo', '4fc5e3edfd43e5b30c5455dd7be5421a'), ('olivia', 'dcf3b4b9a0cbf12e3cd25d5762a539a5'), ('synsam', 'b7a727122b1f97cd786a6510795368b2'), ('polarn', 'f56939b7a719714c010de083d098e7d0'), ('thon', '14f9860af6633694b8167ae0b25622da'), ('boligpartner', 'd121a342e1c6cbabb2e7f27a679b3aea'), ('wikborg', '358607f0e262168a2eaa554fc54d3ff9'), ('fargerike', '3c96c29276610052d23e75b81adb13f1'), ('ferda', 'e71907b8a83cee7f30ad2ea6f694973d'), ('tv2', '8dad736121cdd657464d2f81f1f449ad'), ('ark', 'fbfd2783dd56195ebf28a32f7b62050c'), ('ruter', 'd7e797615a7b33627569773b14cc8cb5'), ('hertz', '6dfe181ef2bf7c9b751447484960330c'), ('extra', '8a8dba666d1dc28ff1fb7d0c4f267c56')]
+NM={'dn': 'Dagens Næringsliv', 'ramirent': 'Ramirent', 'maxbo': 'Maxbo', 'olivia': 'Olivia', 'synsam': 'Synsam', 'polarn': 'Polarn O. Pyret', 'thon': 'Thon Hotels', 'boligpartner': 'BoligPartner', 'wikborg': 'Wikborg Rein', 'fargerike': 'Fargerike', 'ferda': 'Ferda', 'tv2': 'TV 2', 'ark': 'Ark', 'ruter': 'Ruter', 'hertz': 'Hertz', 'extra': 'Coop Extra'}
+def logos():
+    def row(items,cls):
+        t="".join('<div class="lg2"><img src="%s" alt="%s"></div>'%(U(i),NM[n]) for n,i in items)
+        return '<div class="lrow %s"><div class="ltrack">%s%s</div></div>'%(cls,t,t)
+    return row(LOGOS2[:8],"")+row(LOGOS2[8:],"r")
+def excard(e,cls="ex"):
+    if e[3]:
+        pt='<div class="pt"><div class="pi"><img src="%s" alt="%s"></div><span class="dot"></span></div>'%(U(e[3]),e[0])
+    else:
+        pt='<div class="pt"><div class="ph" role="img" aria-label="Bilde mangler"><span>TH</span></div><span class="dot"></span></div>'
+    return '''<a class="%s" href="Fagekspert.dc.html">%s<div class="tx"><h3>%s</h3><p class="r">%s</p><p class="t">%s</p></div><span class="lk"><span class="lesl">Les mer<span class="pil"></span></span></span></a>'''%(cls,pt,e[0],e[1],e[2])
+def inngang(img,tittel,omr):
+    return '''<a class="ing" href="#"><span class="io">%s</span><h3>%s</h3><span class="lesl">Se hva som mangler<span class="pil"></span></span></a>'''%(omr,tittel)
+def case(img,t,r,k):
+    return '''<a class="cs" href="#"><div class="snitt"><img src="%s" alt="" style="height:260px"><span class="dot"></span></div><h3>%s</h3><p class="cr">%s</p><p class="ck">%s</p><span class="xl-lenke">Les caset<span class="pil"></span></span></a>'''%(U(IMG[img]),t,r,k)
+
+# ---------- FORSIDE ----------
+fs=head("Excellerate forside")+HEADER
+fs+='''<section class="dyp hero" style="position:relative;overflow:hidden;background:#1B3A4B;color:#fff">
+<svg aria-hidden="true" viewBox="0 0 700 700" style="position:absolute;right:-120px;top:-40px;width:780px;height:780px"><line x1="80" y1="80" x2="620" y2="620" stroke="#294F67" stroke-width="150"/><line x1="620" y1="80" x2="80" y2="620" stroke="#294F67" stroke-width="150"/></svg>
+<div class="wrap" style="position:relative;padding-top:80px;padding-bottom:88px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+<div>
+<h1 style="font-size:56px;line-height:62px;font-weight:600;letter-spacing:-0.02em">Hvem vil dere vinne neste gang?</h1>
+<p style="margin-top:28px;font-size:21px;line-height:32px;font-weight:500;color:#D3DCDF;max-width:30em">Excellerate hjelper ledere med å styrke konkurransekraften gjennom salgsutvikling og lederutvikling. Vi finner, vinner og beholder flere kunder sammen med dere. Siden 1988.</p>
+<div style="margin-top:40px;display:flex;gap:20px;flex-wrap:wrap;align-items:center"><a class="xl-btn-p xl-btn-g" href="#samtale">Book en samtale</a><a class="xl-lenke lys" href="#mangler" style="font-size:18px">Hva mangler hos dere?<span class="pil"></span></a></div>
+</div>
+<div class="snitt"><img src="@@HERO@@" alt="Mann i samtale med kolleger" style="height:520px;clip-path:polygon(0 0,calc(100% - 48px) 0,100% 48px,100% 100%,0 100%)"><span class="dot" style="width:24px;height:24px"></span></div>
+</div>
+</section>
+<section style="background:#F3F6F5;overflow:hidden"><div class="wrap" style="padding-top:64px;padding-bottom:28px"><h2 style="font-size:32px;line-height:38px;font-weight:500">Takk for tilliten</h2><p style="margin-top:8px;font-size:19px;line-height:28px;color:#566B76;max-width:34em">Noen av virksomhetene vi har fått lov til å jobbe sammen med.</p></div>
+<div class="lrows">@@LOGOS@@</div><div style="height:64px"></div></section>
+<section id="mangler" class="sec"><div class="wrap">
+<h2 style="font-size:40px;line-height:46px;font-weight:500;max-width:18em">Hva mangler for at dere skal lykkes?</h2>
+<p style="margin-top:16px;font-size:21px;line-height:32px;font-weight:500;color:#566B76;max-width:34em">Gjør dere det dere alltid har gjort, får dere det dere alltid har fått. Velg det som ligner mest på deres hverdag.</p>
+<div class="g4" style="margin-top:56px">@@INGANGER@@</div>
+</div></section>
+<section class="dyp" style="background:#1B3A4B;color:#fff"><div class="wrap" style="padding-top:88px;padding-bottom:88px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+<div><span style="display:block;width:18px;height:18px;border-radius:50%;background:#7EA257;margin-bottom:28px"></span>
+<p style="font-size:26px;line-height:36px;font-weight:500">«Vi har skapt nye verdier, etablert nye informasjonskanaler og har fått et eget årshjul med tiltak for å bygge kultur.»</p>
+<p style="margin-top:24px;font-size:15px;line-height:20px;color:#D3DCDF">Thomas Fehn, konserndirektør IT og digitalisering, Saint-Gobain Distribution</p></div>
+<div style="border-left:1px solid #566B76;padding-left:64px"><p style="font-size:26px;line-height:36px;font-weight:500">«Med dyktig ledelse og assistanse fra spesialister i Excellerate, har selskapet løftet den kommersielle kulturen til et nytt nivå.»</p>
+<p style="margin-top:24px;font-size:15px;line-height:20px;color:#D3DCDF">Per Griwell, kommersiell direktør, Thon Hotels</p></div>
+</div></section>
+<section class="sec"><div class="wrap">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px"><h2 style="font-size:40px;line-height:46px;font-weight:500">Resultater hos kunder</h2><a class="xl-lenke" href="#">Alle referanser<span class="pil"></span></a></div>
+<div class="g3" style="margin-top:48px">@@CASES@@</div>
+</div></section>
+<section style="background:#F3F6F5;overflow:hidden"><div style="padding-top:88px;padding-bottom:88px">
+<div class="wrap" style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap"><div><h2 style="font-size:40px;line-height:46px;font-weight:500">Møt fagekspertene</h2><p style="margin-top:12px;font-size:21px;line-height:32px;font-weight:500;color:#566B76">Ett team, ett mål: resultater hos dere. Bla sidelengs.</p></div><a class="xl-lenke" href="Fagekspertene.dc.html">Se alle fagekspertene<span class="pil"></span></a></div>
+<div class="tog" tabindex="0" aria-label="Fagekspertene, bla sidelengs">@@TOG@@</div>
+</div></section>
+<section class="sec" style="padding-bottom:72px"><div class="wrap">
+<h2 style="font-size:40px;line-height:46px;font-weight:500">Slik jobber vi</h2>
+<p style="margin-top:12px;font-size:21px;line-height:32px;font-weight:500;color:#566B76">Tre steg, fra forståelse til varig endring. Velg et steg.</p>
+<div class="reise">
+<div class="track" aria-hidden="true"></div>
+<button class="{{c0}}" onClick="{{v0}}"><span class="nodeb"><span class="nn">1</span></span><span class="nt">Innsikt og fakta</span></button>
+<button class="{{c1}}" onClick="{{v1}}"><span class="nodeb"><span class="nn">2</span></span><span class="nt">Rådgivning og metodeverk</span></button>
+<button class="{{c2}}" onClick="{{v2}}"><span class="nodeb"><span class="nn">3</span></span><span class="nt">Kompetanseheving og implementering</span></button>
+</div>
+<div class="rpanel">
+<div style="position:relative;overflow:hidden;background:#F3F6F5;padding:48px;min-height:280px">
+<svg aria-hidden="true" viewBox="0 0 300 300" style="position:absolute;right:-60px;bottom:-80px;width:340px;height:340px"><line x1="40" y1="40" x2="260" y2="260" stroke="#EAF0EC" stroke-width="64"/><line x1="260" y1="40" x2="40" y2="260" stroke="#EAF0EC" stroke-width="64"/></svg>
+<div style="position:relative"><h3 style="font-size:28px;line-height:34px;font-weight:500">{{stegTittel}}</h3><p style="margin-top:12px;font-size:19px;line-height:28px;max-width:30em">{{stegTekst}}</p>
+<p style="margin-top:24px;font-size:15px;line-height:20px;font-weight:600;color:#566B76">Dere får</p>
+<div style="margin-top:8px;font-size:19px;line-height:30px;font-weight:600">{{stegDere}}</div></div>
+</div>
+</div>
+<p style="margin-top:40px;font-size:26px;line-height:36px;font-weight:500">Vi har lært av de beste. Vi har lært opp de beste.</p>
+</div></section>
+<section style="background:#F3F6F5"><div class="wrap" style="padding-top:88px;padding-bottom:96px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px"><h2 style="font-size:40px;line-height:46px;font-weight:500">Kunnskapssenter</h2><a class="xl-lenke" href="#">Åpne kunnskapssenteret<span class="pil"></span></a></div>
+<p style="margin-top:12px;font-size:21px;line-height:32px;font-weight:500;color:#566B76;max-width:34em">Artikler, fagartikler, guider og arrangementer fra fagekspertene. Kunnskap skal deles.</p>
+<div class="bento">
+<a class="bt b-stor" href="#"><img class="bs" src="@@K2@@" alt=""><div class="bp"><svg aria-hidden="true" viewBox="0 0 300 300" class="bx"><line x1="40" y1="40" x2="260" y2="260" stroke="#294F67" stroke-width="64"/><line x1="260" y1="40" x2="40" y2="260" stroke="#294F67" stroke-width="64"/></svg><span class="bk">Guide</span><h3>Rådgivende verdisalg: prinsipper og beste praksis i B2B-salg</h3><span class="lesl">Last ned<span class="pil"></span></span></div></a>
+<a class="bt b-bilde" href="#"><img src="@@K1@@" alt=""><span class="bo"><span class="bk">Artikler</span><h3>Siste fra fagekspertene</h3></span></a>
+<a class="bt b-bla" href="#"><svg aria-hidden="true" viewBox="0 0 300 300" class="bx"><line x1="40" y1="40" x2="260" y2="260" stroke="#4A83A3" stroke-width="64"/><line x1="260" y1="40" x2="40" y2="260" stroke="#4A83A3" stroke-width="64"/></svg><span class="bk">Fagartikler</span><h3>Fordypning for ledere og selgere</h3><span class="lesl">Les<span class="pil"></span></span></a>
+<form class="bt b-nyhet" onsubmit="return false"><svg aria-hidden="true" viewBox="0 0 300 300" class="bx"><line x1="40" y1="40" x2="260" y2="260" stroke="#356A89" stroke-width="64"/><line x1="260" y1="40" x2="40" y2="260" stroke="#356A89" stroke-width="64"/></svg><span class="bk">Nyhetsbrev</span><h3>Få ny innsikt rett i innboksen</h3><div class="nf"><input type="email" placeholder="Din e-postadresse" aria-label="E-postadresse"><button type="submit" class="xl-btn-p xl-btn-g" style="padding:13px 28px 13px 20px">Abonner</button></div><div class="nl"><span>Eller fortsett med</span><button type="button">LinkedIn</button><button type="button">Google</button><button type="button">Apple</button></div></form>
+<a class="bt b-bilde" href="#"><img src="@@K3@@" alt=""><span class="bo"><span class="bk">Webinarer og arrangementer</span><h3>Kommende webinarer</h3></span></a>
+<a class="bt b-split" href="#"><img src="@@K4@@" alt=""><div class="bp"><span class="bk">Guide</span><h3>Kundeinnsikten som gir bedre salgsresultater</h3><span class="lesl">Last ned<span class="pil"></span></span></div></a>
+<a class="bt b-bilde" href="#"><img src="@@CASEIMG@@" alt=""><span class="bo"><span class="bk">Resultat hos kunde</span><h3>Thon Hotels: et kommersielt kulturløft</h3></span></a>
+</div></div></section>
+'''
+fs=fs.replace("@@K1@@","/_blob/6aee73de7614899efc4561a8f50ec8d6").replace("@@K2@@","/_blob/db80b62da762e5e37fd701b9e92157de").replace("@@K3@@","/_blob/0a081d31223ec6fa18fe5a9f2aa94d8b").replace("@@K4@@",U(IMG["salg"])).replace("@@CASEIMG@@",U(IMG["thon"])).replace("@@HERO@@",U(IMG["hero"])).replace("@@LOGOS@@",logos())
+fs=fs.replace("@@INGANGER@@",
+ inngang("salg","Når salget står stille","Salgsutvikling")+
+ inngang("ledelse","Når strategien ikke blir til handling","Lederutvikling")+
+ inngang("kultur","Når kulturen står i veien for målene","Kulturutvikling")+
+ inngang("ki","Når KI vokser fortere enn kontrollen","KI, adopsjon og sikkerhet"))
+fs=fs.replace("@@CASES@@",
+ case("thon","Thon Hotels: et kommersielt kulturløft","Pipeline økte fra 92 til 124 millioner kroner. Omsetningen vokste 5 prosent.","Kilde: excellerate.no, 2018")+
+ case("bolig","BoligPartner: leder- og salgsutvikling","I 2014 falt bransjen 22 prosent. BoligPartner vokste 26 prosent. Treffprosenten økte fra 28 til 42,5.","Kilde: excellerate.no, 2014")+
+ case("wik","Wikborg Rein: forenklet kompetanseutvikling","Alle advokater i Norge fikk opplæring i informasjonssikkerhet på 14 dager.","Kilde: excellerate.no, 2018"))
+SEP='<div class="vsep" aria-hidden="true"></div>'
+fs=fs.replace("@@TOG@@","".join(excard(e) for e in LED)+SEP+"".join(excard(e) for e in EXP))
+fs+=FOOTER
+STEG='''const STEG = [
+ {t:"Innsikt og fakta",x:"Vi starter med å forstå hvor dere står, før vi foreslår noe. Fakta fra kunder, selgere og ledere gir et felles utgangspunkt.",d:"Et felles faktagrunnlag. En tydelig beskrivelse av hva som mangler."},
+ {t:"Rådgivning og metodeverk",x:"Metoder og verktøy tilpasset deres marked og deres folk. Vi bygger det sammen med dere, ikke over hodet på dere.",d:"Et metodeverk som passer dere. Valg dere kan stå inne for."},
+ {t:"Kompetanseheving og implementering",x:"Systematisk opplæring og støtte, helt til det virker i hverdagen. Det er her endringen blir varig.",d:"Ferdigheter som brukes. Oppfølging til resultatene kommer."}
+];'''
+vals='''    const st = s.steg;
+    o.stegTittel = STEG[st].t; o.stegTekst = STEG[st].x; o.stegDere = STEG[st].d;
+    [0,1,2].forEach((i) => { o["c"+i] = "st" + (st === i ? " on" : ""); o["v"+i] = () => this.setState({ steg: i }); });'''
+fs+=script(5600,", steg: 0",vals,STEG)
+exec(open("v2.py").read())
+open("Forside.dc.html","w").write(fs)
+
+# ---------- OVERSIKT ----------
+ov=head("Fagekspertene")+HEADER
+ov+='''<section class="dyp" style="background:#1B3A4B;color:#fff;position:relative;overflow:hidden">
+<svg aria-hidden="true" viewBox="0 0 700 700" style="position:absolute;right:-100px;top:-120px;width:640px;height:640px"><line x1="80" y1="80" x2="620" y2="620" stroke="#294F67" stroke-width="130"/><line x1="620" y1="80" x2="80" y2="620" stroke="#294F67" stroke-width="130"/></svg>
+<div class="wrap" style="position:relative;padding-top:88px;padding-bottom:88px">
+<h1 style="font-size:56px;line-height:62px;font-weight:600;letter-spacing:-0.02em">Fagekspertene</h1>
+<p style="margin-top:20px;font-size:21px;line-height:32px;font-weight:500;color:#D3DCDF;max-width:32em">Vi er organisert med ett mål for øyet: å sikre våre kunder økt resultat og konkurransekraft. Derfor har vi én pool av mennesker med ekspertise på ulike metoder og verktøy.</p>
+</div></section>
+<section class="sec" style="padding-top:72px;padding-bottom:40px"><div class="wrap">
+<div class="g4">@@LED@@</div>
+</div></section>
+<section style="background:#F3F6F5"><div class="wrap" style="padding-top:80px;padding-bottom:96px">
+<div style="display:flex;gap:12px;flex-wrap:wrap" role="group" aria-label="Filtrer på område">
+<button class="{{f0}}" onClick="{{g0}}">Alle</button><button class="{{f1}}" onClick="{{g1}}">Salgsutvikling</button><button class="{{f2}}" onClick="{{g2}}">Lederutvikling</button><button class="{{f3}}" onClick="{{g3}}">Kulturutvikling</button><button class="{{f4}}" onClick="{{g4}}">KI og sikkerhet</button>
+</div>
+<div class="g4" style="margin-top:40px;row-gap:32px">
+<sc-for list="{{kort}}" as="e" hint-placeholder-count="8">
+<sc-if value="{{e.vis}}" hint-placeholder-val="{{true}}">
+<a class="ex" href="Fagekspert.dc.html"><div class="pt"><div class="pi"><img src="{{e.bilde}}" alt="{{e.navn}}"></div><span class="dot"></span></div><div class="tx"><h3>{{e.navn}}</h3><p class="r">{{e.rolle}}</p><p class="t">{{e.tekst}}</p></div><span class="lk"><span class="lesl">Les mer<span class="pil"></span></span></span></a>
+</sc-if>
+</sc-for>
+</div>
+</div></section>
+'''.replace('@@LED@@',''.join(excard(e) for e in LED))+FOOTER
+data="const EX = "+json.dumps([dict(navn=e[0],rolle=e[1],tekst=e[2],bilde=U(e[3]),omr=e[4]) for e in EXP],ensure_ascii=False)+";\nconst F=['','salg','ledelse','kultur','ki'];"
+vals='''    o.kort = EX.map((e) => ({ ...e, vis: s.f === 0 || e.omr.split(" ").indexOf(F[s.f]) >= 0 }));
+    [0,1,2,3,4].forEach((i) => { o["f"+i] = "pill" + (s.f === i ? " on" : ""); o["g"+i] = () => this.setState({ f: i }); });'''
+open("Fagekspertene.dc.html","w").write(ov+script(3800,", f: 0",vals,data))
+
+# ---------- MAL ----------
+e=EX[0]
+byname={x[0]:x for x in EX}
+REL=[byname[n] for n in ["Leif Ottesen","Janick Løwe","Per Christian Svae"]]
+LI='<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11.5H3zM9.5 9.75h3.8v1.6h.06c.53-1 1.82-2.06 3.75-2.06 4 0 4.74 2.64 4.74 6.07v5.89h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.29h-4z"/></svg>'
+ml=head("Fagekspert")+HEADER
+ml+='''<div class="wrap" style="padding-top:32px"><p style="font-size:15px;line-height:20px;color:#566B76"><a href="Fagekspertene.dc.html" style="text-decoration:none">Fagekspertene</a> / %s</p></div>
+<section class="ph-hero"><svg aria-hidden="true" viewBox="0 0 700 700" class="ph-x"><line x1="80" y1="80" x2="620" y2="620" stroke="#E4ECE8" stroke-width="130"/><line x1="620" y1="80" x2="80" y2="620" stroke="#E4ECE8" stroke-width="130"/></svg>
+<div class="wrap ph-g">
+<div class="snitt" style="width:300px"><img src="%s" alt="%s" style="height:375px;clip-path:polygon(0 0,calc(100%% - 44px) 0,100%% 44px,100%% 100%%,0 100%%)"><span class="dot" style="width:22px;height:22px"></span></div>
+<div>
+<p class="ph-r">%s</p>
+<h1 class="ph-n">%s</h1>
+<p class="ph-v">Leder Excellerate. Gjør kundenes stemme om til konkrete utviklingsplaner for salg og ledelse.</p>
+<div style="margin-top:28px"><a class="chip" href="#">Salgsutvikling</a><a class="chip" href="#">Lederutvikling</a><a class="chip" href="#">Organisasjonsutvikling</a><a class="chip" href="#">GAP Vision</a></div>
+</div></div></section>
+
+<div class="wrap ph-body">
+<div class="ph-main">
+<section><h2>Om Per Kjetil</h2>
+<p>Per Kjetil Parr har siden starten av 1990-tallet stått i front for det som har vært Norges største og mest kjente miljø for kompetanseheving innen salg, ledelse og organisasjonsutvikling. Han var med på oppstarten av Euro Business School og viderefører nå dette arbeidet som leder av Excellerate.</p>
+<p>Han er kjent for å kombinere tung faglig innsikt med en svært praktisk tilnærming, og er opptatt av hva som virker i virkeligheten, for kunder, medarbeidere og ledere.</p>
+<details><summary>Les mer</summary><p>Han har vært sentral i utviklingen av Excellerates metodikk og verktøy for kundedrevet kompetanseutvikling, der kundeopplevelse, prestasjoner og beste praksis fra de beste utøverne i organisasjonen kobles til konkrete utviklingsplaner og lederverktøy. Arbeidet har resultert i mange langsiktige samarbeid med større virksomheter som ville profesjonalisere salgs- og leveranseverdikjedene sine.</p></details></section>
+
+<section><h2>Dette hjelper Per Kjetil med</h2>
+<a class="hj" href="#"><b>Kundedrevet kompetanseutvikling</b><span>Kundens stemme styrer hva som prioriteres. Organisasjonen lærer av de beste i egen virksomhet.</span><i class="pil"></i></a>
+<a class="hj" href="#"><b>Utviklingsplaner for ledere</b><span>Konkrete grep ledere kan bruke i sine team.</span><i class="pil"></i></a>
+<a class="hj" href="#"><b>Salgs- og leveranseverdikjeder</b><span>Profesjonalisering i større virksomheter, over tid.</span><i class="pil"></i></a>
+</section>
+
+<section><h2>I korte trekk</h2>
+<div class="kt">
+<div><b>Tidlig 1990-tall</b><span>Med på oppstarten av Euro Business School</span></div>
+<div><b>1996 til 2021</b><span>Eier av Euro Business School</span></div>
+<div><b>Fra 2023</b><span>Administrerende direktør i Excellerate</span></div>
+<div><b>I dag</b><span>Styreleder i Excellerate AS og Gap Vision AS</span></div>
+</div></section>
+
+<section><h2>Aktuelt</h2>
+<a class="akt" href="#"><span class="ty">3. juni</span><b>GAP Vision AI lansert sammen med Computas</b><span>Salgsorganisasjoner mister verdi når toppselgernes kunnskap blir hos noen få. Verktøyet gjør den kunnskapen synlig, delbar og målbar.</span></a>
+</section>
+
+</div>
+
+<aside class="ph-side"><div class="ph-card">
+<p class="ph-ct">Ta en samtale med Per Kjetil</p>
+<a class="xl-btn-p" href="#samtale">Book en samtale</a>
+<a class="ph-l" href="tel:+4790890509">Ring 908 90 509</a>
+<a class="ph-l" href="https://www.linkedin.com/in/per-kjetil-parr-71a56113/">%s Per Kjetil på LinkedIn</a>
+</div></aside>
+</div>
+
+<section style="background:#F3F6F5"><div class="wrap" style="padding-top:80px;padding-bottom:88px">
+<h2 style="font-size:32px;line-height:40px;font-weight:500">Fagekspertene han jobber sammen med</h2>
+<p style="margin-top:8px;font-size:18px;line-height:28px;color:#566B76">Fra arbeidet med GAP Vision.</p>
+<div class="g3" style="margin-top:36px">@@TOG@@</div>
+<div style="margin-top:36px"><a class="lesbtn" href="Fagekspertene.dc.html">Se alle fagekspertene<span class="pil"></span></a></div>
+</div></section>
+'''%(e[0],U(e[3]),e[0],e[1],e[0],LI)
+ml=ml.replace("@@TOG@@","".join(excard(x) for x in REL))+FOOTER
+open("Fagekspert.dc.html","w").write(ml+script(3700))

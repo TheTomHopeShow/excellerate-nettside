@@ -1,0 +1,15 @@
+/* ===== Harmonisering mot designmanualen (Fagekspertene og Fagekspert) ===== */
+body,input,button{font-family:Inter,system-ui,sans-serif;font-weight:500}
+h1,h2,h3,h4{letter-spacing:-0.04em;font-weight:500}
+.xl-btn-p,.xl-btn-s,.xl-btn-l,.lesbtn{display:inline-flex;gap:10px;align-items:center;font:600 16px Inter,sans-serif;padding:14px 22px;border-radius:4px 12px 4px 12px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .22s,border-color .22s,color .22s}
+.xl-btn-p{background:#547B35;color:#fff;isolation:auto}.xl-btn-p:hover{background:#628C3F}
+.xl-btn-p::before{display:none}
+.xl-btn-p::after,.xl-btn-s::after,.xl-btn-l::after{content:"";position:static;width:9px;height:9px;margin:0;border-radius:50%;background:currentColor;transition:transform .3s}
+.xl-btn-p:hover::after,.xl-btn-s:hover::after,.xl-btn-l:hover::after{transform:translate(3px,-5px) scale(1.5)}
+.xl-btn-g,.xl-btn-p.xl-btn-g{background:#547B35;color:#fff}.xl-btn-g:hover{background:#628C3F}
+.xl-btn-s,.xl-btn-l{background:#F3F6F5;border-color:#D5DFE5;color:#231F20}
+.xl-btn-s:hover,.xl-btn-l:hover{border-color:#356A89;color:#356A89}
+.lesbtn{background:#F3F6F5;border:1px solid #D5DFE5;color:#231F20}
+.ex:hover .lesbtn,.ex:focus-visible .lesbtn{background:#547B35;border-color:#547B35;color:#fff}
+.xl-lenke{display:inline-flex;gap:8px;align-items:center;font-weight:600;color:#356A89;text-decoration:none;padding:6px 2px;background:linear-gradient(#7EA257,#7EA257) left bottom/100% 2px no-repeat}
+.pill{border-radius:4px 12px 4px 12px;font-family:Inter,sans-serif}

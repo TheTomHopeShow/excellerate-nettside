@@ -1,0 +1,1 @@
+document.querySelectorAll('.rfv').forEach(b=>b.addEventListener('click',()=>{const f=document.createElement('iframe');f.src='https://player.vimeo.com/video/'+b.dataset.v+(b.dataset.h?'?h='+b.dataset.h+'&':'?')+'autoplay=1&dnt=1';f.allow='autoplay; fullscreen; picture-in-picture';f.allowFullscreen=true;f.title=b.dataset.t||'Video';f.loading='lazy';b.replaceWith(f)}));
