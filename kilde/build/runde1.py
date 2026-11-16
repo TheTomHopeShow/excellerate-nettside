@@ -1,7 +1,13 @@
 # Runde 1 etter gjennomgangen 15.11.2026 (avtalt med Tom): fart, meny, tilgjengelighet, telefonformat, skygger.
 import re,glob
 GIF="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-JS='<script id="menybilder">(function(){var h=document.querySelector("header.hdr");if(!h)return;var d=0;function last(){if(d)return;d=1;h.querySelectorAll("img[data-src]").forEach(function(i){i.src=i.getAttribute("data-src");i.removeAttribute("data-src")})}["pointerenter","focusin","touchstart","click"].forEach(function(e){h.addEventListener(e,last,{passive:true})})})();</script>'
+JS='<script id="menybilder">(function(){var h=document.querySelector("header.hdr nav.hnav");if(!h)return;var d=0;function last(){if(d)return;d=1;h.querySelectorAll("img[data-src]").forEach(function(i){i.src=i.getAttribute("data-src");i.removeAttribute("data-src")})}["pointerenter","focusin","touchstart","click"].forEach(function(e){h.addEventListener(e,last,{passive:true})})})();</script>'
+# Rettet 16.11.2026: lytteren sto på hele header.hdr, ikke bare nav.hnav (megamenyen).
+# Det gjorde at et trykk på mobilmenyknappen (#mbtn, som også ligger i header.hdr)
+# trigget nedlasting av alle megameny-bildene (28 bilder, over 1 MB), selv om de
+# aldri vises i mobilmenyen (#mpanel har bare tekstlenker, ingen bilder).
+# nav.hnav er display:none på mobil, og et skjult element mottar ingen pointer-/
+# touch-/klikk-hendelser, så lytteren kan nå aldri trigges fra mobilmenyen.
 BRID=["handel","bank","bygg","it"]
 def tlf(d):
     return "+47 %s %s %s %s"%(d[:2],d[2:4],d[4:6],d[6:]) if d[0]=="2" else "+47 %s %s %s"%(d[:3],d[3:5],d[5:])
