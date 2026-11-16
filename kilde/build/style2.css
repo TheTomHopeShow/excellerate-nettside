@@ -16,8 +16,8 @@ h1,h2,h3,h4{letter-spacing:-0.035em}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:28px;background:#F3F6F5;border-radius:28px 28px 0 0}
 .hero h1{font-size:68px!important;line-height:68px!important;font-weight:500!important;letter-spacing:-0.04em!important}
 .hero h1 em{font-style:normal;color:#9CC06F;text-decoration:underline}
-.hph{position:relative;margin:0 36px 36px 0}.hph::before{content:"";position:absolute;left:36px;top:36px;right:-36px;bottom:-36px;background:#356A89;border-radius:18px}
-.hph img{position:relative;display:block;width:100%;height:480px;object-fit:cover;border-radius:18px}
+.hph{position:relative;margin:0 28px 28px 0}.hph::before{content:"";position:absolute;inset:28px -28px -28px 28px;background:#356A89;border-radius:4px 28px 4px 28px}
+.hph img{position:relative;display:block;width:100%;height:430px;object-fit:cover;border-radius:4px 28px 4px 28px}
 .hpill{position:absolute;left:-24px;bottom:28px;background:#fff;color:#231F20;border-radius:12px;padding:14px 18px;box-shadow:0 12px 30px rgba(0,0,0,.22);display:flex;gap:12px;align-items:center;font-size:14px;line-height:18px}.hpill b{display:block;font-size:16px;letter-spacing:-.02em;font-weight:600}.hpill i{width:12px;height:12px;border-radius:50%;background:#7EA257}
 /* inngangskort */
 .ing{clip-path:none;border-radius:4px 20px 4px 20px;position:relative;overflow:hidden}
@@ -58,7 +58,7 @@ h1,h2,h3,h4{letter-spacing:-0.035em}
 .hero .hgrid{position:relative;z-index:1;width:100%;display:grid;grid-template-columns:1.05fr .95fr;gap:72px;align-items:center;padding-top:72px;padding-bottom:112px}
 .hlead{margin-top:24px;font-size:20px;line-height:1.55;color:#C5D2D8;max-width:28em}
 .hbtn{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
-@media (max-width:860px){.hero .hgrid{grid-template-columns:1fr;padding-top:40px;padding-bottom:72px}.hero .hgrid>div:first-child{order:2}.hph{order:1;margin-right:24px;margin-bottom:24px}.hph::before{left:24px;top:24px;right:-24px;bottom:-24px}.hph img{height:clamp(220px,50vw,360px)}.hpill{left:-8px}}
+@media (max-width:1000px){.hero .hgrid{grid-template-columns:1fr;padding-top:40px;padding-bottom:72px}.hero .hgrid>div:first-child{order:2}.hph{order:1;margin:0 18px 18px 0}.hph::before{inset:18px -18px -18px 18px}.hph img{height:300px}.hpill{left:-8px}}
 /* kundelogoer: 2 rader a 6, i farger, i ro */
 .lgrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;padding-bottom:40px}
 .lc{height:104px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:18px 22px}
