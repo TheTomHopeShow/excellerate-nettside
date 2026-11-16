@@ -4,6 +4,10 @@ a{color:inherit}
 h1,h2,h3,h4,p{margin:0}
 .wrap{max-width:1240px;margin:0 auto;padding:0 40px}
 .sec{padding:88px 0}
+/* Mobilregel 16.11.2026: .sec hadde ingen mobilverdi, i motsetning til .nbm/.kqz/.qrot
+   som allerede var justert til mindre luft på mobil. Bruker samme verdi (56px) som de,
+   siden .sec er den klart mest brukte seksjonsinnpakningen (35 forekomster, 20 sider). */
+@media(max-width:900px){.sec{padding:56px 0}}
 .hdr{position:relative;top:0;z-index:50;background:#fff;border-bottom:1px solid #D5DFE5}
 .xl-btn-p{position:relative;display:inline-block;padding:15px 36px 15px 24px;color:#fff;font-weight:600;font-size:17px;line-height:24px;text-decoration:none;isolation:isolate;border:0;background:transparent;cursor:pointer;font-family:inherit}
 .xl-btn-p::before{content:"";position:absolute;inset:0;z-index:-1;background:#356A89;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 24px,100% 100%,0 100%);transition:background .2s}
