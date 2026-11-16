@@ -8,7 +8,7 @@ fs=fs.replace('family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" r
 a=fs.index('<section class="dyp hero"');b=fs.index('</section>',a)+10
 hero='''<section class="dyp hero" style="color:#fff">
 <div class="wrap hgrid">
-<div><h1>Hvem vil dere<br><em>vinne</em> neste gang?</h1>
+<div><h1>Hvem vil dere <em>vinne</em> neste gang?</h1>
 <p class="hlead">Excellerate hjelper ledere med å styrke konkurransekraften gjennom salgsutvikling og lederutvikling. Vi har hjulpet over 5 000 norske virksomheter med å finne, vinne og beholde de riktige kundene.</p>
 <div class="hbtn"><a class="kn g" href="#samtale">Book en samtale</a><a class="xl-lenke lys" href="#mangler">Hva mangler hos dere?<span class="pil"></span></a></div></div>
 <div class="hph"><img src="@@HERO@@" alt="Mann i samtale med kolleger"><div class="hpill"><i></i><div><b>Siden 1988</b>Salg og ledelse</div></div></div>
